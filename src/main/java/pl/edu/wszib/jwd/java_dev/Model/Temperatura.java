@@ -12,15 +12,14 @@ public class Temperatura {
     private Integer id;
 
     private Date data;
-    private float temperatura;
+    private String temperatura;
     private String rodzaj;
     private String uwagi;
 
     public Temperatura() {
     }
 
-    public Temperatura(Integer id, Date data, float temperatura, String rodzaj, String uwagi) {
-        this.id = id;
+    public Temperatura(Date data, String temperatura, String rodzaj, String uwagi) {
         this.data = data;
         this.temperatura = temperatura;
         this.rodzaj = rodzaj;
@@ -43,11 +42,11 @@ public class Temperatura {
         this.data = data;
     }
 
-    public float getTemperatura() {
+    public String getTemperatura() {
         return temperatura;
     }
 
-    public void setTemperatura(float temperatura) {
+    public void setTemperatura(String temperatura) {
         this.temperatura = temperatura;
     }
 
