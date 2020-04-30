@@ -17,11 +17,11 @@ class TemperaturaDaoTest {
 
     public static final int elementy = 2;
 
-    public static final String Temp1 = "36.0";
+    public static final float Temp1 = 36.5f;
     public static final String Rodzaj1 = "noralna";
     public static final String Uwaga1 = "zdrowy";
 
-    public static final String Temp2 = "39.0";
+    public static final float Temp2 = 39.3f;
     public static final String Rodzaj2 = "goraczka";
     public static final String Uwaga2 = "chory";
 
@@ -53,6 +53,8 @@ class TemperaturaDaoTest {
         System.out.println("");
         System.out.println("----------------");
         System.out.println(" ---- id obiektu: " + temperatura1.getId());
+        System.out.println(" ----- data obiektu: " + temperatura1.getData());
+        System.out.println(" ---- temp obiektu: " + temperatura1.getTemperatura());
         System.out.println(" ---- rodzaj obiektu: " + temperatura1.getRodzaj());
         System.out.println(" ---- uwagi obiektu: " + temperatura1.getUwagi());
         System.out.println("----------------");
@@ -62,9 +64,18 @@ class TemperaturaDaoTest {
         assertEquals(Temp1, temperatura1.getTemperatura());
 
         Temperatura temperatura2 = temperaturaDao.findByTemperatura(Temp2);
+        System.out.println("");
+        System.out.println("----------------");
         System.out.println(" ---- id obiektu: " + temperatura2.getId());
-        assertNotNull(temperatura2);
-        assertEquals(Temp2, temperatura2.getTemperatura());
+        System.out.println(" ----- data obiektu: " + temperatura2.getData());
+        System.out.println(" ---- temp obiektu: " + temperatura2.getTemperatura());
+        System.out.println(" ---- rodzaj obiektu: " + temperatura2.getRodzaj());
+        System.out.println(" ---- uwagi obiektu: " + temperatura2.getUwagi());
+        System.out.println("----------------");
+        System.out.println("");
+
+        assertNotNull(temperatura1);
+        assertEquals(Temp1, temperatura1.getTemperatura());
 
     }
 

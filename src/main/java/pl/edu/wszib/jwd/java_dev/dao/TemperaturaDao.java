@@ -6,5 +6,5 @@ import pl.edu.wszib.jwd.java_dev.Model.Temperatura;
 
 @Repository
 public interface TemperaturaDao extends CrudRepository <Temperatura,Integer> {
-Temperatura findByTemperatura(String temeratura);
+Temperatura findByTemperatura(float temeratura);
 }
