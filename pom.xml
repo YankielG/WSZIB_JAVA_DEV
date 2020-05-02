@@ -36,18 +36,23 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+        <!--  xxxxxxxxxxxxxxxxxxx Base Misrosoft sql xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
+                <dependency>
+                    <groupId>com.microsoft.sqlserver</groupId>
+                    <artifactId>mssql-jdbc</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+
+        <!-- xxxxxxxxxxxxxxxxxxxx Base Postgres xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 <!--        <dependency>-->
 <!--            <groupId>org.postgresql</groupId>-->
 <!--            <artifactId>postgresql</artifactId>-->
 <!--            <scope>runtime</scope>-->
 <!--        </dependency>-->
+
+        <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
