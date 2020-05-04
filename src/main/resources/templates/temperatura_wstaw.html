@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Dzienniczek Zdrowia - Temperatura</title>
+    <title th:text="${tytul}"></title>
     <link rel="stylesheet" href="../static/styles.css">
     <script src="../static/scripts.js"></script>
-    <link rel="icon" href="../static/ikona.ico" type="image/x-icon">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="../static/ikona.jpg"/>
 
-Wstaw tempertaturę
+</head>
+
+<body>
+<h1 th:text="${tytul}"></h1>
+<table border="1">
+    <tr>
+        <th width="5" height="10">Id</th>
+        <th width="5" height="20">Temperatura</th>
+        <th width="5" height="50">Data</th>
+        <th width="5" height="50">Rodzaj</th>
+        <th width="5" height="100">Uwagi</th>
+    </tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+</table>
+
 
 </body>
 </html>
