@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${tytul}"></title>
+    <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{css/uikit.min.css}" />
+    <script th:src="@{js/uikit.min.js}"></script>
+    <script th:src="@{js/uikit-icons.min.js}"></script>
 </head>
+
+</head>
+
 <body>
+
+<h1 class="uk-heading-divider" th:text="${tytul}"></h1>
 
 </body>
 </html>

@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <body>
+
+    <div class="uk-width-1-2@s uk-width-2-5@m" uk-stikcy>
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-active"><a th:href="@{start}">Start</a></li>
+            <li><a th:href="@{/temperatura}">Temperatura</a></li>
+            <li><a th:href="@{/wzrost}">Wzrost</a></li>
+            <li><a th:href="@{/waga}">Waga</a></li>
+            <li><a th:href="@{/cisnienie}">Cisnienie</a></li>
+            <li><a th:href="@{/tentno}">Tentno</a></li>
+            <li><a th:href="@{/leki}">Leki</a></li>
+            <li><a th:href="@{/nawyki}">Nawyki</a></li>
+            <li><a th:href="@{/profil}">Profil</a></li>
+            <li><a th:href="@{/info}">Info</a></li>
+        </ul>
+    </div>
 
 </body>
 </html>
