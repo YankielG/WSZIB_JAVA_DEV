@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
     <title th:text="${tytul}"></title>
@@ -16,6 +17,12 @@
 <body>
 
 <h1 class="uk-heading-divider" th:text="${tytul}"></h1>
+<section th:replace="@{fragments/naglowek :: naglowek}"></section>
+<section th:replace="@{fragments/menu :: menu}"></section>
+
+<section layout:fragment="centent"></section>
+
+<section th:replace="@{fragments/stopla :: stopka}"></section>
 
 </body>
 </html>
