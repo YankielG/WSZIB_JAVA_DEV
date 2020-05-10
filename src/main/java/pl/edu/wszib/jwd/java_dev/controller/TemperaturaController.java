@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import pl.edu.wszib.jwd.java_dev.dao.TemperaturaDao;
 
 @Controller
-@PropertySource("classpath:app.properties")
+@PropertySource("classpath:messages.properties")
 public class TemperaturaController {
 
     @Autowired

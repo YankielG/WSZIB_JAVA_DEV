@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @PropertySource("classpath:messages.properties")
-public class  StartController {
+public class Index {
 
-    @GetMapping
-    public String start(){
-        return "start";
+    @GetMapping("/index")
+    public String index(){
+        return "index";
     }
 }
 
