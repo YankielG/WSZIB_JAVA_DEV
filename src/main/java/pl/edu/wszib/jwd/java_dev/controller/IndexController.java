@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @PropertySource("classpath:messages.properties")
-public class Index {
+public class IndexController {
 
     @GetMapping("/index")
     public String index(){

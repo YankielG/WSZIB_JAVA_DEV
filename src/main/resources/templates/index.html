@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="#{index.tytyl}"></title>
-    <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}"/>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{css/uikit.min.css}"/>
-    <script th:src="@{js/uikit.min.js}"></script>
-    <script th:src="@{js/uikit-icons.min.js}"></script>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
 
 <body>
 
-<div th:replace="~{fragments/menu :: menu1}"></div>
+<div class="container">
 
-<div class="uk-container uk-margin-large-top" >
     <h2 th:text="#{index.tytyl}"></h2>
 
     Przejmij kontrolę nad organizmem i zacznij decydować o swoim zdrowiu!
@@ -29,8 +18,6 @@
     Kolejnej odsłonie tej aplikacji powstanie rejestracja; lipidów, glukozy, wypalonych papierosów notatki, Kalorie.
 
 </div>
-
-<div th:replace="~{fragments/stopka :: stopka}"></div>
 
 </body>
 </html>
