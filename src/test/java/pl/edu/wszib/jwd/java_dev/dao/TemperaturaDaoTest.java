@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import pl.edu.wszib.jwd.java_dev.Model.Temperatura;
+import pl.edu.wszib.jwd.java_dev.model.Temperatura;
 
 import java.util.Collection;
 import java.util.Date;
