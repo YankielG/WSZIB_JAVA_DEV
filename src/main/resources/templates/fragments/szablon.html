@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="szablon(content)">
+<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">-->
 <head>
     <meta charset="UTF-8">
-    <title th:text="@{tytul}"></title>
+    <title th:text="#{start.tytyl}"></title>
     <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,13 +16,21 @@
 
 <body>
 
-<h1 class="uk-heading-divider" th:text="${tytul}"></h1>
-<section th:replace="~{fragments/naglowek :: naglowek}"></section>
+<div th:replace="~{fragments/naglowek :: naglowek}"></div>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<div th:insert="${content}" class="uk-container uk-margin-large-top"></div>
+
+<div th:replace="~{fragments/stopka :: stopka}"></div>
+
+
+
+<!--<section th:replace="~{fragments/naglowek :: naglowek}"></section>-->
 <!--<section th:replace="~{fragments/menu :: menu}"></section>-->
 
-<section layout:fragment="centent"></section>
+<!--<section layout:fragment="centent"></section>-->
 
-<section th:replace="~{fragments/stopka :: stopka}"></section>
+<!--<section th:replace="~{fragments/stopka :: stopka}"></section>-->
 
 </body>
 </html>

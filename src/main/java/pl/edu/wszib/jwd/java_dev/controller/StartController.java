@@ -12,6 +12,9 @@ public class  StartController {
     public String start(){
         return "start";
     }
+
+
 }
+
 
 

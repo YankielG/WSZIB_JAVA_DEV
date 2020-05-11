@@ -6,14 +6,31 @@
     <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{css/uikit.min.css}" />
+    <link rel="stylesheet" th:href="@{css/uikit.min.css}"/>
     <script th:src="@{js/uikit.min.js}"></script>
     <script th:src="@{js/uikit-icons.min.js}"></script>
 </head>
 
 <body>
 
-Witam
+<div th:replace="~{fragments/menu :: menu1}"></div>
+
+<div class="uk-container uk-margin-large-top" >
+    <h2 th:text="#{index.tytyl}"></h2>
+
+    Przejmij kontrolę nad organizmem i zacznij decydować o swoim zdrowiu!
+
+    Dobre zdrowie to nie tylko geny. Decydują o nim także styl życia, umiejętność rozładowywania stresu, sposób odżywiania, a nawet relacje z innymi. To doskonała wiadomość: stan naszego organizmu zależy w dużej mierze od nas samych.
+    "Twój dziennik zdrowia" to potężna dawka motywacji, by już dziś zwrócić uwagę na swoje samopoczucie.
+
+    Głównym zadaniem programu jest pomoc w utrzymaniu lub poprawieniu stanu Twojego zdrowia, poprzez monitorowanie pewnego zakresu parametrów zdrowotnych (profilaktyka CHUK)
+    Korzystanie z programu na co dzień pozwoli Ci zapanować nad realizacją najczęstszych zaleceń lekarskich oraz na pełniejsze wykorzystanie wizyty u lekarza.
+    Aplikacja umożliwia rejestrowanie następujących parametrów; Temperatury, wzrostu, wagi ciśnienia tętna zażywanych leków. Oraz wyrabiać określonych nawyków.
+    Kolejnej odsłonie tej aplikacji powstanie rejestracja; lipidów, glukozy, wypalonych papierosów notatki, Kalorie.
+
+</div>
+
+<div th:replace="~{fragments/stopka :: stopka}"></div>
 
 </body>
 </html>
