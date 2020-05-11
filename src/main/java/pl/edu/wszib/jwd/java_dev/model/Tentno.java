@@ -2,7 +2,7 @@ package pl.edu.wszib.jwd.java_dev.model;
 
 import java.util.Date;
 
-public class Tetno {
+public class Tentno {
     private Long id;
     private Date data;
     private double tentno;
