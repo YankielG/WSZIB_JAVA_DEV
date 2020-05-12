@@ -1,11 +1,20 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "index")
 public class Index {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date data;
     private String urzytkownik;
+
+    public Index() {
+    }
 
     public Long getId() {
         return id;

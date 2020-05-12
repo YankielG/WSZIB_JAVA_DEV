@@ -1,13 +1,22 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "temperatura")
 public class Temperatura2 {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date data;
     private double temperatura;
     private String rodzaj;
     private String uwagi;
+
+    public Temperatura2() {
+    }
 
     public Long getId() {
         return id;

@@ -1,8 +1,14 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "profil")
 public class Profil {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String urzytkownik;
     private String imie;
@@ -11,6 +17,9 @@ public class Profil {
     private Date dataurodzenia;
     private String jednostkawagi;
     private String jednostkamiar;
+
+    public Profil() {
+    }
 
     public Long getId() {
         return id;

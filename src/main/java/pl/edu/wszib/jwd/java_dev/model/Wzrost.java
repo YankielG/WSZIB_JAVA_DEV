@@ -1,14 +1,23 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "wzrost")
 public class Wzrost {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date data;
     private double wzrost;
     private String rodzaj;
     private String uwagi;
 
+    public Wzrost() {
+    }
 
     public Long getId() {
         return id;

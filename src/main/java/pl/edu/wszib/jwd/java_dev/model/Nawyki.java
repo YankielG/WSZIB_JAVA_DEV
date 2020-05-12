@@ -1,8 +1,14 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "nawyki")
 public class Nawyki {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date data1;
     private Date data2;
@@ -10,6 +16,9 @@ public class Nawyki {
     private String powtorzenia;
     private String uwagi;
     private boolean realizacja;
+
+    public Nawyki() {
+    }
 
     public Long getId() {
         return id;
