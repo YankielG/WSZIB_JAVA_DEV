@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{wzrost.tytul}" style="position:center;"></h2>
+    <table class="uk-table uk-table-stripped">
+        <thead>
+        <tr>
+            <th>iD</th>
+            <th>Data</th>
+            <th>Wersja</th>
+            <th>Algorytm</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            <td>2</td>
+            <td>90,5</td>
+            <td>10-05-2020</td>
+            <td>
+                <a href="" uk-icon="icon: credit-card"></a>
+                <a href="" uk-icon="icon: trash"></a>
+            </td>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

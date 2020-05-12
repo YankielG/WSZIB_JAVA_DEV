@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{temperatura.tytul}" style="position:center;"></h2>
+
+    <div class="uk-section">
+        <div class="uk-container uk-container-xsmall">
+            <div style="max-width: 800px; margin: 50px auto">
+                <canvas id="line-chart" width="1600" height="900"></canvas>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+            <script th:inline="javascript">
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: [1,2,3,4,5,6,7,8,9,10,11],
+                        datasets: [{
+                            data: [30,35,37,37,39,41,43,36,37,34],
+                            label: "Temperatura",
+                            borderColor: "#3e95cd",
+                            fill: false
+
+                        },
+                        ]
+                    },
+                    options: {
+                        // scales:{
+                        //     yAxes: "temperatura",
+                        //     xAxes: "data",
+                        // }
+
+                    }
+                });
+
+            </script>
+
+
+        </div>
+    </div>
+
+    <table class="uk-table uk-table-stripped">
+        <thead>
+        <tr>
+            <th>iD</th>
+            <th>Temperatura</th>
+            <th>Data</th>
+            <th>Rodzaj</th>
+            <th>Uwagi</th>
+            <th>Opcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>2</td>
+        <td>90,5</td>
+        <td>10-05-2020</td>
+        <td><span uk-icon="icon:heart"></span></td>
+        <td>po jedzeniu</td>
+        <td>
+            <a href="" uk-icon="icon: credit-card"></a>
+            <a href="" uk-icon="icon: trash"></a>
+        </td>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -9,8 +9,7 @@ public class Temperatura {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private Integer id;
-
+    private Long id;
     private Date data;
     private float temperatura;
     private String rodzaj;
@@ -19,6 +18,7 @@ public class Temperatura {
     public Temperatura() {
     }
 
+//    tyczasowe do testow
     public Temperatura(Date data, float temperatura, String rodzaj, String uwagi) {
         this.data = data;
         this.temperatura = temperatura;
@@ -26,11 +26,11 @@ public class Temperatura {
         this.uwagi = uwagi;
     }
 
-     public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
