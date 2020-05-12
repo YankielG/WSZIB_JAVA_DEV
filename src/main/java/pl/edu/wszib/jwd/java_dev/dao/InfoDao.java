@@ -1,4 +1,7 @@
 package pl.edu.wszib.jwd.java_dev.dao;
 
-public interface InfoDao {
+import org.springframework.data.repository.CrudRepository;
+import pl.edu.wszib.jwd.java_dev.model.Info;
+
+public interface InfoDao extends CrudRepository<Info, Long> {
 }

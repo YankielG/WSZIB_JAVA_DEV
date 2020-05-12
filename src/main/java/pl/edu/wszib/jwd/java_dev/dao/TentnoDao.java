@@ -1,4 +1,7 @@
 package pl.edu.wszib.jwd.java_dev.dao;
 
-public interface TentnoDao {
+import org.springframework.data.repository.CrudRepository;
+import pl.edu.wszib.jwd.java_dev.model.Tentno;
+
+public interface TentnoDao extends CrudRepository<Tentno, Long> {
 }
