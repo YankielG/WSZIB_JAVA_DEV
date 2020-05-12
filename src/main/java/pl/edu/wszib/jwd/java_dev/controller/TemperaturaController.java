@@ -15,12 +15,9 @@ public class TemperaturaController {
     @Autowired
     TemperaturaDao temperaturaDao;
 
-    @Value("${temperatura.wstaw.tytul}")
-    private String tytul;
-
-    @GetMapping("temperatura_wstaw")
+    @GetMapping("temperatura")
     public String wstawianieTemperatury(Model model) {
-        model.addAttribute("tytul", tytul);
-        return "temperatura_wstaw";
+
+        return "temperatura";
     }
 }

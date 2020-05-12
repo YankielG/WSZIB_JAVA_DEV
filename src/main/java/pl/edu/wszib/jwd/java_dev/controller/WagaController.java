@@ -9,7 +9,7 @@ import pl.edu.wszib.jwd.java_dev.dao.WagaDao;
 
 @Controller
 @PropertySource("classpath:messages.properties")
-public class WagaControler {
+public class WagaController {
 
     @Autowired
     private WagaDao wagaDao;
