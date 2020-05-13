@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.WagaDao;
 import pl.edu.wszib.jwd.java_dev.model.Waga;
 
@@ -30,10 +31,15 @@ public class WagaController {
 
     @GetMapping("waga/wstaw")
     public String wstaw(Model model) {
-        model.addAttribute("wstaw", new Waga());
-        return "wagawstaw";
+        model.addAttribute("wagadodaj", new Waga());
+        return "wagadodaj";
     }
 
+    @PostMapping("waga/zapisz")
+    public String zapisz(){
+//        wagaDao.save(waga();
+        return "redirect:/waga";
+    }
 
     @GetMapping("waga/edytuj/{id}")
     public String edytuj(@PathVariable Long id, Model model){

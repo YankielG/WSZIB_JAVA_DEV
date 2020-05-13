@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{waga.tytul.dodaj}" style="position:center;"></h2>
+
+    <form style="width:300px; margin: auto" th:object="${wagadodaj}" th:action="@{/waga/zapisz}" method="post">
+        <div class="uk-margin">
+            <label>Waga</label>
+            <input th:field="*{waga}" type="number" step="0.1" class="uk-input">
+        </div>
+        <div class="uk-margin">
+            <label>Data</label>
+            <Input th:field="*{data}" type="date" class="uk-input">
+        </div>
+        <div class="uk-margin">
+            <label>Rodzaj</label>
+            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">
+        </div>
+        <div class="uk-margin">
+            <label>Uwagi</label>
+            <input th:field="*{uwagi}" type="text" class="uk-input">
+        </div>
+        <input th:field="*{id}" type="number" hidden>
+
+        <a th:href="@{/waga}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>
+        <a th:href="@{/waga/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check"></a>
+
+        <a th:href="@{/waga}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+    </form>
+
+</div>
+
+</body>
+</html>
