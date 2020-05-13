@@ -19,5 +19,4 @@ public class WagaController {
 model.addAttribute("wagalista",wagaDao.findAll());
         return "waga";
     }
-
 }

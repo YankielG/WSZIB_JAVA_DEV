@@ -1,7 +1,6 @@
 package pl.edu.wszib.jwd.java_dev.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,7 @@ public class TemperaturaController {
     TemperaturaDao temperaturaDao;
 
     @GetMapping("temperatura")
-    public String wstawianieTemperatury(Model model) {
+    public String Temperatura(Model model) {
 
         return "temperatura";
     }
