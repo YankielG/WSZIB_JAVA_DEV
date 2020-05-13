@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="#{start.tytyl}">Dzienniczek Zdrowia - ERROR</title>
+    <title th:text="#{tytyl}">Dzienniczek_Zdrowia - ERROR</title>
     <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}" href="../static/ikona.ico"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,13 @@
 
 <body>
 
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{error404.tytul}" style="position:center;">Error</h2>
+
 <img src="https://www.pedalo.co.uk/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/05/Cats-Protection-1024x520.png.webp">
+
+</div>
+
 </body>
 </html>

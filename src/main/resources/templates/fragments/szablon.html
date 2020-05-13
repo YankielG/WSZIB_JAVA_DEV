@@ -3,13 +3,13 @@
 <!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">-->
 <head>
     <meta charset="UTF-8">
-    <title th:text="#{start.tytyl}"></title>
-    <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}"/>
+    <title th:text="#{tytyl}">Dzienniczek_Zdrowia</title>
+    <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}" href="../static/ikona.ico"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{css/uikit.min.css}" />
-    <script th:src="@{js/uikit.min.js}"></script>
-    <script th:src="@{js/uikit-icons.min.js}"></script>
+    <link rel="stylesheet" th:href="@{css/uikit.min.css}" href="../static/css/uikit.min.css"/>
+    <script th:src="@{js/uikit.min.js}" src="../static/js/uikit.min.js"></script>
+    <script th:src="@{js/uikit-icons.min.js}" src="../static/js/uikit-icons.min.js"></script>
 </head>
 
 </head>
@@ -17,6 +17,7 @@
 <body>
 
 <!--<div th:replace="~{fragments/naglowek :: naglowek}"></div>-->
+
 <div th:replace="~{fragments/menu :: menu1}"></div>
 
 <div th:insert="${content}" class="uk-container uk-margin-large-top"></div>
@@ -26,6 +27,7 @@
 
 
 <!--<section th:replace="~{fragments/naglowek :: naglowek}"></section>-->
+
 <!--<section th:replace="~{fragments/menu :: menu}"></section>-->
 
 <!--<section layout:fragment="centent"></section>-->
