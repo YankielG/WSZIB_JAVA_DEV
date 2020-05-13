@@ -1,6 +1,5 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
