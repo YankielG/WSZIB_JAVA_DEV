@@ -16,7 +16,7 @@ public class TemperaturaController {
 
     @GetMapping("temperatura")
     public String Temperatura(Model model) {
-
+model.addAttribute("temperaturalista", temperaturaDao.findAll());
         return "temperatura";
     }
 }

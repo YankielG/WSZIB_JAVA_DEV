@@ -12,7 +12,7 @@ public class Waga {
     private Long id;
     private Date data;
     private double waga;
-    private String rodzaj;
+    private boolean rodzaj;
     private String uwagi;
 
     public Waga() {
@@ -42,11 +42,11 @@ public class Waga {
         this.waga = waga;
     }
 
-    public String getRodzaj() {
+    public boolean isRodzaj() {
         return rodzaj;
     }
 
-    public void setRodzaj(String rodzaj) {
+    public void setRodzaj(boolean rodzaj) {
         this.rodzaj = rodzaj;
     }
 
