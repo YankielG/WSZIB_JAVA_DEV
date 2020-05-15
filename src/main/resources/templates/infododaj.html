@@ -4,9 +4,9 @@
 
 <div class="container">
 
-    <h2 class="uk-heading-divider" th:text="#{info.tytul.dodaj}" style="position:center;"></h2>
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.info}" style="position:center;"></h2>
 
-    <form style="width:300px; margin: auto" th:object="${infododaj}" th:action="@{/info/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${infododaj}" th:action="@{/opcje/info/zapisz}" method="post">
         <div class="uk-margin">
             <label>Data</label>
             <Input th:field="*{data}" type="date" class="uk-input">
@@ -21,10 +21,10 @@
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/info}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
-<!--        <a th:href="@{/info/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
-<!--        <a th:href="@{/info/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
-        <a th:href="@{/info}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+<!--        <a th:href="@{/opcje/info}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
+<!--        <a th:href="@{/opcje/info/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
+<!--        <a th:href="@{/opcje/info/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
+        <a th:href="@{/opcje}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
         <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
 
     </form>

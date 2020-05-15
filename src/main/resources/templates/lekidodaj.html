@@ -19,9 +19,20 @@
             <label>Dawka</label>
             <input th:field="*{dawka}" type="text" class="uk-input">
         </div>
-        <div class="uk-margin">
+<!--        <div class="uk-margin">-->
+<!--            <label>Rodzaj</label>-->
+<!--            <input th:field="*{rodzaj}" type="text" class="uk-input">-->
+<!--        </div>-->
+        <div class="uk-button uk-form-controls uk-margin">
             <label>Rodzaj</label>
-            <input th:field="*{rodzaj}" type="text" class="uk-input">
+            <select th:field="*{rodzaj}" type="text" class="uk-input">
+                <option th:value="'Antybiotyk'">Antybiotyk</option>
+                <option th:value="'Komputer przenośny'">Przeciw bólowy</option>
+                <option th:value="'Witamina'">Witamina</option>
+                <option th:value="'Szczepionka'">Szczepionka</option>
+                <option th:value="'Suplement'">Suplement</option>
+                <option th:value="'Pozostałe'">Pozostałe</option>
+            </select>
         </div>
         <div class="uk-margin">
             <label>Uwagi</label>

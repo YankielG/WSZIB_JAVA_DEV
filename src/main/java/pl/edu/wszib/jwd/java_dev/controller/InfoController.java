@@ -19,35 +19,35 @@ public class InfoController {
 
     @GetMapping("info")
     public String info(Model model) {
-        model.addAttribute("lista", infoDao.findAll());
+        model.addAttribute("lista1", infoDao.findAll());
         return "info";
     }
 
-    @GetMapping("info/usun/{id}")
+    @GetMapping("opcje/info/usun/{id}")
     public String usun(@PathVariable Long id) {
         infoDao.deleteById(id);
-        return "redirect:/info";
+        return "redirect:/opcje";
     }
 
-    @GetMapping("info/czysc")
+    @GetMapping("opcje/info/czysc")
     public String czysc() {
         infoDao.deleteAll();
-        return "redirect:/info";
+        return "redirect:/opcje";
     }
 
-    @GetMapping("info/wstaw")
+    @GetMapping("opcje/info/wstaw")
     public String wstaw(Model model) {
         model.addAttribute("infododaj", new Info());
         return "infododaj";
     }
 
-    @PostMapping("info/zapisz")
+    @PostMapping("opcje/info/zapisz")
     public String zapisz(Info info) {
         infoDao.save(info);
-        return "redirect:/info";
+        return "redirect:/opcje";
     }
 
-    @GetMapping("info/edytuj/{id}")
+    @GetMapping("opcje/info/edytuj/{id}")
     public String edytuj(@PathVariable Long id, Model model) {
         Info info = infoDao.findById(id).get();
         model.addAttribute("infododaj", info);

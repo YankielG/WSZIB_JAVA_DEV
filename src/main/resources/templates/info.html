@@ -6,8 +6,8 @@
 
     <h2 class="uk-heading-divider" th:text="#{info.tytul}" style="position:center;"></h2>
 
-    <a th:href="@{/info/wstaw}" uk-icon="icon: copy"></a>
-    <a th:href="@{/info/czysc}" uk-icon="icon: trash"></a>
+<!--    <a th:href="@{/info/wstaw}" uk-icon="icon: copy"></a>-->
+<!--    <a th:href="@{/info/czysc}" uk-icon="icon: trash"></a>-->
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
@@ -15,20 +15,20 @@
             <th>Data</th>
             <th>Wersja</th>
             <th>Algorytm</th>
-            <th>Opcje</th>
+<!--            <th>Opcje</th>-->
         </tr>
         </thead>
         <tbody>
-        <tr th:each="element : ${lista}">
+        <tr th:each="element : ${lista1}">
         <td th:text="${element.id}"></td>
         <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
         <!--            <td th:text="${element.data}"></td>-->
         <td th:text="${element.wersja}"></td>
         <td th:text="${element.algorytm}"></td>
-        <td>
-            <a th:href="@{/info/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
-            <a th:href="@{/info/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
-        </td>
+<!--        <td>-->
+<!--            <a th:href="@{/info/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>-->
+<!--            <a th:href="@{/info/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>-->
+<!--        </td>-->
         </tr>
         </tbody>
     </table>

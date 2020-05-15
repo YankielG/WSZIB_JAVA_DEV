@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.leki}" style="position:center;"></h2>
+
+    <form style="width:300px; margin: auto" th:object="${rodzajlekudodaj}" th:action="@{/opcje/rodzajleku/zapisz}" method="post">
+        <div class="uk-margin">
+            <label>Rodzaj leku</label>
+            <input th:field="*{rodzajleku}" type="text" class="uk-input">
+        </div>
+        <input th:field="*{id}" type="number" hidden>
+
+<!--        <a th:href="@{/opcje/rodzajleku}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
+<!--        <a th:href="@{/opcje/rodzajleku/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
+<!--        <a th:href="@{/opcje/rodzajleku/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
+        <a th:href="@{/opcje}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+</div>
+
+</body>
+</html>
