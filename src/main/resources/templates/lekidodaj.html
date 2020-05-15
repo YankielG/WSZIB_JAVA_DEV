@@ -19,30 +19,42 @@
             <label>Dawka</label>
             <input th:field="*{dawka}" type="text" class="uk-input">
         </div>
-<!--        <div class="uk-margin">-->
-<!--            <label>Rodzaj</label>-->
-<!--            <input th:field="*{rodzaj}" type="text" class="uk-input">-->
-<!--        </div>-->
-        <div class="uk-button uk-form-controls uk-margin">
-            <label>Rodzaj</label>
-            <select th:field="*{rodzaj}" type="text" class="uk-input">
-                <option th:value="'Antybiotyk'">Antybiotyk</option>
-                <option th:value="'Komputer przenośny'">Przeciw bólowy</option>
-                <option th:value="'Witamina'">Witamina</option>
-                <option th:value="'Szczepionka'">Szczepionka</option>
-                <option th:value="'Suplement'">Suplement</option>
-                <option th:value="'Pozostałe'">Pozostałe</option>
-            </select>
-        </div>
+        <!--        <div class="uk-margin">-->
+        <!--            <label>Rodzaj</label>-->
+        <!--            <input th:field="*{rodzaj}" type="text" class="uk-input">-->
+        <!--        </div>-->
+
+        <!--        <div class="uk-button uk-form-controls uk-margin">-->
+        <!--            <label>Rodzaj</label>-->
+        <!--            <select th:field="*{rodzaj}" type="text" class="uk-input">-->
+        <!--                <option th:value="'Antybiotyk'">Antybiotyk</option>-->
+        <!--                <option th:value="'Komputer przenośny'">Przeciw bólowy</option>-->
+        <!--                <option th:value="'Witamina'">Witamina</option>-->
+        <!--                <option th:value="'Szczepionka'">Szczepionka</option>-->
+        <!--                <option th:value="'Suplement'">Suplement</option>-->
+        <!--                <option th:value="'Pozostałe'">Pozostałe</option>-->
+        <!--            </select>-->
+        <!--        </div>-->
+
+                <div class="uk-button uk-form-controls uk-margin">
+                    <label>Rodzaj</label>
+                    <select th:field="*{rodzaj}" type="text" class="uk-input">
+                        <option value=""> -- </option>
+                        <option th:each="rodzajleku : ${rodajkekudodaj}"
+                                th:value="${rodzajleku.rodzajleku}"
+                                th:utext="${rodzajleku.rodzajleku}"/>
+                    </select>
+                </div>
+
         <div class="uk-margin">
             <label>Uwagi</label>
             <input th:field="*{uwagi}" type="text" class="uk-input">
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/leki}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
-<!--        <a th:href="@{/leki/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
-<!--        <a th:href="@{/leki/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
+        <!--        <a th:href="@{/leki}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
+        <!--        <a th:href="@{/leki/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
+        <!--        <a th:href="@{/leki/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
         <a th:href="@{/leki}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
         <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
 

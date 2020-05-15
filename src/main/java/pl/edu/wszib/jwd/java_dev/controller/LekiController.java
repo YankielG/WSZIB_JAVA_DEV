@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.LekiDao;
+import pl.edu.wszib.jwd.java_dev.dao.RodzajLekuDao;
 import pl.edu.wszib.jwd.java_dev.model.Leki;
 
 @Controller
@@ -16,6 +17,9 @@ public class LekiController {
 
     @Autowired
     private LekiDao lekiDao;
+
+    @Autowired
+    private RodzajLekuDao rodzajLekuDao;
 
     @GetMapping("leki")
     public String leki(Model model) {
@@ -38,6 +42,7 @@ public class LekiController {
     @GetMapping("leki/wstaw")
     public String wstaw(Model model) {
         model.addAttribute("lekidodaj", new Leki());
+        model.addAttribute("rodajkekudodaj", rodzajLekuDao.findAll());
         return "lekidodaj";
     }
 
@@ -51,6 +56,7 @@ public class LekiController {
     public String edytuj(@PathVariable Long id, Model model) {
         Leki leki = lekiDao.findById(id).get();
         model.addAttribute("lekidodaj", leki);
+        model.addAttribute("rodajkekudodaj", rodzajLekuDao.findAll());
         return "lekidodaj";
     }
 }
