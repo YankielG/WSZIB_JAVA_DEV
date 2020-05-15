@@ -8,20 +8,16 @@
 
     <form style="width:300px; margin: auto" th:object="${infododaj}" th:action="@{/info/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Info</label>
-            <input th:field="*{info}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
-        </div>
-        <div class="uk-margin">
             <label>Data</label>
             <Input th:field="*{data}" type="date" class="uk-input">
         </div>
         <div class="uk-margin">
-            <label>Rodzaj</label>
-            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">
+            <label>Wersja</label>
+            <input th:field="*{wersja}" type="text"  class="uk-input">
         </div>
         <div class="uk-margin">
-            <label>Uwagi</label>
-            <input th:field="*{uwagi}" type="text" class="uk-input">
+            <label>Algorytm</label>
+            <input th:field="*{algorytm}" type="text" class="uk-input">
         </div>
         <input th:field="*{id}" type="number" hidden>
 

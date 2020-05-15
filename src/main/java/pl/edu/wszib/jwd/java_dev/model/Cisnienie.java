@@ -21,8 +21,8 @@ public class Cisnienie {
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private double rozkurcz;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private double tentno;
-    private String rodzaj;
+    private double tetno;
+    private boolean rodzaj;
     private String uwagi;
 
     public Cisnienie() {
@@ -60,19 +60,19 @@ public class Cisnienie {
         this.rozkurcz = rozkurcz;
     }
 
-    public double getTentno() {
-        return tentno;
+    public double getTetno() {
+        return tetno;
     }
 
-    public void setTentno(double tentno) {
-        this.tentno = tentno;
+    public void setTetno(double tetno) {
+        this.tetno = tetno;
     }
 
-    public String getRodzaj() {
+    public boolean isRodzaj() {
         return rodzaj;
     }
 
-    public void setRodzaj(String rodzaj) {
+    public void setRodzaj(boolean rodzaj) {
         this.rodzaj = rodzaj;
     }
 

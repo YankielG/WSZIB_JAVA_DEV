@@ -18,7 +18,7 @@ public class Wzrost {
     private Date data;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private double wzrost;
-    private String rodzaj;
+    private boolean rodzaj;
     private String uwagi;
 
     public Wzrost() {
@@ -48,11 +48,11 @@ public class Wzrost {
         this.wzrost = wzrost;
     }
 
-    public String getRodzaj() {
+    public boolean isRodzaj() {
         return rodzaj;
     }
 
-    public void setRodzaj(String rodzaj) {
+    public void setRodzaj(boolean rodzaj) {
         this.rodzaj = rodzaj;
     }
 

@@ -61,7 +61,7 @@
             <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
             <td th:text="${element.uwagi}"></td>
             <td>
-                <a th:href="@{/wzrostedytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
+                <a th:href="@{/wzrost/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
                 <a th:href="@{/wzrost/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
             </td>
         </tr>

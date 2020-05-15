@@ -18,7 +18,7 @@ public class Tetno {
     private Date data;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private double tetno;
-    private String rodzaj;
+    private boolean rodzaj;
     private String uwagi;
 
     public Tetno() {
@@ -48,11 +48,11 @@ public class Tetno {
         this.tetno = tetno;
     }
 
-    public String getRodzaj() {
+    public boolean isRodzaj() {
         return rodzaj;
     }
 
-    public void setRodzaj(String rodzaj) {
+    public void setRodzaj(boolean rodzaj) {
         this.rodzaj = rodzaj;
     }
 

@@ -9,15 +9,19 @@
     <form style="width:300px; margin: auto" th:object="${lekidodaj}" th:action="@{/leki/zapisz}" method="post">
         <div class="uk-margin">
             <label>Leki</label>
-            <input th:field="*{leki}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
+            <input th:field="*{leki}" type="text" class="uk-input">
         </div>
         <div class="uk-margin">
             <label>Data</label>
             <Input th:field="*{data}" type="date" class="uk-input">
         </div>
         <div class="uk-margin">
+            <label>Dawka</label>
+            <input th:field="*{dawka}" type="text" class="uk-input">
+        </div>
+        <div class="uk-margin">
             <label>Rodzaj</label>
-            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">
+            <input th:field="*{rodzaj}" type="text" class="uk-input">
         </div>
         <div class="uk-margin">
             <label>Uwagi</label>
@@ -32,8 +36,6 @@
         <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
 
     </form>
-
-
 
 </div>
 

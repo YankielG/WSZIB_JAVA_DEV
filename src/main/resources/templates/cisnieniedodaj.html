@@ -8,8 +8,16 @@
 
     <form style="width:300px; margin: auto" th:object="${cisnieniedodaj}" th:action="@{/cisnienie/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Cisnienie</label>
-            <input th:field="*{cisnienie}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
+            <label>Cisnienie Skurczowe</label>
+            <input th:field="*{skurcz}" type="number"  class="uk-input" step="1" min="50" max="200" >
+        </div>
+        <div class="uk-margin">
+            <label>Cisnienie Rozkurczowe</label>
+            <input th:field="*{rozkurcz}" type="number"  class="uk-input" step="1" min="50" max="150" >
+        </div>
+        <div class="uk-margin">
+            <label>Tętno</label>
+            <input th:field="*{tetno}" type="number"  class="uk-input" step="1" min="50" max="150" >
         </div>
         <div class="uk-margin">
             <label>Data</label>

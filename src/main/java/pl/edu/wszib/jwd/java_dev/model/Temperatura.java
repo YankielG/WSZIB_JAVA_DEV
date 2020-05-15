@@ -17,19 +17,20 @@ public class Temperatura {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private float temperatura;
-    private String rodzaj;
+    private double temperatura;
+    private boolean rodzaj;
     private String uwagi;
 
-    public Temperatura() {
-    }
-
     //    tyczasowe do testow
-    public Temperatura(Date data, float temperatura, String rodzaj, String uwagi) {
+    public Temperatura(Date data, double temperatura, boolean rodzaj, String uwagi) {
         this.data = data;
         this.temperatura = temperatura;
         this.rodzaj = rodzaj;
         this.uwagi = uwagi;
+    }
+
+    public Temperatura() {
+
     }
 
     public Long getId() {
@@ -48,19 +49,19 @@ public class Temperatura {
         this.data = data;
     }
 
-    public float getTemperatura() {
+    public double getTemperatura() {
         return temperatura;
     }
 
-    public void setTemperatura(float temperatura) {
+    public void setTemperatura(double temperatura) {
         this.temperatura = temperatura;
     }
 
-    public String getRodzaj() {
+    public boolean isRodzaj() {
         return rodzaj;
     }
 
-    public void setRodzaj(String rodzaj) {
+    public void setRodzaj(boolean rodzaj) {
         this.rodzaj = rodzaj;
     }
 

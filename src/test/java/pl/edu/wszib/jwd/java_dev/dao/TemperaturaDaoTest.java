@@ -17,12 +17,12 @@ class TemperaturaDaoTest {
 
     public static final int elementy = 2;
 
-    public static final float Temp1 = 36.5f;
-    public static final String Rodzaj1 = "noralna";
+    public static final double Temp1 = 36;
+    public static final boolean Rodzaj1 = false;
     public static final String Uwaga1 = "zdrowy";
 
-    public static final float Temp2 = 39.3f;
-    public static final String Rodzaj2 = "goraczka";
+    public static final double Temp2 = 39;
+    public static final boolean Rodzaj2 = true;
     public static final String Uwaga2 = "chory";
 
     @Autowired
@@ -55,7 +55,7 @@ class TemperaturaDaoTest {
         System.out.println(" ---- id obiektu: " + temperatura1.getId());
         System.out.println(" ----- data obiektu: " + temperatura1.getData());
         System.out.println(" ---- temp obiektu: " + temperatura1.getTemperatura());
-        System.out.println(" ---- rodzaj obiektu: " + temperatura1.getRodzaj());
+        System.out.println(" ---- rodzaj obiektu: " + temperatura1.isRodzaj());
         System.out.println(" ---- uwagi obiektu: " + temperatura1.getUwagi());
         System.out.println("----------------");
         System.out.println("");
@@ -69,7 +69,7 @@ class TemperaturaDaoTest {
         System.out.println(" ---- id obiektu: " + temperatura2.getId());
         System.out.println(" ----- data obiektu: " + temperatura2.getData());
         System.out.println(" ---- temp obiektu: " + temperatura2.getTemperatura());
-        System.out.println(" ---- rodzaj obiektu: " + temperatura2.getRodzaj());
+        System.out.println(" ---- rodzaj obiektu: " + temperatura2.isRodzaj());
         System.out.println(" ---- uwagi obiektu: " + temperatura2.getUwagi());
         System.out.println("----------------");
         System.out.println("");

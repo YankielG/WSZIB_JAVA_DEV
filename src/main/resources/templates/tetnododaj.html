@@ -8,8 +8,8 @@
 
     <form style="width:300px; margin: auto" th:object="${tetnododaj}" th:action="@{/tetno/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Tetno</label>
-            <input th:field="*{tetno}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
+            <label>Tętno</label>
+            <input th:field="*{tetno}" type="number"  class="uk-input" step="1" min="50" max="150" >
         </div>
         <div class="uk-margin">
             <label>Data</label>
