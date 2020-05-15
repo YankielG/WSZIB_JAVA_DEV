@@ -5,6 +5,9 @@
 <div class="container">
 
     <h2 class="uk-heading-divider" th:text="#{profil.tytul}" style="position:center;"></h2>
+
+    <a th:href="@{/profil/wstaw}" uk-icon="icon: copy"></a>
+    <a th:href="@{/profil/czysc}" uk-icon="icon: trash"></a>
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
@@ -16,21 +19,25 @@
             <th>Data urodz.</th>
             <th>Jednostka wagi</th>
             <th>Jednostka długości</th>
+            <th>Opcje</th>
         </tr>
         </thead>
         <tbody>
-            <td>2</td>
-            <td>90,5</td>
-            <td>10-05-2020</td>
-            <td>ddd</td>
-            <td>po jedzeniu</td>
-            <td>po jdfiu</td>
-            <td>po je33333dzeniu</td>
-            <td>po jeeeedzeniu</td>
+        <tr th:each="element : ${lista}">
+            <td th:text="${element.id}"></td>
+            <td th:text="${element.urzytkownik}"></td>
+            <td th:text="${element.imie}"></td>
+            <td th:text="${element.nazwisko}"></td>
+            <td th:text="${element.plec}"></td>
+            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <td th:text="${element.waga}"></td>
+            <td th:text="${element.miara}"></td>
+
             <td>
-                <a href="" uk-icon="icon: credit-card"></a>
-                <a href="" uk-icon="icon: trash"></a>
+                <a th:href="@{/profil/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
+                <a th:href="@{/profil/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
             </td>
+            </tr>
         </tbody>
     </table>
 

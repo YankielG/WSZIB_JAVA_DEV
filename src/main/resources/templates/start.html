@@ -12,15 +12,34 @@
 </head>
 
 <body>
+
 <div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
-
-
-
+    <form method="POST" class="form-signin" th:object="${startdodaj}" th:action="@{start/zapisz}">
+        <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>
+        <input th:field="*{urzytkownik}" type="text" placeholder="Użytkownik" class="uk-input"> <br/>
+        <br/>
+<!--&lt;!&ndash;        <input th:field="*{haslo}" type="password"  th:placeholder="Hasło" class="uk-input"/> <br/>&ndash;&gt;-->
+        <br/>
+        <button class="uk-button uk-button-secondary uk-width-1-1" type="Submit" th:text="#{start.enter}"></button>
+    </form>
 </div>
 
+
+<!--<div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">-->
+<!--    <form th:href="@{index}" method="POST" class="form-signin">-->
+<!--        <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>-->
+<!--        <input type="text" id="user_name" name="user_name" placeholder="Użytkownik" class="uk-input"/> <br/>-->
+<!--        <br/>-->
+<!--        <input type="password" id="password" name="password" th:placeholder="Hasło" class="uk-input"/> <br/>-->
+<!--        <br/>-->
+<!--        <div align="center" th:if="${param.error}"><p style="font-size: 20;">Niema takiego użytkownika!</p></div>-->
+<!--        <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" value="Login" type="Submit" th:text="#{start.enter}"></button>-->
+<!--    </form>-->
+<!--</div>-->
+
 <!--<div class="uk-card-default uk-card uk-card-body" style="width: 500px; margin: 300px auto">-->
-<!--    <h2 class="uk-text-center uk-card-title">Grzes</h2>-->
 <!--    <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>-->
+<!--    <h2 class="uk-text-center uk-card-title" th:text="#{start.text2}"></h2>-->
 <!--    <a th:href="@{index}" class="uk-button uk-button-secondary uk-width-1-1" th:text="#{start.enter}"></a>-->
 <!--</div>-->
 

@@ -14,9 +14,9 @@ public class Profil {
     private String imie;
     private String nazwisko;
     private String plec;
-    private Date dataurodzenia;
-    private String jednostkawagi;
-    private String jednostkamiar;
+    private Date data;
+    private String waga;
+    private String miara;
 
     public Profil() {
     }
@@ -61,27 +61,27 @@ public class Profil {
         this.plec = plec;
     }
 
-    public Date getDataurodzenia() {
-        return dataurodzenia;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataurodzenia(Date dataurodzenia) {
-        this.dataurodzenia = dataurodzenia;
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    public String getJednostkawagi() {
-        return jednostkawagi;
+    public String getWaga() {
+        return waga;
     }
 
-    public void setJednostkawagi(String jednostkawagi) {
-        this.jednostkawagi = jednostkawagi;
+    public void setWaga(String waga) {
+        this.waga = waga;
     }
 
-    public String getJednostkamiar() {
-        return jednostkamiar;
+    public String getMiara() {
+        return miara;
     }
 
-    public void setJednostkamiar(String jednostkamiar) {
-        this.jednostkamiar = jednostkamiar;
+    public void setMiara(String miara) {
+        this.miara = miara;
     }
 }

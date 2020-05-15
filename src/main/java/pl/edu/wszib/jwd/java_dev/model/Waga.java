@@ -13,7 +13,6 @@ public class Waga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
 //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
     @DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -5,35 +5,39 @@
 <div class="container">
 
     <h2 class="uk-heading-divider" th:text="#{nawyki.tytul}" style="position:center;"></h2>
+
+    <a th:href="@{/nawyki/wstaw}" uk-icon="icon: copy"></a>
+    <a th:href="@{/nawyki/czysc}" uk-icon="icon: trash"></a>
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
-            <th>iD</th>
+            <th>Id</th>
+            <th>Nazwa</th>
             <th>Data startu</th>
             <th>Data Końca</th>
-            <th>Nazwa</th>
             <th>Powtórzenia</th>
             <th>Uwagi</th>
             <th>Realizacja</th>
             <th>Opcje</th>
         </tr>
-        </thead>
         <tbody>
-            <td>2</td>
-            <td>10-05-2020</td>
-            <td>10-05-2020</td>
-            <td>10-ddfa0</td>
-            <td>10</td>
-            <td>144dddd0</td>
-            <td><span uk-icon="icon:check"></span></td>
-            <td>po jedzeniu</td>
+        <tr th:each="element : ${lista}">
+            <td th:text="${element.id}"></td>
+            <td th:text="${element.nazwa}"></td>
+            <td th:text="${#calendars.format(element.data1, 'dd-MM-yyyy')}"></td>
+            <!--            <td th:text="${element.data1}"></td>-->
+            <!--            <td th:text="${element.data2}"></td>-->
+            <td th:text="${#calendars.format(element.data2, 'dd-MM-yyyy')}"></td>
+            <td th:text="${element.powtorzenia}"></td>
+            <td><span th:uk-icon="${element.realizacja} ? 'heart' : 'ban'"></span></td>
+            <td th:text="${element.uwagi}"></td>
             <td>
-                <a href="" uk-icon="icon: credit-card"></a>
-                <a href="" uk-icon="icon: trash"></a>
+                <a th:href="@{/leki/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
+                <a th:href="@{/leki/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
             </td>
+        </tr>
         </tbody>
     </table>
-
 </div>
 
 </body>

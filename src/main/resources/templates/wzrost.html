@@ -5,10 +5,46 @@
 <div class="container">
 
     <h2 class="uk-heading-divider" th:text="#{wzrost.tytul}" style="position:center;"></h2>
-    <table class="uk-table uk-table-stripped">
+
+    <div class="uk-section">
+        <div class="uk-container uk-container-xsmall">
+            <div style="max-width: 800px; margin: 50px auto">
+                <canvas id="line-chart" width="1600" height="900"></canvas>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+            <script th:inline="javascript">
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: [1,2,3,4,5,6,7,8,9,10,11],
+                        datasets: [{
+                            data: [30,35,37,37,39,41,43,36,37,34],
+                            label: "Wzrost",
+                            borderColor: "#3e95cd",
+                            fill: false
+                        },
+                        ]
+                    },
+                    options: {
+                        // scales:{
+                        //     yAxes: "temperatura",
+                        //     xAxes: "data",
+                        // }
+                    }
+                });
+
+            </script>
+        </div>
+    </div>
+
+    <a th:href="@{/wzrost/wstaw}" uk-icon="icon: copy"></a>
+    <a th:href="@{/wzrost/czysc}" uk-icon="icon: trash"></a>
+    <table class="uk-table uk-table-striped">
         <thead>
         <tr>
-            <th>iD</th>
+            <th>Id</th>
             <th>Wzrost</th>
             <th>Data</th>
             <th>Rodzaj</th>
@@ -17,15 +53,18 @@
         </tr>
         </thead>
         <tbody>
-            <td>2</td>
-            <td>90,5</td>
-            <td>10-05-2020</td>
-            <td><span uk-icon="icon:heart"></span></td>
-            <td>po jedzeniu</td>
+        <tr th:each="element : ${lista}">
+            <td th:text="${element.id}"></td>
+            <td th:text="${element.wzrost}"></td>
+            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <!--            <td th:text="${element.data}"></td>-->
+            <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
+            <td th:text="${element.uwagi}"></td>
             <td>
-                <a href="" uk-icon="icon: credit-card"></a>
-                <a href="" uk-icon="icon: trash"></a>
+                <a th:href="@{/wzrostedytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
+                <a th:href="@{/wzrost/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
             </td>
+        </tr>
         </tbody>
     </table>
 

@@ -5,10 +5,13 @@
 <div class="container">
 
     <h2 class="uk-heading-divider" th:text="#{leki.tytul}" style="position:center;"></h2>
+
+    <a th:href="@{/leki/wstaw}" uk-icon="icon: copy"></a>
+    <a th:href="@{/leki/czysc}" uk-icon="icon: trash"></a>
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
-            <th>iD</th>
+            <th>Id</th>
             <th>Lek</th>
             <th>Data</th>
             <th>Dawka</th>
@@ -18,16 +21,19 @@
         </tr>
         </thead>
         <tbody>
-            <td>2</td>
-            <td>90,5</td>
-            <td>10-05-2020</td>
-            <td>deaaf</td>
-            <td>po jedzeniu</td>
-            <td>po jedzeniu</td>
+        <tr th:each="element : ${lista}">
+            <td th:text="${element.id}"></td>
+            <td th:text="${element.lek}"></td>
+            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <!--            <td th:text="${element.data}"></td>-->
+            <td th:text="${element.dawka}"></td>
+            <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
+            <td th:text="${element.uwagi}"></td>
             <td>
-                <a href="" uk-icon="icon: credit-card"></a>
-                <a href="" uk-icon="icon: trash"></a>
+                <a th:href="@{/leki/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
+                <a th:href="@{/leki/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
             </td>
+            </tr>
         </tbody>
     </table>
 

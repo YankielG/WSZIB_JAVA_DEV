@@ -1,5 +1,7 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,7 +12,8 @@ public class Start {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date data;
+//    private Date data;
+//    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String urzytkownik;
 
     public Start() {
@@ -22,14 +25,6 @@ public class Start {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public String getUrzytkownik() {
