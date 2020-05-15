@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{temperatura.tytul.dodaj}" style="position:center;"></h2>
+
+    <form style="width:300px; margin: auto" th:object="${temperaturadodaj}" th:action="@{/temperatura/zapisz}" method="post">
+        <div class="uk-margin">
+            <label>Temperatura</label>
+            <input th:field="*{temperatura}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
+        </div>
+        <div class="uk-margin">
+            <label>Data</label>
+            <Input th:field="*{data}" type="date" class="uk-input">
+        </div>
+        <div class="uk-margin">
+            <label>Rodzaj</label>
+            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">
+        </div>
+        <div class="uk-margin">
+            <label>Uwagi</label>
+            <input th:field="*{uwagi}" type="text" class="uk-input">
+        </div>
+        <input th:field="*{id}" type="number" hidden>
+
+<!--        <a th:href="@{/temperatura}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
+<!--        <a th:href="@{/temperatura/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
+<!--        <a th:href="@{/temperatura/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
+        <a th:href="@{/temperatura}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+
+
+</div>
+
+</body>
+</html>
