@@ -6,7 +6,42 @@
 
     <h2 class="uk-heading-divider" th:text="#{waga.tytul}" style="position:center;"></h2>
 
+    <div class="uk-section">
+        <div class="uk-container uk-container-xsmall">
+            <div style="max-width: 800px; margin: 50px auto">
+                <canvas id="line-chart" width="1600" height="900"></canvas>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+            <script th:inline="javascript">
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: [1,2,3,4,5,6,7,8,9,10,11],
+                        datasets: [{
+                            data: [30,35,37,37,39,41,43,36,37,34],
+                            label: "Temperatura",
+                            borderColor: "#3e95cd",
+                            fill: false
+
+                        },
+                        ]
+                    },
+                    options: {
+                        // scales:{
+                        //     yAxes: "temperatura",
+                        //     xAxes: "data",
+                        // }
+                    }
+                });
+
+            </script>
+        </div>
+    </div>
+
     <a th:href="@{/waga/wstaw}" uk-icon="icon: copy"></a>
+    <a th:href="@{/waga/czysc}" uk-icon="icon: trash"></a>
     <table class="uk-table uk-table-striped">
         <thead>
         <tr>
@@ -22,8 +57,8 @@
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
             <td th:text="${element.waga}"></td>
-            <td th:text="${element.data}"></td>
-<!--            <td th:text="|${#dates.hour(lista.data)}|">10-05-2020</td>-->
+            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+<!--            <td th:text="${element.data}"></td>-->
             <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
             <td th:text="${element.uwagi}"></td>
             <td>
@@ -33,6 +68,7 @@
         </tr>
         </tbody>
     </table>
+
 
 </div>
 

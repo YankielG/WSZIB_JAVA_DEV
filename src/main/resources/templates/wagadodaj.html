@@ -9,7 +9,7 @@
     <form style="width:300px; margin: auto" th:object="${wagadodaj}" th:action="@{/waga/zapisz}" method="post">
         <div class="uk-margin">
             <label>Waga</label>
-            <input th:field="*{waga}" type="number" step="0.1" class="uk-input">
+            <input th:field="*{waga}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
         </div>
         <div class="uk-margin">
             <label>Data</label>
@@ -25,12 +25,15 @@
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-        <a th:href="@{/waga}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>
-        <a th:href="@{/waga/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check"></a>
-
+<!--        <a th:href="@{/waga}" class="uk-icon-link uk-margin-small-right" uk-icon="close"></a>-->
+<!--        <a th:href="@{/waga/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"></a>-->
+<!--        <a th:href="@{/waga/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit"></a>-->
         <a th:href="@{/waga}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
         <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
     </form>
+
+
 
 </div>
 

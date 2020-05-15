@@ -1,6 +1,10 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Entity
@@ -9,9 +13,15 @@ public class Waga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private Date data;
-    private double waga;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @NumberFormat(pattern = "number")
+    private Double waga;
     private boolean rodzaj;
     private String uwagi;
 
@@ -34,11 +44,11 @@ public class Waga {
         this.data = data;
     }
 
-    public double getWaga() {
+    public Double getWaga() {
         return waga;
     }
 
-    public void setWaga(double waga) {
+    public void setWaga(Double waga) {
         this.waga = waga;
     }
 

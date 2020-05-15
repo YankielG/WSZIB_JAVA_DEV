@@ -29,6 +29,12 @@ public class WagaController {
         return "redirect:/waga";
     }
 
+    @GetMapping("waga/czysc")
+    public String czysc() {
+        wagaDao.deleteAll();
+        return "redirect:/waga";
+    }
+
     @GetMapping("waga/wstaw")
     public String wstaw(Model model) {
         model.addAttribute("wagadodaj", new Waga());
@@ -36,15 +42,15 @@ public class WagaController {
     }
 
     @PostMapping("waga/zapisz")
-    public String zapisz(){
-//        wagaDao.save(waga();
+    public String zapisz(Waga waga){
+        wagaDao.save(waga);
         return "redirect:/waga";
     }
 
     @GetMapping("waga/edytuj/{id}")
     public String edytuj(@PathVariable Long id, Model model){
         Waga waga = wagaDao.findById(id).get();
-        model.addAttribute("element", waga);
-        return "waga";
+        model.addAttribute("wagadodaj", waga);
+        return "wagadodaj";
     }
 }
