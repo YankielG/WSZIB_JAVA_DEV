@@ -32,7 +32,6 @@
             <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
             <td th:text="${element.waga}"></td>
             <td th:text="${element.miara}"></td>
-
             <td>
                 <a th:href="@{/profil/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
                 <a th:href="@{/profil/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>

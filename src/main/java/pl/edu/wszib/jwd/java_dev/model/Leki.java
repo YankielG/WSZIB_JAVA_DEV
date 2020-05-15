@@ -17,11 +17,10 @@ public class Leki {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private String leki;
-    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String dawka;
     private String rodzaj;
     private String uwagi;
+    private String lek;
 
     public Leki() {
     }
@@ -40,14 +39,6 @@ public class Leki {
 
     public void setData(Date data) {
         this.data = data;
-    }
-
-    public String getLeki() {
-        return leki;
-    }
-
-    public void setLeki(String leki) {
-        this.leki = leki;
     }
 
     public String getDawka() {
@@ -72,5 +63,13 @@ public class Leki {
 
     public void setUwagi(String uwagi) {
         this.uwagi = uwagi;
+    }
+
+    public String getLek() {
+        return lek;
+    }
+
+    public void setLek(String lek) {
+        this.lek = lek;
     }
 }
