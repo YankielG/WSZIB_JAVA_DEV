@@ -42,13 +42,13 @@ public class WagaController {
     }
 
     @PostMapping("waga/zapisz")
-    public String zapisz(Waga waga){
+    public String zapisz(Waga waga) {
         wagaDao.save(waga);
         return "redirect:/waga";
     }
 
     @GetMapping("waga/edytuj/{id}")
-    public String edytuj(@PathVariable Long id, Model model){
+    public String edytuj(@PathVariable Long id, Model model) {
         Waga waga = wagaDao.findById(id).get();
         model.addAttribute("wagadodaj", waga);
         return "wagadodaj";

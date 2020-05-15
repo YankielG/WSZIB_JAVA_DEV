@@ -5,7 +5,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.CisnienieDao;
+import pl.edu.wszib.jwd.java_dev.model.Cisnienie;
 
 @Controller
 @PropertySource("classpath:messages.properties")
@@ -15,9 +18,40 @@ public class CisnienieController {
     private CisnienieDao cisnienieDao;
 
     @GetMapping("cisnienie")
-    public String cisnienie(Model model){
-
+    public String cisnienie(Model model) {
+        model.addAttribute("lista", cisnienieDao.findAll());
         return "cisnienie";
+    }
+
+    @GetMapping("cisnienie/usun/{id}")
+    public String usun(@PathVariable Long id) {
+        cisnienieDao.deleteById(id);
+        return "redirect:/cisnienie";
+    }
+
+    @GetMapping("cisnienie/czysc")
+    public String czysc() {
+        cisnienieDao.deleteAll();
+        return "redirect:/cisnienie";
+    }
+
+    @GetMapping("cisnienie/wstaw")
+    public String wstaw(Model model) {
+        model.addAttribute("cisnieniedodaj", new Cisnienie());
+        return "cisnieniedodaj";
+    }
+
+    @PostMapping("cisnienie/zapisz")
+    public String zapisz(Cisnienie cisnienie) {
+        cisnienieDao.save(cisnienie);
+        return "redirect:/cisnienie";
+    }
+
+    @GetMapping("cisnienie/edytuj/{id}")
+    public String edytuj(@PathVariable Long id, Model model) {
+        Cisnienie cisnienie = cisnienieDao.findById(id).get();
+        model.addAttribute("cisnieniedodaj", cisnienie);
+        return "cisnieniedodaj";
     }
 
 }

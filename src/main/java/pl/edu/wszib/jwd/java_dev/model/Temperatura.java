@@ -6,11 +6,11 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="temperatura")
+@Table(name = "temperatura")
 public class Temperatura {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
@@ -24,7 +24,7 @@ public class Temperatura {
     public Temperatura() {
     }
 
-//    tyczasowe do testow
+    //    tyczasowe do testow
     public Temperatura(Date data, float temperatura, String rodzaj, String uwagi) {
         this.data = data;
         this.temperatura = temperatura;

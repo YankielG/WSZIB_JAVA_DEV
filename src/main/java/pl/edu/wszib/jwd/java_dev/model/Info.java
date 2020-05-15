@@ -12,7 +12,7 @@ public class Info {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-//    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
 //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;

@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pl.edu.wszib.jwd.java_dev.model.Tetno;
 
 @Repository
-public interface TentnoDao extends CrudRepository<Tetno, Long> {
+public interface TetnoDao extends CrudRepository<Tetno, Long> {
 }

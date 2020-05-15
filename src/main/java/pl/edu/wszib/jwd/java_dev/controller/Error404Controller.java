@@ -5,11 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.edu.wszib.jwd.java_dev.dao.Error404Dao;
+import pl.edu.wszib.jwd.java_dev.model.Error404;
 
 @ControllerAdvice
 //@RestController
@@ -20,15 +18,45 @@ public class Error404Controller extends Throwable {
     @Autowired
     private Error404Dao error404Dao;
 
-    @GetMapping("error404")
-    public String error404(Model model){
-
+    @ExceptionHandler(NotFoundException.class)
+    public String error() {
         return "error404";
     }
 
-    @ExceptionHandler(NotFoundException.class)
-    public String error(){
-
+    @GetMapping("error404")
+    public String error404(Model model) {
+        model.addAttribute("lista", error404Dao.findAll());
         return "error404";
+    }
+
+    @GetMapping("error404/usun/{id}")
+    public String usun(@PathVariable Long id) {
+        error404Dao.deleteById(id);
+        return "redirect:/error404";
+    }
+
+    @GetMapping("error404/czysc")
+    public String czysc() {
+        error404Dao.deleteAll();
+        return "redirect:/error404";
+    }
+
+    @GetMapping("error404/wstaw")
+    public String wstaw(Model model) {
+        model.addAttribute("error404dodaj", new Error404());
+        return "error404dodaj";
+    }
+
+    @PostMapping("error404/zapisz")
+    public String zapisz(Error404 error404) {
+        error404Dao.save(error404);
+        return "redirect:/error404";
+    }
+
+    @GetMapping("error404/edytuj/{id}")
+    public String edytuj(@PathVariable Long id, Model model) {
+        Error404 error404 = error404Dao.findById(id).get();
+        model.addAttribute("error404dodaj", error404);
+        return "error404dodaj";
     }
 }

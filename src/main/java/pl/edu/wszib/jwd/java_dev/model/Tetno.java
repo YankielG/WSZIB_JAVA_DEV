@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "tentno")
+@Table(name = "tetno")
 public class Tetno {
 
     @Id
@@ -17,7 +17,7 @@ public class Tetno {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private double tentno;
+    private double tetno;
     private String rodzaj;
     private String uwagi;
 
@@ -40,12 +40,12 @@ public class Tetno {
         this.data = data;
     }
 
-    public double getTentno() {
-        return tentno;
+    public double getTetno() {
+        return tetno;
     }
 
-    public void setTentno(double tentno) {
-        this.tentno = tentno;
+    public void setTetno(double tetno) {
+        this.tetno = tetno;
     }
 
     public String getRodzaj() {
