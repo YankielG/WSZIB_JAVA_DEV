@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "tentno")
-public class Tentno {
+public class Tetno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +15,7 @@ public class Tentno {
     private String rodzaj;
     private String uwagi;
 
-    public Tentno() {
+    public Tetno() {
     }
 
     public Long getId() {

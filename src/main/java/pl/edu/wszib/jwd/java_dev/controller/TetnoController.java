@@ -9,14 +9,14 @@ import pl.edu.wszib.jwd.java_dev.dao.TentnoDao;
 
 @Controller
 @PropertySource("classpath:messages.properties")
-public class TentnoController {
+public class TetnoController {
 
     @Autowired
     private TentnoDao tentnoDao;
 
-    @GetMapping("tentno")
+    @GetMapping("tetno")
     public String tentno(Model model){
 
-        return "tentno";
+        return "tetno";
     }
 }

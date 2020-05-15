@@ -19,6 +19,7 @@
         </tr>
         </thead>
         <tbody>
+        <tr th:each="element : ${lista}">
         <td th:text="${element.id}"></td>
         <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
         <!--            <td th:text="${element.data}"></td>-->
