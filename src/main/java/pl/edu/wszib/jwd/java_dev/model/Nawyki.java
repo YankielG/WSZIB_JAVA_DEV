@@ -1,5 +1,7 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,9 +12,17 @@ public class Nawyki {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data1;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data2;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String nazwa;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String powtorzenia;
     private String uwagi;
     private boolean realizacja;

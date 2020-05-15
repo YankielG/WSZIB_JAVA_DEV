@@ -1,5 +1,7 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,10 +12,17 @@ public class Profil {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String urzytkownik;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String imie;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String nazwisko;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String plec;
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
     private String waga;
     private String miara;
