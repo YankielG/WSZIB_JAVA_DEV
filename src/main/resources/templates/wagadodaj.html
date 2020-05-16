@@ -15,10 +15,19 @@
             <label>Data</label>
             <Input th:field="*{data}" type="date" class="uk-input">
         </div>
+<!--        <div class="uk-margin">-->
+<!--            <label>Rodzaj</label>-->
+<!--            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">-->
+<!--        </div>-->
+
         <div class="uk-margin">
-            <label>Rodzaj</label>
-            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">
+            <div class="uk-form-label">Rodzaj</div>
+            <div class="uk-form-controls uk-form-controls-text" >
+                <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{rodzaj}"> Waga prawidłowa</label><br>
+                <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{rodzaj}"> Waga nieprawidłowa</label>
+            </div>
         </div>
+
         <div class="uk-margin">
             <label>Uwagi</label>
             <textarea th:field="*{uwagi}" type="textarea" class="uk-input"></textarea>
