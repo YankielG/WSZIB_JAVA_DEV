@@ -4,8 +4,10 @@
 
 <div class="container">
     <div class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{temperatura.tytul}" style="position:center;"></h2>
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
+        <h2 class="uk-heading-divider" th:text="#{temperatura.tytul}" style="position:center;" ></h2>
+        </div>
+        <span uk-icon="icon: info" uk-tooltip="Info"></span>
         <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000">
             <div class="uk-card uk-card-body uk-card-default">
                 <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>
@@ -17,7 +19,33 @@
                 </ul>
             </div>
         </div>
+
+
+    <span uk-icon="icon: info" uk-tooltip="Info" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom hide"></span>
+    <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">      <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>
+        <p>Należy pamiętać, że ciepłota ciała człowieka jest tak naprawdę kwestią indywidualną, zależną od wielu czynników, między innymi takich jak:</p>
+        <ul class="uk-list uk-list-bullet">
+            <li>prowadzony tryb życia,</li>
+            <li>predyspozycje zdrowotne,</li>
+            <li>temperatura otoczenia.</li>
+        </ul>
     </div>
+
+    <a uk-icon="info" uk-tooltip="Info" href="#modal-center" uk-toggle></a>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+<!--            <button class="uk-modal-close-default" type="button" uk-close></button>-->
+            <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>
+            <p>Należy pamiętać, że ciepłota ciała człowieka jest tak naprawdę kwestią indywidualną, zależną od wielu czynników, między innymi takich jak:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>prowadzony tryb życia,</li>
+                <li>predyspozycje zdrowotne,</li>
+                <li>temperatura otoczenia.</li>
+            </ul>
+
+        </div>
+    </div>
+
     <div class="uk-section">
         <div class="uk-container uk-container-xsmall">
             <div style="max-width: 800px; margin: 50px auto">
@@ -53,7 +81,7 @@
 
     <a th:href="@{/temperatura/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
     <a th:href="@{/temperatura/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
-    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small" uk-sortable>
         <thead>
         <tr>
             <th class="uk-table-shrink">Id</th>

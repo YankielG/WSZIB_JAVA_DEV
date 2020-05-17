@@ -3,12 +3,13 @@
 <body>
 
 <div class="container">
-
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{nawyki.tytul}" style="position:center;"></h2>
-
+    </div>
     <a th:href="@{/nawyki/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
     <a th:href="@{/nawyki/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
-    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small">
+    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
         <thead>
         <tr>
             <th>Id</th>

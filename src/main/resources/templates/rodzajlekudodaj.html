@@ -3,9 +3,10 @@
 <body>
 
 <div class="container">
-
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{opcje.tytul.leki}" style="position:center;"></h2>
-
+    </div>
     <form style="width:300px; margin: auto" th:object="${rodzajlekudodaj}" th:action="@{/opcje/rodzajleku/zapisz}" method="post">
         <div class="uk-margin">
             <label>Rodzaj leku</label>

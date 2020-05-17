@@ -7,15 +7,15 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{info.tytul}" style="position:center;"></h2>
     </div>
-    <h5><b>Info:</b></h5>
-    <p>Aplikacja "Dzienniczek Zdrowia" powstała jako zaliczenie studiów podyplomowych.</p>
-    <p>Na kierunku Java Web Developer w Wyższej Szkole Zarządzania i Bankowiśći w Krakowie.</p>
-    <p>Autor Projektu: Grzegorz Jankowicz</p>
-    <p>Rok: 2019/2020</p>
-<h5><b>Historia zmian:</b></h5>
+    <p class="uk-text-lead">Info:</p>
+    <p class="uk-text-muted">Aplikacja "Dzienniczek Zdrowia" powstała jako zaliczenie studiów podyplomowych.</p>
+    <p class="uk-text-muted">Na kierunku Java Web Developer w Wyższej Szkole Zarządzania i Bankowiśći w Krakowie.</p>
+    <p class="uk-text-muted">Autor Projektu: Grzegorz Jankowicz</p>
+    <p class="uk-text-muted">Rok: 2019/2020</p>
+<p class="uk-text-lead"> Historia zmian:</p>
 <!--    <a th:href="@{/info/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>-->
 <!--    <a th:href="@{/info/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>-->
-    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small">
+    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
         <thead>
         <tr>
             <th hidden="hidden">iD</th>
