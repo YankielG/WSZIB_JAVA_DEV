@@ -7,13 +7,18 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{info.tytul}" style="position:center;"></h2>
     </div>
-
+    <h5><b>Info:</b></h5>
+    <p>Aplikacja "Dzienniczek Zdrowia" powstała jako zaliczenie studiów podyplomowych.</p>
+    <p>Na kierunku Java Web Developer w Wyższej Szkole Zarządzania i Bankowiśći w Krakowie.</p>
+    <p>Autor Projektu: Grzegorz Jankowicz</p>
+    <p>Rok: 2019/2020</p>
+<h5><b>Historia zmian:</b></h5>
 <!--    <a th:href="@{/info/wstaw}" uk-icon="icon: copy"></a>-->
 <!--    <a th:href="@{/info/czysc}" uk-icon="icon: trash"></a>-->
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
-            <th>iD</th>
+            <th hidden="hidden">iD</th>
             <th>Data</th>
             <th>Wersja</th>
             <th>Algorytm</th>
@@ -21,14 +26,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="element : ${lista1}">
-        <td th:text="${element.id}"></td>
+        <tr th:each="element : ${lista}">
+        <td th:text="${element.id}" hidden="hidden"></td>
         <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
         <!--            <td th:text="${element.data}"></td>-->
         <td th:text="${element.wersja}"></td>
         <td th:text="${element.algorytm}"></td>
 <!--        <td>-->
-<!--            <a th:href="@{/info/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>-->
+<!--            <a th:href="@{/info/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit"></a>-->
 <!--            <a th:href="@{/info/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>-->
 <!--        </td>-->
         </tr>

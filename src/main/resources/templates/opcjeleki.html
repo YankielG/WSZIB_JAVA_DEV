@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.leki}" style="position:center;"></h2>
+
+    <a th:href="@{/opcje/rodzajleku/wstaw}" uk-icon="icon: copy"></a>
+    <a th:href="@{/opcje/rodzajleku/czysc}" uk-icon="icon: trash"></a>
+    <table class="uk-table uk-table-stripped">
+        <thead>
+        <tr>
+            <th>iD</th>
+            <th>Rodzaj Leku</th>
+            <th>Opcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="element : ${lista}">
+            <td th:text="${element.id}"></td>
+            <td th:text="${element.rodzajleku}"></td>
+            <td>
+                <a th:href="@{/opcje/rodzajleku/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit"></a>
+                <a th:href="@{/opcje/rodzajleku/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

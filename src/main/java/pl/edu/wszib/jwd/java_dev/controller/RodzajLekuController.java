@@ -17,22 +17,22 @@ public class RodzajLekuController {
     @Autowired
     private RodzajLekuDao rodzajLekuDao;
 
-    @GetMapping("rodzajleku")
+    @GetMapping("opcje/rodzajleku")
     public String rodzajleku(Model model) {
         model.addAttribute("lista", rodzajLekuDao.findAll());
-        return "rodzajleku";
+        return "opcjeleki";
     }
 
     @GetMapping("opcje/rodzajleku/usun/{id}")
     public String usun(@PathVariable Long id) {
         rodzajLekuDao.deleteById(id);
-        return "redirect:/opcje";
+        return "redirect:/opcje/rodzajleku";
     }
 
     @GetMapping("opcje/rodzajleku/czysc")
     public String czysc() {
         rodzajLekuDao.deleteAll();
-        return "redirect:/opcje";
+        return "redirect:/opcje/rodzajleku";
     }
 
     @GetMapping("opcje/rodzajleku/wstaw")
@@ -44,7 +44,7 @@ public class RodzajLekuController {
     @PostMapping("opcje/rodzajleku/zapisz")
     public String zapisz(RodzajLeku rodzajLeku) {
         rodzajLekuDao.save(rodzajLeku);
-        return "redirect:/opcje";
+        return "redirect:/opcje/rodzajleku";
     }
 
     @GetMapping("opcje/rodzajleku/edytuj/{id}")

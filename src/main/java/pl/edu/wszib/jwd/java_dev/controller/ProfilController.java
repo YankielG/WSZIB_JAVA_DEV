@@ -19,30 +19,22 @@ public class ProfilController {
     @Autowired
     private ProfilDao profilDao;
 
-    @Autowired
-    private InfoDao infoDao;
-
-    @Autowired
-    private RodzajLekuDao rodzajLekuDao;
-
-    @GetMapping("opcje")
+    @GetMapping("opcje/opcjeprofil")
     public String profil(Model model) {
-        model.addAttribute("lista2", profilDao.findAll());
-        model.addAttribute("lista1",infoDao.findAll());
-        model.addAttribute("lista3", rodzajLekuDao.findAll());
-        return "opcje";
+        model.addAttribute("lista", profilDao.findAll());
+        return "opcjeprofil";
     }
 
     @GetMapping("opcje/profil/usun/{id}")
     public String usun(@PathVariable Long id) {
         profilDao.deleteById(id);
-        return "redirect:/opcje";
+        return "redirect:/opcje/opcjeprofil";
     }
 
     @GetMapping("opcje/profil/czysc")
     public String czysc() {
         profilDao.deleteAll();
-        return "redirect:/opcje";
+        return "redirect:/opcje/opcjeprofil";
     }
 
     @GetMapping("opcje/profil/wstaw")
@@ -54,7 +46,7 @@ public class ProfilController {
     @PostMapping("opcje/profil/zapisz")
     public String zapisz(Profil profil) {
         profilDao.save(profil);
-        return "redirect:/opcje";
+        return "redirect:/opcje/opcjeprofil";
     }
 
     @GetMapping("opcje/profil/edytuj/{id}")

@@ -30,7 +30,7 @@
             <td th:text="${element.rodzaj}"></td>
             <td th:text="${element.uwagi}"></td>
             <td>
-                <a th:href="@{/leki/edytuj/{id} (id=${element.id})}" uk-icon="icon: credit-card"></a>
+                <a th:href="@{/leki/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit"></a>
                 <a th:href="@{/leki/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
             </td>
             </tr>
