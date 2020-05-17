@@ -9,15 +9,15 @@
     <form style="width:300px; margin: auto" th:object="${infododaj}" th:action="@{/opcje/info/zapisz}" method="post">
         <div class="uk-margin">
             <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input">
+            <Input th:field="*{data}" type="date" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Wersja</label>
-            <input th:field="*{wersja}" type="text"  class="uk-input">
+            <input th:field="*{wersja}" type="text"  class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Algorytm</label>
-            <input th:field="*{algorytm}" type="text" class="uk-input">
+            <input th:field="*{algorytm}" type="text" class="uk-input" required="required">
         </div>
         <input th:field="*{id}" type="number" hidden>
 

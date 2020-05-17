@@ -8,5 +8,8 @@ import pl.edu.wszib.jwd.java_dev.model.Temperatura;
 public interface TemperaturaDao extends CrudRepository <Temperatura,Long> {
 //    na potrzeby testu
 Temperatura findByTemperatura(Double temeratura);
+//Temperatura findBy user_id (Long id){
+//    return userid;
+//    }
 
 }

@@ -17,7 +17,7 @@ class TemperaturaDaoTest {
 
     public static final int elementy = 2;
 
-    public static final double Temp1 = 36;
+    public static final double Temp1 = 36.0;
     public static final boolean Rodzaj1 = false;
     public static final String Uwaga1 = "zdrowy";
 

@@ -9,11 +9,11 @@
     <form style="width:300px; margin: auto" th:object="${error404dodaj}" th:action="@{/error404/zapisz}" method="post">
         <div class="uk-margin">
             <label>Error404</label>
-            <input th:field="*{error404}" type="number"  class="uk-input" step="0.1" min="10" max="150" >
+            <input th:field="*{error404}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">
         </div>
         <div class="uk-margin">
             <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input">
+            <Input th:field="*{data}" type="date" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Rodzaj</label>

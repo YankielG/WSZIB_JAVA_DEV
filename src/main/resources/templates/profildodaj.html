@@ -9,31 +9,31 @@
     <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/opcje/profil/zapisz}" method="post">
         <div class="uk-margin">
             <label>Urzytkownik</label>
-            <input th:field="*{urzytkownik}" type="text"  class="uk-input">
+            <input th:field="*{urzytkownik}" type="text"  class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Imię</label>
-            <input th:field="*{imie}" type="text" class="uk-input">
+            <input th:field="*{imie}" type="text" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Nazwisko</label>
-            <input th:field="*{nazwisko}" type="text" class="uk-input">
+            <input th:field="*{nazwisko}" type="text" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Płeć</label>
-            <input th:field="*{plec}" type="text" class="uk-input">
+            <input th:field="*{plec}" type="text" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Data urodz.</label>
-            <Input th:field="*{data}" type="date" class="uk-input">
+            <Input th:field="*{data}" type="date" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Jednostka wagi</label>
-            <input th:field="*{waga}" type="text" class="uk-input">
+            <input th:field="*{waga}" type="text" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Jednostka długości</label>
-            <input th:field="*{miara}" type="text" class="uk-input">
+            <input th:field="*{miara}" type="text" class="uk-input" required="required">
         </div>
         <input th:field="*{id}" type="number" hidden>
 

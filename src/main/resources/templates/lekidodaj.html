@@ -9,15 +9,15 @@
     <form style="width:300px; margin: auto" th:object="${lekidodaj}" th:action="@{/leki/zapisz}" method="post">
         <div class="uk-margin">
             <label>Leki</label>
-            <input th:field="*{lek}" type="text" class="uk-input">
+            <input th:field="*{lek}" type="text" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input">
+            <Input th:field="*{data}" type="date" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Dawka</label>
-            <input th:field="*{dawka}" type="text" class="uk-input">
+            <input th:field="*{dawka}" type="text" class="uk-input" required="required">
         </div>
         <!--        <div class="uk-margin">-->
         <!--            <label>Rodzaj</label>-->
@@ -38,7 +38,7 @@
 
                 <div class="uk-button uk-form-controls uk-margin">
                     <label>Rodzaj</label>
-                    <select th:field="*{rodzaj}" type="text" class="uk-input">
+                    <select th:field="*{rodzaj}" type="text" class="uk-input" required="required">
                         <option value=""> -- </option>
                         <option th:each="rodzajleku : ${rodajkekudodaj}"th:value="${rodzajleku.rodzajleku}" th:utext="${rodzajleku.rodzajleku}"/>
                     </select>

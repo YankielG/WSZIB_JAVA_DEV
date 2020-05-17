@@ -1,8 +1,10 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Entity
@@ -12,11 +14,12 @@ public class Temperatura {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
+//        @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+//        @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date data;
-    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+     private Date data;
+//        @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+//    @NumberFormat(pattern = "#,###,###,###.##")
     private double temperatura;
     private boolean rodzaj;
     private String uwagi;

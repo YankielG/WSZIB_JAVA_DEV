@@ -9,11 +9,11 @@
     <form style="width:300px; margin: auto" th:object="${wzrostdodaj}" th:action="@{/wzrost/zapisz}" method="post">
         <div class="uk-margin">
             <label>Wzrost</label>
-            <input th:field="*{wzrost}" type="number"  class="uk-input" step="0.1" min="50" max="210" >
+            <input th:field="*{wzrost}" type="number"  class="uk-input" step="0.1" min="50" max="210" required="required">
         </div>
         <div class="uk-margin">
             <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input">
+            <Input th:field="*{data}" type="date" class="uk-input" required="required">
         </div>
 <!--        <div class="uk-margin">-->
 <!--            <label>Rodzaj</label>-->

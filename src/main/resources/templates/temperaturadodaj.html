@@ -9,11 +9,11 @@
     <form style="width:300px; margin: auto" th:object="${temperaturadodaj}" th:action="@{/temperatura/zapisz}" method="post">
         <div class="uk-margin">
             <label>Temperatura</label>
-            <input th:field="*{temperatura}" type="number"  class="uk-input" step="0.1" min="33" max="44" >
+            <input th:field="*{temperatura}" type="number"  class="uk-input" step="0.1" min="33" max="44" required="required">
         </div>
         <div class="uk-margin">
             <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input">
+            <Input th:field="*{data}" type="date" class="uk-input" required="required">
         </div>
 <!--        <div class="uk-margin">-->
 <!--            <label>Rodzaj</label>-->
@@ -27,7 +27,6 @@
                 <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{rodzaj}"> Temperatura nieprawidłowa</label>
             </div>
         </div>
-
 
         <div class="uk-margin">
             <label>Uwagi</label>

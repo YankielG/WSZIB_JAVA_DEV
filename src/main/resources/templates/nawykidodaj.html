@@ -9,19 +9,19 @@
     <form style="width:300px; margin: auto" th:object="${nawykidodaj}" th:action="@{/nawyki/zapisz}" method="post">
         <div class="uk-margin">
             <label>Nazwa</label>
-            <input th:field="*{nazwa}" type="text"  class="uk-input">
+            <input th:field="*{nazwa}" type="text"  class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Data startu</label>
-            <Input th:field="*{data1}" type="date" class="uk-input">
+            <Input th:field="*{data1}" type="date" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Data data końca</label>
-            <Input th:field="*{data2}" type="date" class="uk-input">
+            <Input th:field="*{data2}" type="date" class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Powtórzenia</label>
-            <input th:field="*{powtorzenia}" type="text" class="uk-input">
+            <input th:field="*{powtorzenia}" type="text" class="uk-input" required="required">
         </div>
 <!--        <div class="uk-margin">-->
 <!--            <label>Realizacja</label>-->
