@@ -8,10 +8,12 @@
 
     <a th:href="@{/opcje/profil/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>
     <a th:href="@{/opcje/profil/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>
-    <table class="uk-table uk-table-stripped">
+    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small">
         <thead>
         <tr>
             <th>iD</th>
+            <!--            <th th:colspan="2"></th>-->
+            <th>Wybór</th>
             <th>Urzytkownik</th>
             <th>Imię</th>
             <th>Nazwisko</th>
@@ -25,11 +27,14 @@
         <tbody>
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
+            <td><input class="uk-checkbox" type="checkbox"></td>
             <td th:text="${element.urzytkownik}"></td>
             <td th:text="${element.imie}"></td>
             <td th:text="${element.nazwisko}"></td>
             <td th:text="${element.plec}"></td>
             <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
+            <!--            <td th:text="${element.data}"></td>--->
             <td th:text="${element.waga}"></td>
             <td th:text="${element.miara}"></td>
             <td>

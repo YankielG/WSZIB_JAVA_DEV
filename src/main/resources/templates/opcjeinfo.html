@@ -8,10 +8,12 @@
 
     <a th:href="@{/opcje/info/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>
     <a th:href="@{/opcje/info/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>
-    <table class="uk-table uk-table-stripped">
+    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small">
         <thead>
         <tr>
             <th>Id</th>
+            <!--            <th th:colspan="2"></th>-->
+            <th>Wybór</th>
             <th>Data</th>
             <th>Wersja</th>
             <th>Algorytm</th>
@@ -21,7 +23,9 @@
         <tbody>
         <tr th:each="element : ${lista1}">
             <td th:text="${element.id}"></td>
+            <td><input class="uk-checkbox" type="checkbox"></td>
             <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
             <!--            <td th:text="${element.data}"></td>-->
             <td th:text="${element.wersja}"></td>
             <td th:text="${element.algorytm}"></td>

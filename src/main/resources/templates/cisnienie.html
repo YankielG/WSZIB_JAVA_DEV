@@ -41,12 +41,14 @@
 
     <a th:href="@{/cisnienie/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>
     <a th:href="@{/cisnienie/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>
-    <table class="uk-table uk-table-stripped">
+    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small">
         <thead>
         <tr>
             <th>Id</th>
-            <th>Skurczowe</th>
-            <th>Rozkurczowe</th>
+            <!--            <th th:colspan="2"></th>-->
+            <th>Wybór</th>
+            <th>Ciśnienie Skurczowe</th>
+            <th>Ciśnienie Rozkurczowe</th>
             <th>Tętno</th>
             <th>Data</th>
             <th>Rodzaj</th>
@@ -57,10 +59,12 @@
         <tbody>
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
+            <td><input class="uk-checkbox" type="checkbox"></td>
             <td th:text="${element.skurcz}"></td>
             <td th:text="${element.rozkurcz}"></td>
             <td th:text="${element.tetno}"></td>
             <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
             <!--            <td th:text="${element.data}"></td>-->
             <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
             <td th:text="${element.uwagi}"></td>

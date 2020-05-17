@@ -8,10 +8,12 @@
 
     <a th:href="@{/nawyki/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>
     <a th:href="@{/nawyki/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>
-    <table class="uk-table uk-table-stripped">
+    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small">
         <thead>
         <tr>
             <th>Id</th>
+            <!--            <th th:colspan="2"></th>-->
+            <th>Wybór</th>
             <th>Nazwa</th>
             <th>Data startu</th>
             <th>Data Końca</th>
@@ -23,10 +25,13 @@
         <tbody>
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
+            <td><input class="uk-checkbox" type="checkbox"></td>
             <td th:text="${element.nazwa}"></td>
             <td th:text="${#calendars.format(element.data1, 'dd-MM-yyyy')}"></td>
             <!--            <td th:text="${element.data1}"></td>-->
+            <!--            <td th:text="${#calendars.format(element.data1, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
             <!--            <td th:text="${element.data2}"></td>-->
+            <!--            <td th:text="${#calendars.format(element.data2, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
             <td th:text="${#calendars.format(element.data2, 'dd-MM-yyyy')}"></td>
             <td th:text="${element.powtorzenia}"></td>
             <td><span th:uk-icon="${element.realizacja} ? 'heart' : 'ban'"></span></td>
