@@ -13,8 +13,8 @@
     <p>Autor Projektu: Grzegorz Jankowicz</p>
     <p>Rok: 2019/2020</p>
 <h5><b>Historia zmian:</b></h5>
-<!--    <a th:href="@{/info/wstaw}" uk-icon="icon: copy"></a>-->
-<!--    <a th:href="@{/info/czysc}" uk-icon="icon: trash"></a>-->
+<!--    <a th:href="@{/info/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>-->
+<!--    <a th:href="@{/info/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>-->
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
@@ -33,8 +33,8 @@
         <td th:text="${element.wersja}"></td>
         <td th:text="${element.algorytm}"></td>
 <!--        <td>-->
-<!--            <a th:href="@{/info/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit"></a>-->
-<!--            <a th:href="@{/info/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>-->
+<!--            <a th:href="@{/info/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" th:title="Edytuj"></a>-->
+<!--            <a th:href="@{/info/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" th:title="Usuń"></a>-->
 <!--        </td>-->
         </tr>
         </tbody>

@@ -6,8 +6,8 @@
 
     <h2 class="uk-heading-divider" th:text="#{nawyki.tytul}" style="position:center;"></h2>
 
-    <a th:href="@{/nawyki/wstaw}" uk-icon="icon: copy"></a>
-    <a th:href="@{/nawyki/czysc}" uk-icon="icon: trash"></a>
+    <a th:href="@{/nawyki/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>
+    <a th:href="@{/nawyki/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>
     <table class="uk-table uk-table-stripped">
         <thead>
         <tr>
@@ -32,8 +32,8 @@
             <td><span th:uk-icon="${element.realizacja} ? 'heart' : 'ban'"></span></td>
             <td th:text="${element.uwagi}"></td>
             <td>
-                <a th:href="@{/nawyki/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit"></a>
-                <a th:href="@{/nawyki/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash"></a>
+                <a th:href="@{/nawyki/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" th:title="Edytuj"></a>
+                <a th:href="@{/nawyki/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" th:title="Usuń"></a>
             </td>
         </tr>
         </tbody>
