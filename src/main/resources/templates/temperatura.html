@@ -51,8 +51,8 @@
         </div>
     </div>
 
-    <a th:href="@{/temperatura/wstaw}" uk-icon="icon: copy" th:title="Dodaj"></a>
-    <a th:href="@{/temperatura/czysc}" uk-icon="icon: trash" th:title="Wyczyść"></a>
+    <a th:href="@{/temperatura/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+    <a th:href="@{/temperatura/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
     <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
         <thead>
         <tr>
@@ -77,8 +77,8 @@
             <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
             <td th:text="${element.uwagi}"></td>
             <td>
-                <a th:href="@{/temperatura/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" th:title="Edytuj"></a>
-                <a th:href="@{/temperatura/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" th:title="Usuń"></a>
+                <a th:href="@{/temperatura/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                <a th:href="@{/temperatura/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
             </td>
         </tr>
         </tbody>
