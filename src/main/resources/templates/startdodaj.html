@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{start.tytyl}"></title>
+    <link rel="icon" type="image/x-icon" th:href="@{ikona.ico}" href="../static/ikona.ico"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}" href="../static/css/uikit.min.css"/>
+    <script th:src="@{/js/uikit.min.js}" src="../static/js/uikit.min.js"></script>
+    <script th:src="@{/js/uikit-icons.min.js}" src="../static/js/uikit-icons.min.js"></script>
+</head>
+
 <body>
 
-<div class="container">
-    <div class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="//tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{start.tytul.dodaj}" style="position:center;"></h2>
+<div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
+<form style="width:300px; margin: auto" th:object="${startdodaj}" th:action="@{/start/zapisz}" method="post">
+    <div class="uk-margin">
+        <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>
+        <input th:field="*{urzytkownik}" type="text" class="uk-input" placeholder="Użytkownik" required="required">
     </div>
-    <form style="width:300px; margin: auto" th:object="${startdodaj}" th:action="@{/start/zapisz}" method="post">
-        <div class="uk-margin">
-            <label>Start</label>
-            <input th:field="*{start}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">
-        </div>
-        <div class="uk-margin">
-            <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
-        </div>
-        <div class="uk-margin">
-            <label>Rodzaj</label>
-            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">
-        </div>
-        <div class="uk-margin">
-            <label>Uwagi</label>
-            <input th:field="*{uwagi}" type="text" class="uk-input">
-        </div>
-        <input th:field="*{id}" type="number" hidden>
+    <input th:field="*{id}" type="number" hidden>
+    <button class="uk-button uk-button-secondary uk-width-1-1" type="Submit" th:text="#{start.enter}"></button>
+
+</form>
+</div>
+
+    <!--    <form style="width:300px; margin: auto" th:object="${startdodaj}" th:action="@{/start/zapisz}" method="post">-->
+<!--        <div class="uk-margin">-->
+<!--            <label>Urzytkownik</label>-->
+<!--            <input th:field="*{urzytkownik}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">-->
+<!--        </div>-->
+<!--        <div class="uk-margin">-->
+<!--            <label>Data</label>-->
+<!--            <Input th:field="*{data}" type="date" class="uk-input" required="required">-->
+<!--        </div>-->
+<!--        <div class="uk-margin">-->
+<!--            <label>Rodzaj</label>-->
+<!--            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">-->
+<!--        </div>-->
+<!--        <div class="uk-margin">-->
+<!--            <label>Uwagi</label>-->
+<!--            <input th:field="*{uwagi}" type="text" class="uk-input">-->
+<!--        </div>-->
+<!--        <input th:field="*{id}" type="number" hidden>-->
 
 <!--        <a th:href="@{/start}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
 <!--        <a th:href="@{/start/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
 <!--        <a th:href="@{/start/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
-        <a th:href="@{/start}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+<!--        <a th:href="@{/start}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>-->
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

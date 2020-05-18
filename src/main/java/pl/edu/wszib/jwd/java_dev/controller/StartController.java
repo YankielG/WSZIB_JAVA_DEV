@@ -39,6 +39,7 @@ public class StartController {
     @GetMapping
     public String wstaw(Model model) {
         model.addAttribute("startdodaj", new Start());
+            model.addAttribute("lista", startDao.findAll());
         return "start";
     }
 
@@ -52,7 +53,7 @@ public class StartController {
     public String edytuj(@PathVariable Long id, Model model) {
         Start start = startDao.findById(id).get();
         model.addAttribute("startdodaj", start);
-        return "start";
+        return "startdodaj";
     }
 }
 
