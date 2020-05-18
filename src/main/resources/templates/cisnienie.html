@@ -7,6 +7,58 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{cisnienie.tytul}" style="position:center;"></h2>
     </div>
+
+    <span uk-icon="icon: info" uk-tooltip="Info"></span>
+    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000" >
+        <div class="uk-card uk-card-body uk-card-default" >
+            <p>Pomiary ciśnienia najlepiej wykonywać o stałej porze dnia, gdyż ciśnienie w ciągu doby ulega zmianom.</p>
+            <p>Badanie powinno odbywać się w warunkach spoczynkowych.</p>
+            <p>Kategoria - Ciśnienie skurczowe / Ciśnienie rozkurczowe:p</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>Ciśnienie optymalne: < 120 mm Hg / < 80 Hg,</li>
+                <li>Ciśnienie prawidłowe: 120 - 129 mm Hg / 80 - 84 mm Hg,</li>
+                <li>Ciśnienie wysokie prawidłowe: 130 - 139 mm Hg / 85 - 89 mm Hg,</li>
+                <li>Nadciśnienie tętnicze 1. stopnia: 140 - 159 mm Hg / 90 - 99 mm Hg</li>
+                <li>Nadciśnienie tętnicze 2. stopnia: 160 - 179 mm Hg / 100 - 109 mm Hg</li>
+                <li>Nadciśnienie tętnicze 3. stopnia: ≥ 180 mm Hg / ≥ 110 mm Hg.</li>
+            </ul>
+        </div>
+    </div>
+
+
+<!--        <span uk-icon="icon: info" uk-tooltip="Info" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom hide"></span>-->
+<!--        <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">      <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>-->
+<!--            <p>Pomiary ciśnienia najlepiej wykonywać o stałej porze dnia, gdyż ciśnienie w ciągu doby ulega zmianom.</p>-->
+<!--            <p>Badanie powinno odbywać się w warunkach spoczynkowych.</p>-->
+<!--    <p>Kategoria - Ciśnienie skurczowe / Ciśnienie rozkurczowe:p</p>-->
+<!--            <ul class="uk-list uk-list-bullet">-->
+<!--                <li>Ciśnienie optymalne: < 120 mm Hg / < 80 Hg,</li>-->
+<!--                <li>Ciśnienie prawidłowe: 120 - 129 mm Hg / 80 - 84 mm Hg,</li>-->
+<!--                <li>Ciśnienie wysokie prawidłowe: 130 - 139 mm Hg / 85 - 89 mm Hg,</li>-->
+<!--                <li>Nadciśnienie tętnicze 1. stopnia: 140 - 159 mm Hg / 90 - 99 mm Hg</li>-->
+<!--                <li>Nadciśnienie tętnicze 2. stopnia: 160 - 179 mm Hg / 100 - 109 mm Hg</li>-->
+<!--                <li>Nadciśnienie tętnicze 3. stopnia: ≥ 180 mm Hg / ≥ 110 mm Hg.</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+    <a uk-icon="info" uk-tooltip="Info" href="#modal-center" uk-toggle></a>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <!--            <button class="uk-modal-close-default" type="button" uk-close></button>-->
+            <p>Pomiary ciśnienia najlepiej wykonywać o stałej porze dnia, gdyż ciśnienie w ciągu doby ulega zmianom.</p>
+            <p>Badanie powinno odbywać się w warunkach spoczynkowych.</p>
+           <p>Kategoria - Ciśnienie skurczowe / Ciśnienie rozkurczowe:p</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>Ciśnienie optymalne: < 120 mm Hg / < 80 Hg,</li>
+                <li>Ciśnienie prawidłowe: 120 - 129 mm Hg / 80 - 84 mm Hg,</li>
+                <li>Ciśnienie wysokie prawidłowe: 130 - 139 mm Hg / 85 - 89 mm Hg,</li>
+                <li>Nadciśnienie tętnicze 1. stopnia: 140 - 159 mm Hg / 90 - 99 mm Hg</li>
+                <li>Nadciśnienie tętnicze 2. stopnia: 160 - 179 mm Hg / 100 - 109 mm Hg</li>
+                <li>Nadciśnienie tętnicze 3. stopnia: ≥ 180 mm Hg / ≥ 110 mm Hg.</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="uk-section">
         <div class="uk-container uk-container-xsmall">
             <div style="max-width: 800px; margin: 50px auto">
@@ -76,7 +128,7 @@
         </tr>
         </tbody>
     </table>
-
+    <div class="uk-padding"></div>
 </div>
 
 </body>

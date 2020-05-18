@@ -7,6 +7,33 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{leki.tytul}" style="position:center;"></h2>
     </div>
+
+    <span uk-icon="icon: info" uk-tooltip="Info"></span>
+    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000" >
+        <div class="uk-card uk-card-body uk-card-default" >
+           <P> Przed użyciem zapoznaj się z treścią ulotki dołączonej do opakowania bądź skonsultuj się z lekarzem lub farmaceutą.</p>
+            <p> Gdyż każdy lek niewłaściwie stosowany zagraża Twojemu życiu lub zdrowiu</P>
+            </ul>
+        </div>
+    </div>
+
+
+<!--        <span uk-icon="icon: info" uk-tooltip="Info" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom hide"></span>-->
+<!--        <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">      <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>-->
+<!--            <P> Przed użyciem zapoznaj się z treścią ulotki dołączonej do opakowania bądź skonsultuj się z lekarzem lub farmaceutą.</p>-->
+<!--            <p> Gdyż każdy lek niewłaściwie stosowany zagraża Twojemu życiu lub zdrowiu</P>-->
+<!--        </div>-->
+
+    <a uk-icon="info" uk-tooltip="Info" href="#modal-center" uk-toggle></a>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <!--            <button class="uk-modal-close-default" type="button" uk-close></button>-->
+            <P> Przed użyciem zapoznaj się z treścią ulotki dołączonej do opakowania bądź skonsultuj się z lekarzem lub farmaceutą.</p>
+            <p> Gdyż każdy lek niewłaściwie stosowany zagraża Twojemu życiu lub zdrowiu</P>
+        </div>
+    </div>
+    <div class="uk-padding"></div>
+
     <a th:href="@{/leki/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
     <a th:href="@{/leki/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
     <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
@@ -41,7 +68,7 @@
             </tr>
         </tbody>
     </table>
-
+    <div class="uk-padding"></div>
 </div>
 
 </body>

@@ -5,8 +5,60 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{wzrost.tytul}" style="position:center;"></h2>
+        <h2 class="uk-heading-divider" th:text="#{wzrost.tytul}" style="position:center;"></h2>
     </div>
+    <span uk-icon="icon: info" uk-tooltip="Info"></span>
+    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000">
+        <div class="uk-card uk-card-body uk-card-default">
+            <p>Wzrost człowieka mierzony od czubka głowy do podeszwy stopy w pozycji wyprostowanej. Rano i wieczorem wzrost może się różnić o 2–3 cm.</p>
+            <p>Szacowanie średniego wzrostu ludzi jest trudne. Średni wzrost ludzi zmienia się na przestrzeni wieków / lat.
+            A także zależy od kontynętu.</p>
+            <p>Na tą chwilę można przyjąć:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>wzrost karłowaty - do 152,9 cm,</li>
+                <li>wzrost niski (153-162,9 cm),</li>
+                <li>wzrost średni (163-175,0 cm),</li>
+                <li>wzrost wysoki (175-184,9 cm),</li>
+                <li>wzrost bardzo wysoki (powyżej 178 cm).</li>
+            </ul>
+        </div>
+    </div>
+
+
+<!--        <span uk-icon="icon: info" uk-tooltip="Info" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom hide"></span>-->
+<!--        <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">      <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>-->
+<!--    <p>Wzrost człowieka mierzony od czubka głowy do podeszwy stopy w pozycji wyprostowanej. Rano i wieczorem wzrost może się różnić o 2–3 cm.</p>-->
+<!--    <p>Szacowanie średniego wzrostu ludzi jest trudne. Średni wzrost ludzi zmienia się na przestrzeni wieków / lat.-->
+<!--        A także zależy od kontynętu.</p>-->
+<!--    <p>Na tą chwilę można przyjąć:</p>-->
+<!--    <ul class="uk-list uk-list-bullet">-->
+<!--        <li>wzrost karłowaty - do 152,9 cm,</li>-->
+<!--        <li>wzrost niski (153-162,9 cm),</li>-->
+<!--        <li>wzrost średni (163-175,0 cm),</li>-->
+<!--        <li>wzrost wysoki (175-184,9 cm),</li>-->
+<!--        <li>wzrost bardzo wysoki (powyżej 178 cm).</li>-->
+<!--</ul>-->
+<!--    </div>-->
+
+    <a uk-icon="info" uk-tooltip="Info" href="#modal-center" uk-toggle></a>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <!--            <button class="uk-modal-close-default" type="button" uk-close></button>-->
+            <p>Wzrost człowieka mierzony od czubka głowy do podeszwy stopy w pozycji wyprostowanej. Rano i wieczorem wzrost może się różnić o 2–3 cm.</p>
+            <p>Szacowanie średniego wzrostu ludzi jest trudne. Średni wzrost ludzi zmienia się na przestrzeni wieków / lat.
+                A także zależy od kontynętu.</p>
+            <p>Na tą chwilę można przyjąć:</p>
+            <ul class="uk-list uk-list-bullet">
+                <li>wzrost karłowaty - do 152,9 cm,</li>
+                <li>wzrost niski (153-162,9 cm),</li>
+                <li>wzrost średni (163-175,0 cm),</li>
+                <li>wzrost wysoki (175-184,9 cm),</li>
+                <li>wzrost bardzo wysoki (powyżej 178 cm).</li>
+            </ul>
+        </div>
+    </div>
+
+
     <div class="uk-section">
         <div class="uk-container uk-container-xsmall">
             <div style="max-width: 800px; margin: 50px auto">
@@ -19,9 +71,9 @@
                 new Chart(document.getElementById("line-chart"), {
                     type: 'line',
                     data: {
-                        labels: [1,2,3,4,5,6,7,8,9,10,11],
+                        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
                         datasets: [{
-                            data: [30,35,37,37,39,41,43,36,37,34],
+                            data: [30, 35, 37, 37, 39, 41, 43, 36, 37, 34],
                             label: "Wzrost",
                             borderColor: "#3e95cd",
                             fill: false
@@ -66,13 +118,14 @@
             <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>
             <td th:text="${element.uwagi}"></td>
             <td>
-                <a th:href="@{/wzrost/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                <a th:href="@{/wzrost/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit"
+                   uk-tooltip="Edytuj"></a>
                 <a th:href="@{/wzrost/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
             </td>
         </tr>
         </tbody>
     </table>
-
+    <div class="uk-padding"></div>
 </div>
 
 </body>

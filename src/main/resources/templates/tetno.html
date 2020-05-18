@@ -7,6 +7,34 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{tetno.tytul}" style="position:center;"></h2>
     </div>
+
+    <span uk-icon="icon: info" uk-tooltip="Info"></span>
+    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000" >
+        <div class="uk-card uk-card-body uk-card-default" >
+           <p> Prawidłowe tętno (puls) mieści się w przedziale od 60 do 100 uderzeń serca na minutę.</p>
+            <p>Za wysoki puls serca (powyżej 100 uderzeń na minutę) to tachykardia (częstoskurcz), za niski puls (poniżej 60 uderzeń na minutę) to bradykardia.</p>
+            <p>Zarówno wysoki puls w spoczynku, jak i niski puls mogą świadczyć o chorobie – taki stan wymaga dalszej diagnostyki.</p>
+        </div>
+    </div>
+
+
+<!--        <span uk-icon="icon: info" uk-tooltip="Info" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom hide"></span>-->
+<!--        <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">      <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>-->
+<!--            <p> Prawidłowe tętno (puls) mieści się w przedziale od 60 do 100 uderzeń serca na minutę.</p>-->
+<!--            <p>Za wysoki puls serca (powyżej 100 uderzeń na minutę) to tachykardia (częstoskurcz), za niski puls (poniżej 60 uderzeń na minutę) to bradykardia.</p>-->
+<!--            <p>Zarówno wysoki puls w spoczynku, jak i niski puls mogą świadczyć o chorobie – taki stan wymaga dalszej diagnostyki.</p>-->
+<!--        </div>-->
+
+    <a uk-icon="info" uk-tooltip="Info" href="#modal-center" uk-toggle></a>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <!--            <button class="uk-modal-close-default" type="button" uk-close></button>-->
+            <p> Prawidłowe tętno (puls) mieści się w przedziale od 60 do 100 uderzeń serca na minutę.</p>
+            <p>Za wysoki puls serca (powyżej 100 uderzeń na minutę) to tachykardia (częstoskurcz), za niski puls (poniżej 60 uderzeń na minutę) to bradykardia.</p>
+            <p>Zarówno wysoki puls w spoczynku, jak i niski puls mogą świadczyć o chorobie – taki stan wymaga dalszej diagnostyki.</p>
+        </div>
+    </div>
+
     <div class="uk-section">
         <div class="uk-container uk-container-xsmall">
             <div style="max-width: 800px; margin: 50px auto">
@@ -72,7 +100,7 @@
         </tr>
         </tbody>
     </table>
-
-
+    <div class="uk-padding"></div>
+</div>
 </body>
 </html>

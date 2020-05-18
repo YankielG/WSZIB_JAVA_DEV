@@ -7,6 +7,47 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{nawyki.tytul}" style="position:center;"></h2>
     </div>
+
+    <span uk-icon="icon: info" uk-tooltip="Info"></span>
+    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000" >
+        <div class="uk-card uk-card-body uk-card-default" >
+            <p> Nawyk w terminologii psychologii zautomatyzowana czynność, którą nabywa się w wyniku ćwiczenia.</p>
+            <p>Codziennie podejmujemy setki mniejszych i większych decyzji. Każda z nich jest dla naszego mózgu niemałym energetycznym wyzwaniem
+                i dlatego nasze mózgi ciągle szukają sposobów optymalizacji wydatkowanej energii.</p>
+            <p>To właśnie dlatego wytwarzamy nawyki – pomagają one zautomatyzować pewne powtarzalne czynności i oszczędzić cenne zasoby.</p>
+            <p>Oczywiście mamy nawyki dobre i złe.</p>
+            <p>Za każdym razem, gdy nasz mózg dojrzy pewien „wyzwalacz”, uruchamia zaprogramowaną procedurę, by otrzymać nagrodę.</p>
+            <p>W ten sposób możemy nauczyć się dobrych nawiów, a wyliminować złe</p>
+        </div>
+    </div>
+
+
+<!--        <span uk-icon="icon: info" uk-tooltip="Info" uk-toggle="target: #toggle-animation-multiple; animation:  uk-animation-slide-left, uk-animation-slide-bottom hide"></span>-->
+<!--        <div id="toggle-animation-multiple" class="uk-card uk-card-default uk-card-body uk-margin-small">      <p>Prawidłowa temperatura ciała człowieka waha się w zakresie od 36 – 37°C, za umowną (uśrednioną wartość) uznaje się 36,6 °C.</p>-->
+<!--            <p> Nawyk w terminologii psychologii zautomatyzowana czynność, którą nabywa się w wyniku ćwiczenia.</p>-->
+<!--            <p>Codziennie podejmujemy setki mniejszych i większych decyzji. Każda z nich jest dla naszego mózgu niemałym energetycznym wyzwaniem-->
+<!--                i dlatego nasze mózgi ciągle szukają sposobów optymalizacji wydatkowanej energii.</p>-->
+<!--            <p>To właśnie dlatego wytwarzamy nawyki – pomagają one zautomatyzować pewne powtarzalne czynności i oszczędzić cenne zasoby.</p>-->
+<!--            <p>Oczywiście mamy nawyki dobre i złe.</p>-->
+<!--            <p>Za każdym razem, gdy nasz mózg dojrzy pewien „wyzwalacz”, uruchamia zaprogramowaną procedurę, by otrzymać nagrodę.</p>-->
+<!--            <p>W ten sposób możemy nauczyć się dobrych nawiów, a wyliminować złe</p>-->
+<!--        </div>-->
+
+    <a uk-icon="info" uk-tooltip="Info" href="#modal-center" uk-toggle></a>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <!--            <button class="uk-modal-close-default" type="button" uk-close></button>-->
+           <p> Nawyk w terminologii psychologii zautomatyzowana czynność, którą nabywa się w wyniku ćwiczenia.</p>
+           <p>Codziennie podejmujemy setki mniejszych i większych decyzji. Każda z nich jest dla naszego mózgu niemałym energetycznym wyzwaniem
+               i dlatego nasze mózgi ciągle szukają sposobów optymalizacji wydatkowanej energii.</p>
+            <p>To właśnie dlatego wytwarzamy nawyki – pomagają one zautomatyzować pewne powtarzalne czynności i oszczędzić cenne zasoby.</p>
+            <p>Oczywiście mamy nawyki dobre i złe.</p>
+            <p>Za każdym razem, gdy nasz mózg dojrzy pewien „wyzwalacz”, uruchamia zaprogramowaną procedurę, by otrzymać nagrodę.</p>
+            <p>W ten sposób możemy nauczyć się dobrych nawiów, a wyliminować złe</p>
+        </div>
+    </div>
+    <div class="uk-padding"></div>
+
     <a th:href="@{/nawyki/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
     <a th:href="@{/nawyki/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
     <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
@@ -44,6 +85,7 @@
         </tr>
         </tbody>
     </table>
+    <div class="uk-padding"></div>
 </div>
 
 </body>
