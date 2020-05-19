@@ -13,17 +13,35 @@ public class Waga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-//    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
+    //    @Temporal(TemporalType.DATE)
+    //    @Column(name = "data", updatable = false, nullable = false)
+    //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "data")
     private Date data;
+
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    @NumberFormat(pattern = "number")
     private Double waga;
+
     private boolean rodzaj;
+
     private String uwagi;
+
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "urzytkownik_id")
+    private Long urzytkownik_id;
+
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "urzytkownik_prawa")
+    private String urzytkownik_prawa;
+
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "dane_opcje")
+    private boolean dane_opcje;
 
     public Waga() {
     }
@@ -66,5 +84,29 @@ public class Waga {
 
     public void setUwagi(String uwagi) {
         this.uwagi = uwagi;
+    }
+
+    public Long getUrzytkownik_id() {
+        return urzytkownik_id;
+    }
+
+    public void setUrzytkownik_id(Long urzytkownik_id) {
+        this.urzytkownik_id = urzytkownik_id;
+    }
+
+    public String getUrzytkownik_prawa() {
+        return urzytkownik_prawa;
+    }
+
+    public void setUrzytkownik_prawa(String urzytkownik_prawa) {
+        this.urzytkownik_prawa = urzytkownik_prawa;
+    }
+
+    public boolean isDane_opcje() {
+        return dane_opcje;
+    }
+
+    public void setDane_opcje(boolean dane_opcje) {
+        this.dane_opcje = dane_opcje;
     }
 }
