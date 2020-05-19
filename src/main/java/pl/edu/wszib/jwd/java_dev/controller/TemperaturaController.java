@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.TemperaturaDao;
 import pl.edu.wszib.jwd.java_dev.model.Temperatura;
 
+import java.util.Collection;
+import java.util.Date;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Controller
 @PropertySource("classpath:messages.properties")
 public class TemperaturaController {
@@ -20,6 +25,10 @@ public class TemperaturaController {
     @GetMapping("temperatura")
     public String Temperatura(Model model) {
         model.addAttribute("lista", temperaturaDao.findAll());
+        double etykieta[]={1,2,3,4,5,6,7,8,9,10,11};
+        double dane[]={30, 35, 37, 37, 39, 41, 43, 36, 37, 34};
+        model.addAttribute("etykieta", etykieta);
+        model.addAttribute("dane", dane);
         return "temperatura";
     }
 
