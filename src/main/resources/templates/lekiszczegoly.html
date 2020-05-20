@@ -5,57 +5,38 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{leki.tytul.dodaj}" style="position:center;"></h2>
+        <h2 class="uk-heading-divider" th:text="#{leki.tytul.szczegoly}" style="position:center;"></h2>
     </div>
     <form style="width:300px; margin: auto" th:object="${lekiszczegoly}" th:action="@{/leki/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Leki</label>
-            <input th:field="*{lek}" type="text" class="uk-input" required="required">
+            <label>Leki: </label>
+            <td th:text="${lekiszczegoly.lek}"></td>
         </div>
+        
         <div class="uk-margin">
-            <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
+            <label>Data: </label>
+            <td th:text="${#calendars.format(lekiszczegoly.data, 'dd-MM-yyyy')}"></td>
         </div>
+        
         <div class="uk-margin">
-            <label>Dawka</label>
-            <input th:field="*{dawka}" type="text" class="uk-input" required="required">
+            <label>Dawka: </label>
+            <td th:text="${lekiszczegoly.data}"></td>
         </div>
-        <!--        <div class="uk-margin">-->
-        <!--            <label>Rodzaj</label>-->
-        <!--            <input th:field="*{rodzaj}" type="text" class="uk-input">-->
-        <!--        </div>-->
-
-        <!--        <div class="uk-button uk-form-controls uk-margin">-->
-        <!--            <label>Rodzaj</label>-->
-        <!--            <select th:field="*{rodzaj}" type="text" class="uk-input">-->
-        <!--                <option th:value="'Antybiotyk'">Antybiotyk</option>-->
-        <!--                <option th:value="'Przeciw bólowy'">Przeciw bólowy</option>-->
-        <!--                <option th:value="'Witamina'">Witamina</option>-->
-        <!--                <option th:value="'Szczepionka'">Szczepionka</option>-->
-        <!--                <option th:value="'Suplement'">Suplement</option>-->
-        <!--                <option th:value="'Pozostałe'">Pozostałe</option>-->
-        <!--            </select>-->
-        <!--        </div>-->
-
-                <div class="uk-button uk-form-controls uk-margin">
-                    <label>Rodzaj </label><span uk-icon="icon: info" uk-tooltip="Ustaw w opcjach"></span>
-                    <select th:field="*{rodzaj}" type="text" class="uk-input" required="required">
-                        <option value=""> -- </option>
-                        <option th:each="rodzajleku : ${rodajkekudodaj}"th:value="${rodzajleku.rodzajleku}" th:utext="${rodzajleku.rodzajleku}"/>
-                    </select>
-                </div>
+        
+        <div class="uk-margin">
+            <label>Rodzaj: </label>
+            <td th:text="${lekiszczegoly.rodzaj}"></td>
+        </div>
 
         <div class="uk-margin">
-            <label>Uwagi</label>
-            <textarea th:field="*{uwagi}" class="uk-textarea" rows="4"></textarea>
+            <label>Uwagi: </label>
+            <td th:text="${lekiszczegoly.uwagi}"></td>
         </div>
+        
         <input th:field="*{id}" type="number" hidden>
 
-        <!--        <a th:href="@{/leki}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
-        <!--        <a th:href="@{/leki/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
-        <!--        <a th:href="@{/leki/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
         <a th:href="@{/leki}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
-<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
+
 
     </form>
     <div class="uk-padding"></div>

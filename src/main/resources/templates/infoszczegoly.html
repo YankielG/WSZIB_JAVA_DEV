@@ -5,31 +5,26 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.info}" style="position:center;"></h2>
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.info.szczegoly}" style="position:center;"></h2>
     </div>
     <form style="width:300px; margin: auto" th:object="${infoszczegoly}" th:action="@{/opcje/info/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
+            <label>Data: </label>
+            <td th:text="${#calendars.format(infoszczegoly.data, 'dd-MM-yyyy')}"></td>
         </div>
         <div class="uk-margin">
-            <label>Wersja</label>
-            <input th:field="*{wersja}" type="text"  class="uk-input" required="required">
+            <label>Wersja: </label>
+            <td th:text="${infoszczegoly.wersja}"></td>
         </div>
         <div class="uk-margin">
-            <label>Algorytm</label>
-            <input th:field="*{algorytm}" type="text" class="uk-input" required="required">
+            <label>Algorytm: </label>
+            <td th:text="${infoszczegoly.algorytm}"></td>
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/opcje/info}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
-<!--        <a th:href="@{/opcje/info/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
-<!--        <a th:href="@{/opcje/info/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
         <a th:href="@{/opcje/opcjeinfo}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
-<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
-
+        
     </form>
-
 
     <div class="uk-padding"></div>
 </div>

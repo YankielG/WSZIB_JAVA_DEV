@@ -5,49 +5,38 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{cisnienie.tytul.dodaj}" style="position:center;"></h2>
+    <h2 class="uk-heading-divider" th:text="#{cisnienie.tytul.szczegoly}" style="position:center;"></h2>
     </div>
     <form style="width:300px; margin: auto" th:object="${cisnienieszczegoly}" th:action="@{/cisnienie/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Cisnienie Skurczowe</label>
-            <input th:field="*{skurcz}" type="number"  class="uk-input" step="1" min="50" max="200" required="required">
+            <label>Cisnienie Skurczowe: </label>
+            <td th:text="${cisnienieszczegoly.skurcz}"></td>
         </div>
         <div class="uk-margin">
-            <label>Cisnienie Rozkurczowe</label>
-            <input th:field="*{rozkurcz}" type="number"  class="uk-input" step="1" min="50" max="150" required="required">
+            <label>Cisnienie Rozkurczowe: </label>
+            <td th:text="${cisnienieszczegoly.rozkurcz}"></td>
         </div>
         <div class="uk-margin">
-            <label>Tętno</label>
-            <input th:field="*{tetno}" type="number"  class="uk-input" step="1" min="50" max="150" required="required">
+            <label>Tętno: </label>
+            <td th:text="${cisnienieszczegoly.tetno}"></td>
         </div>
         <div class="uk-margin">
-            <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
+            <label>Data: </label>
+            <td th:text="${#calendars.format(cisnienieszczegoly.data, 'dd-MM-yyyy')}"></td>
         </div>
-<!--        <div class="uk-margin">-->
-<!--            <label>Rodzaj</label>-->
-<!--            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">-->
-<!--        </div>-->
-
+        
         <div class="uk-margin">
-            <div class="uk-form-label">Rodzaj</div>
-            <div class="uk-form-controls uk-form-controls-text" >
-                <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{rodzaj}"> Ciśnienie prawidłowa</label><br>
-                <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{rodzaj}"> Ciśnienie nieprawidłowa</label>
-            </div>
+            <label>Rodzaj: </label>
+            <td> <span th:uk-icon="${cisnienieszczegoly.rodzaj} ? 'heart' : 'ban'"></span></td>
         </div>
 
         <div class="uk-margin">
-            <label>Uwagi</label>
-            <textarea th:field="*{uwagi}" class="uk-textarea" rows="4"></textarea>
+            <label>Uwagi: </label>
+            <td th:text="${cisnienieszczegoly.uwagi}"></td>
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/cisnienie}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
-<!--        <a th:href="@{/cisnienie/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
-<!--        <a th:href="@{/cisnienie/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
         <a th:href="@{/cisnienie}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
-<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

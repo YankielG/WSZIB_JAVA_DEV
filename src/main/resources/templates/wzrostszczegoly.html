@@ -5,45 +5,33 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{wzrost.tytul.dodaj}" style="position:center;"></h2>
+    <h2 class="uk-heading-divider" th:text="#{wzrost.tytul.szczegoly}" style="position:center;"></h2>
     </div>
     <form style="width:300px; margin: auto" th:object="${wzrostszczegoly}" th:action="@{/wzrost/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Wzrost</label>
-            <input th:field="*{wzrost}" type="number"  class="uk-input" step="0.1" min="50" max="210" required="required">
+            <label>Wzrost: </label>
+            <td th:text="${wzrostszczegoly.wzrost}"></td>
         </div>
         <div class="uk-margin">
-            <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
+            <label>Data: </label>
+<!--            <td th:text="${wzrostszczegoly.data}"></td>-->
+            <td th:text="${#calendars.format(wzrostszczegoly.data, 'dd-MM-yyyy')}"></td>
         </div>
-<!--        <div class="uk-margin">-->
-<!--            <label>Rodzaj</label>-->
-<!--            <input th:field="*{rodzaj}" type="checkbox" class="uk-checkbox">-->
-<!--        </div>-->
-
         <div class="uk-margin">
-            <div class="uk-form-label">Rodzaj</div>
-            <div class="uk-form-controls uk-form-controls-text" >
-                <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{rodzaj}"> Wzrost prawidłowy</label><br>
-                <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{rodzaj}"> Wzrost nieprawidłowy</label>
-            </div>
+            <label>Rodzaj: </label>
+            <td> <span th:uk-icon="${wzrostszczegoly.rodzaj} ? 'heart' : 'ban'"></span></td>
         </div>
 
         <div class="uk-margin">
-            <label>Uwagi</label>
-<!--            <textarea th:field="*{uwagi}" type="textarea" class="uk-input" > </textarea>-->
-            <textarea th:field="*{uwagi}" class="uk-textarea" rows="4"> </textarea>
+            <label>Uwagi: </label>
+            <td th:text="${wzrostszczegoly.wzrost}"></td>
         </div>
+        
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/wzrost}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
-<!--        <a th:href="@{/wzrost/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
-<!--        <a th:href="@{/wzrost/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
         <a th:href="@{/wzrost}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
-<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
-
+        
     </form>
-
 
     <div class="uk-padding"></div>
 </div>
