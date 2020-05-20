@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil}" style="position:center;"></h2>
+    </div>
+    <form style="width:300px; margin: auto" th:object="${profilblokada}" th:action="@{/opcje/profil/zapisz}" method="post">
+        <div class="uk-margin">
+            <label>Urzytkownik</label>
+            <input th:field="*{urzytkownik}" type="text"  class="uk-input" readonly>
+        </div>
+        <div class="uk-margin">
+            <label>Imię</label>
+            <input th:field="*{imie}" type="text" class="uk-input" readonly>
+        </div>
+        <div class="uk-margin">
+            <label>Nazwisko</label>
+            <input th:field="*{nazwisko}" type="text" class="uk-input" readonly>
+        </div>
+
+<!--        <div class="uk-margin">-->
+<!--            <label>Wł/wył Urzytkownika</label>-->
+<!--            <input th:field="*{urzytkownik_aktywny}" type="checkbox" class="uk-input" required="required">-->
+<!--        </div>-->
+            <div class="uk-margin">
+                <div class="uk-form-label">Wł/Wył Urzytkownika</div>
+                <div class="uk-form-controls uk-form-controls-text">
+                    <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{urzytkownik_aktywny}">Urzytkownik Wł.</label><br>
+                    <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{urzytkownik_aktywny}">Urzytkownik wył.</label>
+                </div>
+            </div>
+
+<!--        <div class="uk-margin">-->
+<!--            <label>Urzytkownik prawa </label><span uk-icon="icon: info" uk-tooltip="'r', 'w', 'rw'"></span>-->
+<!--            <input th:field="*{urzytkownik_prawa}" type="text" class="uk-input" required="required">-->
+<!--        </div>-->
+
+
+        <input th:field="*{id}" type="number" hidden>
+
+<!--        <a th:href="@{opcje/profil}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
+<!--        <a th:href="@{opcje/profil/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
+<!--        <a th:href="@{opcje/profil/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
+        <a th:href="@{/opcje/opcjeprofil}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+
+    <div class="uk-padding"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil}" style="position:center;"></h2>
+    </div>
+    <form style="width:300px; margin: auto" th:object="${profilszczegoly}" th:action="@{/opcje/profil/zapisz}" method="post">
+        <div class="uk-margin">
+            <label>Urzytkownik</label>
+            <input th:field="*{urzytkownik}" type="text"  class="uk-input" readonly>
+        </div>
+        <div class="uk-margin">
+            <label>Imię</label>
+            <input th:field="*{imie}" type="text" class="uk-input" readonly>
+        </div>
+        <div class="uk-margin">
+            <label>Nazwisko</label>
+            <input th:field="*{nazwisko}" type="text" class="uk-input" readonly>
+        </div>
+        <div class="uk-margin">
+            <label>Email</label>
+            <input th:field="*{email}" type="email" class="uk-input" readonly>
+        </div>
+        <div class="uk-margin">
+            <label>Hasło</label>
+            <input th:field="*{haslo}" type="password" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Płeć </label>
+            <input th:field="*{plec}" type="text" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Data urodzenia</label>
+            <Input th:field="*{data}" type="date" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Jednostka wagi </label>
+            <input th:field="*{waga}" type="text" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Jednostka długości </label>
+            <input th:field="*{miara}" type="text" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Wł/wył Urzytkownika</label>
+            <input th:field="*{urzytkownik_aktywny}" type="checkbox" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik prawa </label>
+            <input th:field="*{urzytkownik_prawa}" type="text" class="uk-input" readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik ID</label>
+            <input th:field="*{urzytkownik_id}" type="text" class="uk-input"  readonly>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik - Data utworzenia </label>
+            <input th:field="*{urzytkownik_data_tw}" type="text" class="uk-input">
+        </div>
+        <div class="uk-margin">
+            <label>Urzytkownik - Data edycji</label>
+            <input th:field="*{urzytkownik_data_up}" type="text" class="uk-input">
+        </div>
+        <div class="uk-margin">
+            <label>Urzytkownik - Data skasowania</label>
+            <input th:field="*{urzytkownik_data_ucl}" type="text" class="uk-input">
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+
+<!--        <a th:href="@{opcje/profil}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
+<!--        <a th:href="@{opcje/profil/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
+<!--        <a th:href="@{opcje/profil/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
+        <a th:href="@{/opcje/opcjeprofil}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
+
+    </form>
+
+
+    <div class="uk-padding"></div>
+</div>
+
+</body>
+</html>

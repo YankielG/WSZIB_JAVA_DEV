@@ -18,14 +18,14 @@
             <th>Urzytkownik</th>
             <th>Imię</th>
             <th>Nazwisko</th>
-            <th>Email</th>
-            <th>Hasło</th>
+<!--            <th>Email</th>-->
+<!--            <th>Hasło</th>-->
             <th>Płeć</th>
             <th>Data urodzenia</th>
             <th>Jednostka wagi</th>
             <th>Jednostka długości</th>
-            <th>Wł/Wył Urzytkownika</th>
-            <th>Urzytkownik prawa</th>
+<!--            <th>Wł/Wył Urzytkownika</th>-->
+<!--            <th>Urzytkownik prawa</th>-->
 <!--            <th>Urzytkownik ID</th>-->
 <!--            <th>Data utworzenia</th>-->
 <!--            <th>Data edycji</th>-->
@@ -40,22 +40,25 @@
             <td th:text="${element.urzytkownik}"></td>
             <td th:text="${element.imie}"></td>
             <td th:text="${element.nazwisko}"></td>
-            <td th:text="${element.email}"></td>
-            <td th:text="${element.haslo}"></td>
+<!--            <td th:text="${element.email}"></td>-->
+<!--            <td th:text="${element.haslo}"></td>-->
             <td th:text="${element.plec}"></td>
             <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
             <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
             <!--            <td th:text="${element.data}"></td>--->
             <td th:text="${element.waga}"></td>
             <td th:text="${element.miara}"></td>
-            <td><span th:uk-icon="${element.urzytkownik_aktywny} ? 'check' : 'close'"></span></td>
-            <td th:text="${element.urzytkownik_prawa}"></td>
+<!--            <td><span th:uk-icon="${element.urzytkownik_aktywny} ? 'check' : 'close'"></span></td>-->
+<!--            <td th:text="${element.urzytkownik_prawa}"></td>-->
 <!--            <td th:text="${element.urzytkownik_id}"></td>-->
 <!--            <td th:text="${element.urzytkownik_data_tw}"></td>-->
 <!--            <td th:text="${element.urzytkownik_data_up}"></td>-->
 <!--            <td th:text="${element.urzytkownik_data_ucl}"></td>-->
             <td>
+                <a th:href="@{/opcje/profil/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
                 <a th:href="@{/opcje/profil/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                <a th:href="@{/opcje/profil/blokada/{id} (id=${element.id})}" uk-icon="icon: lock" uk-tooltip="Blokada"></a>
+                <a th:href="@{/opcje/profil/profildodajadmin/{id} (id=${element.id})}" uk-icon="icon: users" uk-tooltip="Admin"></a>
                 <a th:href="@{/opcje/profil/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
             </td>
             </tr>
