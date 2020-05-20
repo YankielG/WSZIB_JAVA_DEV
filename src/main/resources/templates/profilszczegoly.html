@@ -9,72 +9,72 @@
     </div>
     <form style="width:300px; margin: auto" th:object="${profilszczegoly}" th:action="@{/opcje/profil/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Urzytkownik</label>
-            <input th:field="*{urzytkownik}" type="text"  class="uk-input" readonly>
+            <label>Urzytkownik: </label>
+            <td th:text="${profilszczegoly.urzytkownik}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Imię</label>
-            <input th:field="*{imie}" type="text" class="uk-input" readonly>
+            <label>Imię: </label>
+            <td th:text="${profilszczegoly.imie}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Nazwisko</label>
-            <input th:field="*{nazwisko}" type="text" class="uk-input" readonly>
+            <label>Nazwisko: </label>
+            <td th:text="${profilszczegoly.nazwisko}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Email</label>
-            <input th:field="*{email}" type="email" class="uk-input" readonly>
+            <label>Email: </label>
+            <td th:text="${profilszczegoly.email}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Hasło</label>
-            <input th:field="*{haslo}" type="password" class="uk-input" readonly>
-        </div>
-
-        <div class="uk-margin">
-            <label>Płeć </label>
-            <input th:field="*{plec}" type="text" class="uk-input" readonly>
+            <label>Hasło: </label>
+            <td th:text="${profilszczegoly.haslo}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Data urodzenia</label>
-            <Input th:field="*{data}" type="date" class="uk-input" readonly>
+            <label>Płeć: </label>
+            <td th:text="${profilszczegoly.plec}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Jednostka wagi </label>
-            <input th:field="*{waga}" type="text" class="uk-input" readonly>
+            <label>Data urodzenia: </label>
+            <td th:text="${profilszczegoly.data}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Jednostka długości </label>
-            <input th:field="*{miara}" type="text" class="uk-input" readonly>
+            <label>Jednostka wagi: </label>
+            <td th:text="${profilszczegoly.waga}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Wł/wył Urzytkownika</label>
-            <input th:field="*{urzytkownik_aktywny}" type="checkbox" class="uk-input" readonly>
+            <label>Jednostka długości: </label>
+            <td th:text="${profilszczegoly.miara}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik prawa </label>
-            <input th:field="*{urzytkownik_prawa}" type="text" class="uk-input" readonly>
+            <label>Wł/wył Urzytkownika: </label>
+            <td th:text="${profilszczegoly.urzytkownik_aktywny}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik ID</label>
-            <input th:field="*{urzytkownik_id}" type="text" class="uk-input"  readonly>
+            <label>Urzytkownik prawa: </label>
+            <td th:text="${profilszczegoly.urzytkownik_prawa}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik - Data utworzenia </label>
-            <input th:field="*{urzytkownik_data_tw}" type="text" class="uk-input">
+            <label>Urzytkownik ID: </label>
+            <td th:text="${profilszczegoly.urzytkownik_id}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik - Data utworzenia: </label>
+            <td th:text="${profilszczegoly.urzytkownik_data_tw}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Urzytkownik - Data edycji</label>
-            <input th:field="*{urzytkownik_data_up}" type="text" class="uk-input">
+            <label>Urzytkownik - Data edycji: </label>
+            <td th:text="${profilszczegoly.urzytkownik_data_up}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Urzytkownik - Data skasowania</label>
-            <input th:field="*{urzytkownik_data_ucl}" type="text" class="uk-input">
+            <label>Urzytkownik - Data skasowania: </label>
+            <td th:text="${profilszczegoly.urzytkownik_data_ucl}">...Brak danych...</td>
         </div>
 
         <input th:field="*{id}" type="number" hidden>

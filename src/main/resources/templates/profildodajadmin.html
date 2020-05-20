@@ -9,16 +9,16 @@
     </div>
     <form style="width:300px; margin: auto" th:object="${profildodajadmin}" th:action="@{/opcje/profil/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Urzytkownik</label>
-            <input th:field="*{urzytkownik}" type="text"  class="uk-input" readonly>
+            <label>Urzytkownik: </label>
+            <td th:text="${profildodajadmin.urzytkownik}"></td>
         </div>
         <div class="uk-margin">
-            <label>Imię</label>
-            <input th:field="*{imie}" type="text" class="uk-input"readonly>
+            <label>Imię: </label>
+            <td th:text="${profildodajadmin.imie}"></td>
         </div>
         <div class="uk-margin">
-            <label>Nazwisko</label>
-            <input th:field="*{nazwisko}" type="text" class="uk-input" readonly>
+            <label>Nazwisko: </label>
+            <td th:text="${profildodajadmin.nazwisko}"></td>
         </div>
 
 <!--        <div class="uk-margin">-->
