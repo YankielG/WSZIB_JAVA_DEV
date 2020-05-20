@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <body>
 
 <nav th:fragment="menu1" class="uk-navbar-container" uk-navbar uk-sticky>
     <div class="uk-navbar-center">
         <a th:href="@{/index}" class="uk-navbar-item uk-logo">Start</a>
         <ul class="uk-navbar-nav">
-<!--            <li class="uk-parent" th:classappend="${title==#{temperatura.tytul.calosc} ? 'uk-active':''}"><a th:href="@{/temperatura}">Temperatura</a></li>-->
+            <!--            <li class="uk-parent" th:classappend="${title==#{temperatura.tytul.calosc} ? 'uk-active':''}"><a th:href="@{/temperatura}">Temperatura</a></li>-->
             <li class="uk-parent"><a th:href="@{/temperatura}">Temperatura</a></li>
             <li class="uk-parent"><a th:href="@{/wzrost}">Wzrost</a></li>
             <li class="uk-parent"><a th:href="@{/waga}">Waga</a></li>

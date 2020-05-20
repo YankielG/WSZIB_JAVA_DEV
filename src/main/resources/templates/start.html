@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title th:text="#{start.tytyl}"></title>
@@ -20,7 +21,7 @@
         <br/>
 <!--&lt;!&ndash;        <input th:field="*{haslo}" type="password"  th:placeholder="Hasło" class="uk-input"/> <br/>&ndash;&gt;-->
         <br/>
-        <button class="uk-button uk-button-secondary uk-width-1-1" type="Submit" th:text="#{start.enter}"></button>
+        <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" type="Submit" value="Login" th:text="#{start.enter}"></button>
     </form>
 </div>
 
@@ -32,7 +33,7 @@
 <!--        <br/>-->
 <!--        <input type="password" id="password" name="password" th:placeholder="Hasło" class="uk-input" required="required"/> <br/>-->
 <!--        <br/>-->
-<!--        <div align="center" th:if="${param.error}"><p style="font-size: 20;">Niema takiego użytkownika!</p></div>-->
+<!--        <div align="center" th:if="${start.error}"><p style="font-size: 20;">Niema takiego użytkownika!</p></div>-->
 <!--        <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" value="Login" type="Submit" th:text="#{start.enter}"></button>-->
 <!--    </form>-->
 <!--</div>-->
