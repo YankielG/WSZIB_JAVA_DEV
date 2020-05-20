@@ -5,9 +5,10 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil.szczegoly}" style="position:center;"></h2>
+        <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil.szczegoly}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${profilszczegoly}" th:action="@{/opcje/profil/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${profilszczegoly}" th:action="@{/opcje/profil/zapisz}"
+          method="post">
         <div class="uk-margin">
             <label>Urzytkownik: </label>
             <td th:text="${profilszczegoly.urzytkownik}">...Brak danych...</td>
@@ -51,7 +52,7 @@
 
         <div class="uk-margin">
             <label>Wł/wył Urzytkownika: </label>
-            <td th:text="${profilszczegoly.urzytkownik_aktywny}">...Brak danych...</td>
+            <td><span th:uk-icon="${profilszczegoly.urzytkownik_aktywny} ? 'check' : 'close'"></span></td>
         </div>
 
         <div class="uk-margin">
@@ -84,11 +85,11 @@
 
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{opcje/profil}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
-<!--        <a th:href="@{opcje/profil/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
-<!--        <a th:href="@{opcje/profil/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
+        <!--        <a th:href="@{opcje/profil}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
+        <!--        <a th:href="@{opcje/profil/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
+        <!--        <a th:href="@{opcje/profil/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
         <a th:href="@{/opcje/opcjeprofil}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
-<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
+        <!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

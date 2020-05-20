@@ -7,9 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.edu.wszib.jwd.java_dev.dao.InfoDao;
 import pl.edu.wszib.jwd.java_dev.dao.ProfilDao;
-import pl.edu.wszib.jwd.java_dev.dao.RodzajLekuDao;
 import pl.edu.wszib.jwd.java_dev.model.Profil;
 
 @Controller
@@ -56,13 +54,6 @@ public class ProfilController {
         return "profildodaj";
     }
 
-    @GetMapping("opcje/profil/blokada/{id}")
-    public String blokada(@PathVariable Long id, Model model) {
-        Profil profil = profilDao.findById(id).get();
-        model.addAttribute("profilblokada", profil);
-        return "profilblokada";
-    }
-
     @GetMapping("opcje/profil/szczegoly/{id}")
     public String szczegoly(@PathVariable Long id, Model model) {
         Profil profil = profilDao.findById(id).get();
@@ -70,10 +61,10 @@ public class ProfilController {
         return "profilszczegoly";
     }
 
-    @GetMapping("opcje/profil/profildodajadmin/{id}")
+    @GetMapping("opcje/profil/edytujadmin/{id}")
     public String edytujadmin(@PathVariable Long id, Model model) {
         Profil profil = profilDao.findById(id).get();
-        model.addAttribute("profildodajadmin", profil);
+        model.addAttribute("profildodaj", profil);
         return "profildodajadmin";
     }
 
