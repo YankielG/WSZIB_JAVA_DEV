@@ -7,7 +7,7 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{wzrost.tytul.dodaj}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${wzrostdodaj}" th:action="@{/wzrost/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${wzrostszczegoly}" th:action="@{/wzrost/zapisz}" method="post">
         <div class="uk-margin">
             <label>Wzrost</label>
             <input th:field="*{wzrost}" type="number"  class="uk-input" step="0.1" min="50" max="210" required="required">
@@ -36,11 +36,11 @@
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/wzrost}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
+<!--        <a th:href="@{/wzrost}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
 <!--        <a th:href="@{/wzrost/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
 <!--        <a th:href="@{/wzrost/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
-        <a th:href="@{/wzrost}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+        <a th:href="@{/wzrost}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

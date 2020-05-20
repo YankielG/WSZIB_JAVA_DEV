@@ -7,7 +7,7 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{temperatura.tytul.dodaj}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${temperaturadodaj}" th:action="@{/temperatura/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${temperaturaszczegoly}" th:action="@{/temperatura/zapisz}" method="post">
         <div class="uk-margin">
             <label>Temperatura</label>
             <input th:field="*{temperatura}" type="number"  class="uk-input" step="0.1" min="33" max="44" required="required">
@@ -35,11 +35,11 @@
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/temperatura}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
+<!--        <a th:href="@{/temperatura}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
 <!--        <a th:href="@{/temperatura/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Dodaj"></a>-->
 <!--        <a th:href="@{/temperatura/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
-        <a th:href="@{/temperatura}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+        <a th:href="@{/temperatura}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

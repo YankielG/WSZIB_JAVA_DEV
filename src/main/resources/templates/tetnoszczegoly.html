@@ -7,7 +7,7 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{tetno.tytul.dodaj}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${tetnododaj}" th:action="@{/tetno/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${tetnoszczegoly}" th:action="@{/tetno/zapisz}" method="post">
         <div class="uk-margin">
             <label>Tętno</label>
             <input th:field="*{tetno}" type="number"  class="uk-input" step="1" min="50" max="150" required="required">
@@ -38,8 +38,8 @@
 <!--        <a th:href="@{/tetno}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
 <!--        <a th:href="@{/tetno/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash"uk-tooltip="Wyczyść"></a>-->
 <!--        <a th:href="@{/tetno/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
-        <a th:href="@{/tetno}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+        <a th:href="@{/tetno}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

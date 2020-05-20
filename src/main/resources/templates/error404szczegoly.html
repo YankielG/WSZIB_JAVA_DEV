@@ -7,7 +7,7 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{error404.tytul.dodaj}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${error404dodaj}" th:action="@{/error404/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${error404szczegoly}" th:action="@{/error404/zapisz}" method="post">
         <div class="uk-margin">
             <label>Error404</label>
             <input th:field="*{error404}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">
@@ -26,11 +26,11 @@
         </div>
         <input th:field="*{id}" type="number" hidden>
 
-<!--        <a th:href="@{/error404}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
+<!--        <a th:href="@{/error404}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Zamknij"></a>-->
 <!--        <a th:href="@{/error404/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
 <!--        <a th:href="@{/error404/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
-        <a th:href="@{/error404}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+        <a th:href="@{/error404}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 

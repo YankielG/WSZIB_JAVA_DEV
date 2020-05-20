@@ -7,7 +7,7 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{waga.tytul.dodaj}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${wagadodaj}" th:action="@{/waga/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${wagaszczegoly}" th:action="@{/waga/zapisz}" method="post">
         <div class="uk-margin">
             <label>Waga</label>
             <input th:field="*{waga}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">
@@ -38,8 +38,8 @@
 <!--        <a th:href="@{/waga}" class="uk-icon-link uk-margin-small-right" uk-icon="close" uk-tooltip="Anuluj"></a>-->
 <!--        <a th:href="@{/waga/wstaw}" class="uk-icon-link uk-margin-small-right" uk-icon="trash" uk-tooltip="Wyczyść"></a>-->
 <!--        <a th:href="@{/waga/zapisz}" class="uk-icon-link uk-margin-small-right" uk-icon="check" th:type="submit" uk-tooltip="Zapisz"></a>-->
-        <a th:href="@{/waga}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+        <a th:href="@{/waga}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+<!--        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">-->
 
     </form>
 
