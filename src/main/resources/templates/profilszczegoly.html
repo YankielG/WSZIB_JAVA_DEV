@@ -5,7 +5,7 @@
 <div class="container">
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil}" style="position:center;"></h2>
+    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil.szczegoly}" style="position:center;"></h2>
     </div>
     <form style="width:300px; margin: auto" th:object="${profilszczegoly}" th:action="@{/opcje/profil/zapisz}" method="post">
         <div class="uk-margin">
@@ -75,6 +75,11 @@
         <div class="uk-margin">
             <label>Urzytkownik - Data skasowania: </label>
             <td th:text="${profilszczegoly.urzytkownik_data_ucl}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik - Uwagi: </label>
+            <td th:text="${profilszczegoly.urzytkownik_uwagi}">...Brak danych...</td>
         </div>
 
         <input th:field="*{id}" type="number" hidden>

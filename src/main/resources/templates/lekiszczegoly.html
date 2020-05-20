@@ -32,6 +32,21 @@
             <label>Uwagi: </label>
             <td th:text="${lekiszczegoly.uwagi}"></td>
         </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik ID: </label>
+            <td th:text="${lekiszczegoly.urzytkownik_id}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik prawa: </label>
+            <td th:text="${lekiszczegoly.urzytkownik_prawa}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Zaznaczanie: </label>
+            <td> <span th:uk-icon="${lekiszczegoly.dane_opcje} ? 'check' : 'close'"></span></td>
+        </div>
         
         <input th:field="*{id}" type="number" hidden>
 

@@ -25,8 +25,24 @@
 
         <div class="uk-margin">
             <label>Uwagi: </label>
-            <td th:text="${wagaszczegoly.waga}"></td>
+            <td th:text="${wagaszczegoly.uwagi}"></td>
         </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik ID: </label>
+            <td th:text="${wagaszczegoly.urzytkownik_id}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik prawa: </label>
+            <td th:text="${wagaszczegoly.urzytkownik_prawa}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Zaznaczanie: </label>
+            <td> <span th:uk-icon="${wagaszczegoly.dane_opcje} ? 'check' : 'close'"></span></td>
+        </div>
+        
         <input th:field="*{id}" type="number" hidden>
 
         <a th:href="@{/waga}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>

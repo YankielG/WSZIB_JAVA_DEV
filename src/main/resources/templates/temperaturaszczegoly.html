@@ -25,10 +25,25 @@
             <label>Uwagi: </label>
             <td th:text="${temperaturaszczegoly.uwagi}"></td>
         </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik ID: </label>
+            <td th:text="${temperaturaszczegoly.urzytkownik_id}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik prawa: </label>
+            <td th:text="${temperaturaszczegoly.urzytkownik_prawa}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Zaznaczanie: </label>
+            <td> <span th:uk-icon="${temperaturaszczegoly.dane_opcje} ? 'check' : 'close'"></span></td>
+        </div>
         
         <input th:field="*{id}" type="number" hidden>
 
-        <a th:href="@{/temperaturaszczegoly}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+        <a th:href="@{/temperatura}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
 
     </form>
 

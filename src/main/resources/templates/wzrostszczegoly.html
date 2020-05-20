@@ -24,9 +24,24 @@
 
         <div class="uk-margin">
             <label>Uwagi: </label>
-            <td th:text="${wzrostszczegoly.wzrost}"></td>
+            <td th:text="${wzrostszczegoly.uwagi}"></td>
         </div>
-        
+
+        <div class="uk-margin">
+            <label>Urzytkownik ID: </label>
+            <td th:text="${wzrostszczegoly.urzytkownik_id}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik prawa: </label>
+            <td th:text="${wzrostszczegoly.urzytkownik_prawa}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Zaznaczanie: </label>
+            <td> <span th:uk-icon="${wzrostszczegoly.dane_opcje} ? 'check' : 'close'"></span></td>
+        </div>
+
         <input th:field="*{id}" type="number" hidden>
 
         <a th:href="@{/wzrost}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>

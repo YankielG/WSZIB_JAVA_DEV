@@ -67,6 +67,10 @@ public class Profil {
     @Column(name = "urzytkownik_prawa")
     private String urzytkownik_prawa;
 
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "urzytkownik_uwagi")
+    private String urzytkownik_uwagi;
+
     //    Data tworzenia urzytkownika
 //    @Temporal(TemporalType.DATE)
 //    @Column(name = "urzytkownik_d_tw", updatable = false, nullable = false)
@@ -198,6 +202,14 @@ public class Profil {
 
     public void setUrzytkownik_prawa(String urzytkownik_prawa) {
         this.urzytkownik_prawa = urzytkownik_prawa;
+    }
+
+    public String getUrzytkownik_uwagi() {
+        return urzytkownik_uwagi;
+    }
+
+    public void setUrzytkownik_uwagi(String urzytkownik_uwagi) {
+        this.urzytkownik_uwagi = urzytkownik_uwagi;
     }
 
     public Date getUrzytkownik_data_tw() {

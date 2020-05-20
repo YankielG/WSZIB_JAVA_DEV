@@ -12,6 +12,22 @@
             <label>Rodzaj leku: </label>
             <td th:text="${rodzajlekuszczegoly.rodzajleku}"></td>
         </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik ID: </label>
+            <td th:text="${rodzajlekuszczegoly.urzytkownik_id}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Urzytkownik prawa: </label>
+            <td th:text="${rodzajlekuszczegoly.urzytkownik_prawa}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Zaznaczanie: </label>
+            <td> <span th:uk-icon="${rodzajlekuszczegoly.dane_opcje} ? 'check' : 'close'"></span></td>
+        </div>
+        
         <input th:field="*{id}" type="number" hidden>
 
         <a th:href="@{/opcje/rodzajleku}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
