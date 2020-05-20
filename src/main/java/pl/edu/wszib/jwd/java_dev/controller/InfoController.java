@@ -91,4 +91,11 @@ public class InfoController {
         model.addAttribute("infododaj", info);
         return "infododaj";
     }
+
+    @GetMapping("opcje/info/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Info info = infoDao.findById(id).get();
+        model.addAttribute("infoszczegoly", info);
+        return "infoszczegoly";
+    }
 }

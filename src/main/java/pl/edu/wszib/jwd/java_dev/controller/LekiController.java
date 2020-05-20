@@ -59,4 +59,12 @@ public class LekiController {
         model.addAttribute("rodajkekudodaj", rodzajLekuDao.findAll());
         return "lekidodaj";
     }
+
+    @GetMapping("leki/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Leki leki = lekiDao.findById(id).get();
+        model.addAttribute("lekiszczegoly", leki);
+        model.addAttribute("rodajkekudodaj", rodzajLekuDao.findAll());
+        return "lekiszczegoly";
+    }
 }

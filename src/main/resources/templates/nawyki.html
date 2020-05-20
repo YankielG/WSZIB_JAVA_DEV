@@ -80,6 +80,7 @@
             <td th:text="${element.uwagi}"></td>
             <td>
                 <a th:href="@{/nawyki/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                <a th:href="@{/nawyki/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
                 <a th:href="@{/nawyki/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
             </td>
         </tr>

@@ -56,6 +56,13 @@ public class StartController {
         return "startdodaj";
     }
 
+    @GetMapping("start/szczegoly{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Start start = startDao.findById(id).get();
+        model.addAttribute("startszczegoly", start);
+        return "startszczegoly";
+    }
+
 //    @GetMapping("/{id}")
 //    public String edytuj1(@PathVariable Long id, Model model) {
 //        Start start = startDao.findById(id).get();

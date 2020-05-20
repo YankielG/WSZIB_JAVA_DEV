@@ -53,4 +53,11 @@ public class TetnoController {
         model.addAttribute("tetnododaj", tetno);
         return "tetnododaj";
     }
+
+    @GetMapping("tetno/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Tetno tetno = tetnoDao.findById(id).get();
+        model.addAttribute("tetnoszczegoly", tetno);
+        return "tetnoszczegoly";
+    }
 }

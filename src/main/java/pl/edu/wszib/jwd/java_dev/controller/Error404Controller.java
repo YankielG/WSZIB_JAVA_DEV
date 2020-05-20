@@ -59,4 +59,11 @@ public class Error404Controller extends Throwable {
         model.addAttribute("error404dodaj", error404);
         return "error404dodaj";
     }
+
+    @GetMapping("error404/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Error404 error404 = error404Dao.findById(id).get();
+        model.addAttribute("error404szczegoly", error404);
+        return "error404szczegoly";
+    }
 }

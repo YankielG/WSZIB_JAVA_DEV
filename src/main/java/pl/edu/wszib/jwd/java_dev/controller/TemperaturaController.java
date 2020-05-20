@@ -63,4 +63,11 @@ public class TemperaturaController {
         return "temperaturadodaj";
     }
 
+    @GetMapping("temperatura/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Temperatura temperatura = temperaturaDao.findById(id).get();
+        model.addAttribute("temperaturaszczegoly", temperatura);
+        return "temperaturaszczegoly";
+    }
+
 }

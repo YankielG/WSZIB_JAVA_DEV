@@ -54,4 +54,11 @@ public class CisnienieController {
         return "cisnieniedodaj";
     }
 
+    @GetMapping("cisnienie/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Cisnienie cisnienie = cisnienieDao.findById(id).get();
+        model.addAttribute("cisnienieszczegoly", cisnienie);
+        return "cisnienieszczegoly";
+    }
+
 }

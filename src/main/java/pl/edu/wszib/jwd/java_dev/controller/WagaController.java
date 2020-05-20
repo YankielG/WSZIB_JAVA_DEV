@@ -53,4 +53,11 @@ public class WagaController {
         model.addAttribute("wagadodaj", waga);
         return "wagadodaj";
     }
+
+    @GetMapping("waga/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Waga waga = wagaDao.findById(id).get();
+        model.addAttribute("wagaszczegoly", waga);
+        return "wagaszczegoly";
+    }
 }

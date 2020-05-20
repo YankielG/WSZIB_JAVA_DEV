@@ -53,4 +53,11 @@ public class NawykiController {
         model.addAttribute("nawykidodaj", nawyki);
         return "nawykidodaj";
     }
+
+    @GetMapping("nawyki/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Nawyki nawyki = nawykiDao.findById(id).get();
+        model.addAttribute("nawykiszczegoly", nawyki);
+        return "nawykiszczegoly";
+    }
 }

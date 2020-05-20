@@ -53,4 +53,11 @@ public class WzrostController {
         model.addAttribute("wzrostdodaj", wzrost);
         return "wzrostdodaj";
     }
+
+    @GetMapping("wzrost/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Wzrost wzrost = wzrostDao.findById(id).get();
+        model.addAttribute("wzrostszczegoly", wzrost);
+        return "wzrostszczegoly";
+    }
 }

@@ -26,6 +26,7 @@
             <td th:text="${element.rodzajleku}"></td>
             <td>
                 <a th:href="@{/opcje/rodzajleku/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                <a th:href="@{/opcje/rodzajleku/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
                 <a th:href="@{/opcje/rodzajleku/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
             </td>
         </tr>

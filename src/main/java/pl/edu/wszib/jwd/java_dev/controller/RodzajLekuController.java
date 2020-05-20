@@ -53,4 +53,11 @@ public class RodzajLekuController {
         model.addAttribute("rodzajlekudodaj", rodzajleku);
         return "rodzajlekudodaj";
     }
+
+    @GetMapping("opcje/rodzajleku/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        RodzajLeku rodzajleku = rodzajLekuDao.findById(id).get();
+        model.addAttribute("rodzajlekuszczegoly", rodzajleku);
+        return "rodzajlekuszczegoly";
+    }
 }

@@ -59,6 +59,13 @@ public class IndexController {
         model.addAttribute("indexdodaj", index);
         return "indexdodaj";
     }
+
+    @GetMapping("index/szczegoly/{id}")
+    public String szczegoly(@PathVariable Long id, Model model) {
+        Index index = indexDao.findById(id).get();
+        model.addAttribute("indexszczegoly", index);
+        return "indexszczegoly";
+    }
 }
 
 
