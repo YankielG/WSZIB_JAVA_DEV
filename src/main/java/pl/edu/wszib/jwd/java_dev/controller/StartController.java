@@ -55,6 +55,14 @@ public class StartController {
         model.addAttribute("startdodaj", start);
         return "startdodaj";
     }
+
+//    @GetMapping("/{id}")
+//    public String edytuj1(@PathVariable Long id, Model model) {
+//        Start start = startDao.findById(id).get();
+//        model.addAttribute("startdodaj", start);
+//        return "startdodaj";
+//    }
+
 }
 
 
