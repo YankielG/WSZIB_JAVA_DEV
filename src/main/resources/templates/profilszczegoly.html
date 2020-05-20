@@ -37,7 +37,7 @@
 
         <div class="uk-margin">
             <label>Data urodzenia: </label>
-            <td th:text="${profilszczegoly.data}">...Brak danych...</td>
+            <td th:text="${#calendars.format(profilszczegoly.data, 'dd-MM-yyyy')}"></td>
         </div>
 
         <div class="uk-margin">

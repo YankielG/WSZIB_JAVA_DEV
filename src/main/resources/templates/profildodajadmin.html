@@ -9,24 +9,27 @@
     </div>
     <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/opcje/profil/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Urzytkownik</label>
-            <input th:field="*{urzytkownik}" type="text"  class="uk-input" required="required">
+            <label>Urzytkownik: </label>
+            <td th:text="${profildodaj.urzytkownik}">...Brak danych...</td>
+            <input th:field="*{urzytkownik}" type="text"  class="uk-input" hidden>
         </div>
         <div class="uk-margin">
-            <label>Imię</label>
-            <input th:field="*{imie}" type="text" class="uk-input" required="required">
+            <label>Imię: </label>
+            <td th:text="${profildodaj.imie}">...Brak danych...</td>
+            <input th:field="*{imie}" type="text" class="uk-input" hidden>
         </div>
         <div class="uk-margin">
-            <label>Nazwisko</label>
+            <label>Nazwisko: </label>
+            <td th:text="${profildodaj.nazwisko}">...Brak danych...</td>
             <input th:field="*{nazwisko}" type="text" class="uk-input" hidden>
         </div>
-        <div class="uk-margin">
-            <label>Email</label>
-            <input th:field="*{email}" type="email" class="uk-input" required="required" >
+        <div class="uk-margin" hidden>
+            <label >Email</label>
+            <input th:field="*{email}" type="email" class="uk-input">
         </div>
-        <div class="uk-margin">
+        <div class="uk-margin" hidden>
             <label>Hasło</label>
-            <input th:field="*{haslo}" type="password" class="uk-input"  hidden>
+            <input th:field="*{haslo}" type="text" class="uk-input">
         </div>
 
         <!--        <div class="uk-margin">-->
@@ -35,7 +38,7 @@
         <!--        </div>-->
 
 
-        <div class="uk-button uk-form-controls uk-margin">
+        <div class="uk-button uk-form-controls uk-margin" hidden>
             <label>Płeć</label>
             <select th:field="*{plec}" type="text" class="uk-input">
                 <option value=""> -- </option>
@@ -45,9 +48,9 @@
             </select>
         </div>
 
-        <div class="uk-margin">
+        <div class="uk-margin" hidden>
             <label>Data urodzenia</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
+            <Input th:field="*{data}" type="date" class="uk-input">
         </div>
 
         <!--        <div class="uk-margin">-->
@@ -55,7 +58,7 @@
         <!--            <input th:field="*{waga}" type="text" class="uk-input" required="required">-->
         <!--        </div>-->
 
-        <div class="uk-button uk-form-controls uk-margin">
+        <div class="uk-button uk-form-controls uk-margin" hidden>
             <label>Jednostka wagi</label>
             <select th:field="*{waga}" type="text" class="uk-input">
                 <option value=""> -- </option>
@@ -69,7 +72,7 @@
         <!--            <input th:field="*{miara}" type="text" class="uk-input" required="required">-->
         <!--        </div>-->
 
-        <div class="uk-button uk-form-controls uk-margin">
+        <div class="uk-button uk-form-controls uk-margin" hidden>
             <label>Jednostka długości</label>
             <select th:field="*{miara}" type="text" class="uk-input">
                 <option value=""> -- </option>
@@ -82,34 +85,34 @@
         <!--            <label>Wł/wył Urzytkownika</label>-->
         <!--            <input th:field="*{urzytkownik_aktywny}" type="checkbox" class="uk-input" required="required">-->
         <!--        </div>-->
-        <!--            <div class="uk-margin">-->
-        <!--                <div class="uk-form-label">Wł/Wył Urzytkownika</div>-->
-        <!--                <div class="uk-form-controls uk-form-controls-text">-->
-        <!--                    <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{urzytkownik_aktywny}">Urzytkownik Wł.</label><br>-->
-        <!--                    <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{urzytkownik_aktywny}">Urzytkownik wył.</label>-->
-        <!--                </div>-->
-        <!--            </div>-->
+                    <div class="uk-margin">
+                        <div class="uk-form-label">Wł/Wył Urzytkownika</div>
+                        <div class="uk-form-controls uk-form-controls-text">
+                            <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{urzytkownik_aktywny}">Urzytkownik Wł.</label><br>
+                            <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{urzytkownik_aktywny}">Urzytkownik wył.</label>
+                        </div>
+                    </div>
 
         <!--        <div class="uk-margin">-->
         <!--            <label>Urzytkownik prawa </label><span uk-icon="icon: info" uk-tooltip="'r', 'w', 'rw'"></span>-->
         <!--            <input th:field="*{urzytkownik_prawa}" type="text" class="uk-input" required="required">-->
         <!--        </div>-->
 
-        <!--        <div class="uk-button uk-form-controls uk-margin">-->
-        <!--            <label>Urzytkownik prawa</label>-->
-        <!--            <select th:field="*{urzytkownik_prawa}" type="text" class="uk-input">-->
-        <!--                <option value=""> &#45;&#45; </option>-->
-        <!--                <option th:value="'Odczyt'">Odczyt</option>-->
-        <!--                <option th:value="'Odczyt-Zapis'">Odczyt-Zapis</option>-->
-        <!--                <option th:value="'Odczyt-Edycja-Zapis'">Odczyt-Edycja-Zapis</option>-->
-        <!--                <option th:value="'Admin'">Admin</option>-->
-        <!--            </select>-->
-        <!--        </div>-->
+                <div class="uk-button uk-form-controls uk-margin">
+                    <label>Urzytkownik prawa</label>
+                    <select th:field="*{urzytkownik_prawa}" type="text" class="uk-input">
+                        <option value=""> -- </option>
+                        <option th:value="'Odczyt'">Odczyt</option>
+                        <option th:value="'Odczyt-Zapis'">Odczyt-Zapis</option>
+                        <option th:value="'Odczyt-Edycja-Zapis'">Odczyt-Edycja-Zapis</option>
+                        <option th:value="'Admin'">Admin</option>
+                    </select>
+                </div>
 
-        <!--        <div class="uk-margin">-->
-        <!--            <label>Urzytkownik ID</label>-->
-        <!--            <input th:field="*{urzytkownik_id}" type="number" class="uk-input" step="1" min="1" max="100" required="required">-->
-        <!--        </div>-->
+                <div class="uk-margin">
+                    <label>Urzytkownik ID</label>
+                    <input th:field="*{urzytkownik_id}" type="number" class="uk-input" step="1" min="1" max="100" required="required">
+                </div>
 
         <!--        <div class="uk-button uk-form-controls uk-margin">-->
         <!--            <label>Urzytkownik ID </label><span uk-icon="icon: info" uk-tooltip="Wybor z dostępnych"></span>-->
@@ -132,6 +135,11 @@
         <!--            <label>Urzytkownik - Data skasowania</label>-->
         <!--            <input th:field="*{urzytkownik_data_ucl}" type="date" class="uk-input">-->
         <!--        </div>-->
+
+        <div class="uk-margin">
+            <label>Urzytkownik Uwagi</label>
+            <textarea th:field="*{urzytkownik_uwagi}" class="uk-textarea" rows="4"></textarea>
+        </div>
 
         <input th:field="*{id}" type="number" hidden>
 
