@@ -29,6 +29,16 @@ public class TemperaturaController {
         double dane[]={30, 35, 37, 37, 39, 41, 43, 36, 37, 34};
         model.addAttribute("etykieta", etykieta);
         model.addAttribute("dane", dane);
+
+        Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
+        Collection<Temperatura> temperaturaCollection
+                = (Collection<Temperatura>) temperaturas;
+//
+//        Map<String, Long> dataMap = temperaturaCollection.stream()
+//                .collect(Collectors.groupingBy(Temperatura::getTemperatura, Collectors.counting()));
+//
+//        model.addAttribute("dataMap", dataMap);
+//        model.addAttribute("labels", 2);
         return "temperatura";
     }
 
