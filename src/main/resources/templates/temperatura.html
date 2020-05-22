@@ -100,8 +100,13 @@
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
             <td><input class="uk-checkbox" type="checkbox"></td>
-            <td th:text="${element.temperatura}"></td>
-            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+            <td th:text="${element.temp}"></td>
+
+            <!--Mikłas-->
+            <!-- <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>-->
+            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm')}"></td>
+
+
             <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
             <!--            <td th:text="${element.data}"></td>-->
             <td><span th:uk-icon="${element.rodzaj} ? 'heart' : 'ban'"></span></td>

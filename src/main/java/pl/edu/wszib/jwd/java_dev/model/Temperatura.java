@@ -1,10 +1,8 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Entity
@@ -20,22 +18,25 @@ public class Temperatura {
     //    @Temporal(TemporalType.DATE)
     //    @Column(name = "data", updatable = false, nullable = false)
     //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+
+    //Mikłas
+    //@DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "data")
     private Date data;
 
 //        @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
 //    @NumberFormat(pattern = "#,###,###,###.##")
-    private double temperatura;
+    private double temp;
 
     private boolean rodzaj;
 
     private String uwagi;
 
     //    tyczasowe do testow
-    public Temperatura(Date data, double temperatura, boolean rodzaj, String uwagi) {
+    public Temperatura(Date data, double temp, boolean rodzaj, String uwagi) {
         this.data = data;
-        this.temperatura = temperatura;
+        this.temp = temp;
         this.rodzaj = rodzaj;
         this.uwagi = uwagi;
     }
@@ -72,12 +73,12 @@ public class Temperatura {
         this.data = data;
     }
 
-    public double getTemperatura() {
-        return temperatura;
+    public double getTemp() {
+        return temp;
     }
 
-    public void setTemperatura(double temperatura) {
-        this.temperatura = temperatura;
+    public void setTemp(double temperatura) {
+        this.temp = temperatura;
     }
 
     public boolean isRodzaj() {

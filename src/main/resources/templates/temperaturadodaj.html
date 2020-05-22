@@ -10,11 +10,19 @@
     <form style="width:300px; margin: auto" th:object="${temperaturadodaj}" th:action="@{/temperatura/zapisz}" method="post">
         <div class="uk-margin">
             <label>Temperatura</label>
-            <input th:field="*{temperatura}" type="number"  class="uk-input" step="0.1" min="33" max="44" required="required">
+
+            <!--Mikłas-->
+            <!--<input th:field="*{temp}" type="number" class="uk-input" step="0.1" min="33" max="44" required="required">-->
+            <input name="temp" th:value="36.6" type="number" class="uk-input" step="0.1" min="33" max="44" required="required">
+
         </div>
         <div class="uk-margin">
             <label>Data</label>
-            <Input th:field="*{data}" type="date" class="uk-input" required="required">
+
+            <!--Mikłas-->
+            <!--<Input th:field="*{data}" type="date" class="uk-input" required="required">-->
+            <input th:field="*{data}" type="datetime-local" class="uk-input" required="required">
+
         </div>
 <!--        <div class="uk-margin">-->
 <!--            <label>Rodzaj</label>-->
