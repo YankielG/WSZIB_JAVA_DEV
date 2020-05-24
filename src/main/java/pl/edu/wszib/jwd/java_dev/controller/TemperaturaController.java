@@ -28,14 +28,15 @@ public class TemperaturaController {
         //double etykieta[]={1,2,3,4,5,6,7,8,9,10,11};
         //double dane[]={30, 35, 37, 37, 39, 41, 43, 36, 37, 34};
 
-        List<Integer> etykieta = new ArrayList<>();
+        List<Date> etykieta = new ArrayList<>();
         List<Double> dane = new ArrayList<>();
 
         Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
 
         for (Temperatura t  : temperaturas) {
             dane.add(t.getTemp());
-            etykieta.add(dane.size());
+//            etykieta.add(dane.size());
+            etykieta.add(t.getData());
         }
 
         model.addAttribute("etykieta", etykieta);

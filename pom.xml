@@ -24,11 +24,11 @@
 
         <!--  xxxxxxxxxxxxxxxxxxx Base Misrosoft sql xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
-        <!--                <dependency>-->
-        <!--                    <groupId>com.microsoft.sqlserver</groupId>-->
-        <!--                    <artifactId>mssql-jdbc</artifactId>-->
-        <!--                    <scope>runtime</scope>-->
-        <!--                </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.microsoft.sqlserver</groupId>-->
+<!--            <artifactId>mssql-jdbc</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
 
         <!-- xxxxxxxxxxxxxxxxxxxx Base Postgres xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 

@@ -3,8 +3,6 @@ package pl.edu.wszib.jwd.java_dev.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -18,8 +16,8 @@ public class Profil {
     private Long id;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    @Column(name = "urzytkownik")
-    private String urzytkownik;
+    @Column(name = "uzytkownik")
+    private String uzytkownik;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "imie")
@@ -57,49 +55,48 @@ public class Profil {
     private String miara;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    @Column(name = "urzytkownik_aktywny")
-    private Boolean urzytkownik_aktywny;
+    @Column(name = "uzytkownik_aktywny")
+    private Boolean uzytkownik_aktywny;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    @Column(name = "urzytkownik_id")
-    private Long urzytkownik_id;
+    @Column(name = "uzytkownik_id")
+    private Long uzytkownik_id;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    @Column(name = "urzytkownik_prawa")
-    private String urzytkownik_prawa;
+    @Column(name = "uzytkownik_prawa")
+    private String uzytkownik_prawa;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    @Column(name = "urzytkownik_uwagi")
-    private String urzytkownik_uwagi;
+    @Column(name = "uzytkownik_uwagi")
+    private String uzytkownik_uwagi;
 
-    //    Data tworzenia urzytkownika
+    //    Data tworzenia uzytkownika
 //    @Temporal(TemporalType.DATE)
-//    @Column(name = "urzytkownik_d_tw", updatable = false, nullable = false)
-    @Column(name = "urzytkownik_d_tw")
+//    @Column(name = "uzytkownik_d_tw", updatable = false, nullable = false)
+    @Column(name = "uzytkownik_d_tw")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    private Date urzytkownik_data_tw;
-        private LocalDateTime urzytkownik_data_tw = LocalDateTime.now();
+//    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+//    private Date uzytkownik_data_tw;
+//    private LocalDateTime uzytkownik_data_tw = LocalDateTime.now();
+    private Date uzytkownik_data_tw = new Date();
 
     //    Data ostatniej edycji
 //    @Temporal(TemporalType.DATE)
-//    @Column(name = "urzytkownik_d_up", updatable = false, nullable = false)
-    @Column(name = "urzytkownik_d_up")
+//    @Column(name = "uzytkownik_d_up", updatable = false, nullable = false)
+    @Column(name = "uzytkownik_d_up")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date urzytkownik_data_up;
-    //    private LocalDateTime data = LocalDateTime.now();
+    private Date uzytkownik_data_up;
 
     //    Data usuniecia profilu
 //    @Temporal(TemporalType.DATE)
-//    @Column(name = "urzytkownik_d_cl", updatable = false, nullable = false)
-    @Column(name = "urzytkownik_d_cl")
+//    @Column(name = "uzytkownik_d_cl", updatable = false, nullable = false)
+    @Column(name = "uzytkownik_d_cl")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date urzytkownik_data_ucl;
-    //    private LocalDateTime data = LocalDateTime.now();
+    private Date uzytkownik_data_ucl;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "dane_opcje")
     private boolean dane_opcje;
-
 
     public Profil() {
     }
@@ -112,12 +109,12 @@ public class Profil {
         this.id = id;
     }
 
-    public String getUrzytkownik() {
-        return urzytkownik;
+    public String getUzytkownik() {
+        return uzytkownik;
     }
 
-    public void setUrzytkownik(String urzytkownik) {
-        this.urzytkownik = urzytkownik;
+    public void setUzytkownik(String uzytkownik) {
+        this.uzytkownik = uzytkownik;
     }
 
     public String getImie() {
@@ -184,60 +181,60 @@ public class Profil {
         this.miara = miara;
     }
 
-    public Boolean getUrzytkownik_aktywny() {
-        return urzytkownik_aktywny;
+    public Boolean getUzytkownik_aktywny() {
+        return uzytkownik_aktywny;
     }
 
-    public void setUrzytkownik_aktywny(Boolean urzytkownik_aktywny) {
-        this.urzytkownik_aktywny = urzytkownik_aktywny;
+    public void setUzytkownik_aktywny(Boolean uzytkownik_aktywny) {
+        this.uzytkownik_aktywny = uzytkownik_aktywny;
     }
 
-    public Long getUrzytkownik_id() {
-        return urzytkownik_id;
+    public Long getUzytkownik_id() {
+        return uzytkownik_id;
     }
 
-    public void setUrzytkownik_id(Long urzytkownik_id) {
-        this.urzytkownik_id = urzytkownik_id;
+    public void setUzytkownik_id(Long uzytkownik_id) {
+        this.uzytkownik_id = uzytkownik_id;
     }
 
-    public String getUrzytkownik_prawa() {
-        return urzytkownik_prawa;
+    public String getUzytkownik_prawa() {
+        return uzytkownik_prawa;
     }
 
-    public void setUrzytkownik_prawa(String urzytkownik_prawa) {
-        this.urzytkownik_prawa = urzytkownik_prawa;
+    public void setUzytkownik_prawa(String uzytkownik_prawa) {
+        this.uzytkownik_prawa = uzytkownik_prawa;
     }
 
-    public String getUrzytkownik_uwagi() {
-        return urzytkownik_uwagi;
+    public String getUzytkownik_uwagi() {
+        return uzytkownik_uwagi;
     }
 
-    public void setUrzytkownik_uwagi(String urzytkownik_uwagi) {
-        this.urzytkownik_uwagi = urzytkownik_uwagi;
+    public void setUzytkownik_uwagi(String uzytkownik_uwagi) {
+        this.uzytkownik_uwagi = uzytkownik_uwagi;
     }
 
-    public LocalDateTime getUrzytkownik_data_tw() {
-        return urzytkownik_data_tw;
+    public Date getUzytkownik_data_tw() {
+        return uzytkownik_data_tw;
     }
 
-    public void setUrzytkownik_data_tw(LocalDateTime urzytkownik_data_tw) {
-        this.urzytkownik_data_tw = urzytkownik_data_tw;
+    public void setUzytkownik_data_tw(Date uzytkownik_data_tw) {
+        this.uzytkownik_data_tw = uzytkownik_data_tw;
     }
 
-    public Date getUrzytkownik_data_up() {
-        return urzytkownik_data_up;
+    public Date getUzytkownik_data_up() {
+        return uzytkownik_data_up;
     }
 
-    public void setUrzytkownik_data_up(Date urzytkownik_data_up) {
-        this.urzytkownik_data_up = urzytkownik_data_up;
+    public void setUzytkownik_data_up(Date uzytkownik_data_up) {
+        this.uzytkownik_data_up = uzytkownik_data_up;
     }
 
-    public Date getUrzytkownik_data_ucl() {
-        return urzytkownik_data_ucl;
+    public Date getUzytkownik_data_ucl() {
+        return uzytkownik_data_ucl;
     }
 
-    public void setUrzytkownik_data_ucl(Date urzytkownik_data_ucl) {
-        this.urzytkownik_data_ucl = urzytkownik_data_ucl;
+    public void setUzytkownik_data_ucl(Date uzytkownik_data_ucl) {
+        this.uzytkownik_data_ucl = uzytkownik_data_ucl;
     }
 
     public boolean isDane_opcje() {

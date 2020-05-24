@@ -23,7 +23,7 @@
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
             <td><input class="uk-checkbox" type="checkbox"></td>
-            <td th:text="${element.rodzajleku}"></td>
+            <td th:text="${element.rodzajleku_}"></td>
             <td>
                 <a th:href="@{/opcje/rodzajleku/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
                 <a th:href="@{/opcje/rodzajleku/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>

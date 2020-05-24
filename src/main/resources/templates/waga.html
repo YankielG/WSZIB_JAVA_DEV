@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/szablon :: szablon(~{::.container})}">
 <body>
 
 <div class="container">
@@ -50,9 +51,9 @@
                 new Chart(document.getElementById("line-chart"), {
                     type: 'line',
                     data: {
-                        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                        labels: [[${etykieta}]],
                         datasets: [{
-                            data: [30, 35, 37, 37, 39, 41, 43, 36, 37, 34],
+                            data: [[${dane}]],
                             label: "Waga",
                             borderColor: "#3e95cd",
                             fill: false
@@ -104,6 +105,10 @@
         </tr>
         </tbody>
     </table>
+
+</div>
+
+
     <div class="uk-padding"></div>
 </div>
 

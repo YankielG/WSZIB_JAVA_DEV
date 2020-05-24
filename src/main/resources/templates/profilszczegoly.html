@@ -10,8 +10,8 @@
     <form style="width:300px; margin: auto" th:object="${profilszczegoly}" th:action="@{/opcje/profil/zapisz}"
           method="post">
         <div class="uk-margin">
-            <label>Urzytkownik: </label>
-            <td th:text="${profilszczegoly.urzytkownik}">...Brak danych...</td>
+            <label>Użytkownik: </label>
+            <td th:text="${profilszczegoly.uzytkownik}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
             <label>Imię: </label>
@@ -51,36 +51,40 @@
         </div>
 
         <div class="uk-margin">
-            <label>Wł/wył Urzytkownika: </label>
-            <td><span th:uk-icon="${profilszczegoly.urzytkownik_aktywny} ? 'check' : 'close'"></span></td>
+            <label>Wł/wył Użytkownika: </label>
+            <td><span th:uk-icon="${profilszczegoly.uzytkownik_aktywny} ? 'check' : 'close'"></span></td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik prawa: </label>
-            <td th:text="${profilszczegoly.urzytkownik_prawa}">...Brak danych...</td>
+            <label>Użytkownik prawa: </label>
+            <td th:text="${profilszczegoly.uzytkownik_prawa}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik ID: </label>
-            <td th:text="${profilszczegoly.urzytkownik_id}">...Brak danych...</td>
+            <label>Użytkownik ID: </label>
+            <td th:text="${profilszczegoly.uzytkownik_id}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik - Data utworzenia: </label>
-            <td th:text="${profilszczegoly.urzytkownik_data_tw}">...Brak danych...</td>
+            <label>Użytkownik - Data utworzenia: </label>
+<!--            <td th:text="${profilszczegoly.uzytkownik_data_tw}">...Brak danych...</td>-->
+            <td th:text="${#calendars.format(profilszczegoly.uzytkownik_data_tw, 'dd-MM-yyyy HH:mm')}">...Brak danych...</td>
+<!--            <td th:text="${#calendars.format(profilszczegoly.uzytkownik_data_tw, 'dd-MM-yyyy')}">...Brak danych...</td>-->
         </div>
         <div class="uk-margin">
-            <label>Urzytkownik - Data edycji: </label>
-            <td th:text="${profilszczegoly.urzytkownik_data_up}">...Brak danych...</td>
+            <label>Użytkownik - Data edycji: </label>
+<!--            <td th:text="${profilszczegoly.uzytkownik_data_up}">...Brak danych...</td>-->
+            <td th:text="${#calendars.format(profilszczegoly.uzytkownik_data_up, 'dd-MM-yyyy HH:mm')}">...Brak danych...</td>
         </div>
         <div class="uk-margin">
-            <label>Urzytkownik - Data skasowania: </label>
-            <td th:text="${profilszczegoly.urzytkownik_data_ucl}">...Brak danych...</td>
+            <label>Użytkownik - Data skasowania: </label>
+<!--            <td th:text="${profilszczegoly.uzytkownik_data_ucl}">...Brak danych...</td>-->
+            <td th:text="${#calendars.format(profilszczegoly.uzytkownik_data_ucl, 'dd-MM-yyyy HH:mm')}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Urzytkownik - Uwagi: </label>
-            <td th:text="${profilszczegoly.urzytkownik_uwagi}">...Brak danych...</td>
+            <label>Użytkownik - Uwagi: </label>
+            <td th:text="${profilszczegoly.uzytkownik_uwagi}">...Brak danych...</td>
         </div>
 
         <input th:field="*{id}" type="number" hidden>

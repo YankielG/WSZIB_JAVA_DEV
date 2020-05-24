@@ -15,7 +15,7 @@
             <th>iD</th>
             <!--            <th th:colspan="2"></th>-->
             <th>Wybór</th>
-            <th>Urzytkownik</th>
+            <th>Użytkownik</th>
             <th>Imię</th>
             <th>Nazwisko</th>
 <!--            <th>Email</th>-->
@@ -24,9 +24,9 @@
             <th>Data urodzenia</th>
             <th>Jednostka wagi</th>
             <th>Jednostka długości</th>
-<!--            <th>Wł/Wył Urzytkownika</th>-->
-<!--            <th>Urzytkownik prawa</th>-->
-<!--            <th>Urzytkownik ID</th>-->
+<!--            <th>Wł/Wył Użytkownika</th>-->
+<!--            <th>Użytkownik prawa</th>-->
+<!--            <th>Użytkownik ID</th>-->
 <!--            <th>Data utworzenia</th>-->
 <!--            <th>Data edycji</th>-->
 <!--            <th>Data skasowania</th>-->
@@ -37,7 +37,7 @@
         <tr th:each="element : ${lista}">
             <td th:text="${element.id}"></td>
             <td><input class="uk-checkbox" type="checkbox"></td>
-            <td th:text="${element.urzytkownik}"></td>
+            <td th:text="${element.uzytkownik}"></td>
             <td th:text="${element.imie}"></td>
             <td th:text="${element.nazwisko}"></td>
 <!--            <td th:text="${element.email}"></td>-->
@@ -48,12 +48,12 @@
             <!--            <td th:text="${element.data}"></td>--->
             <td th:text="${element.waga}"></td>
             <td th:text="${element.miara}"></td>
-<!--            <td><span th:uk-icon="${element.urzytkownik_aktywny} ? 'check' : 'close'"></span></td>-->
-<!--            <td th:text="${element.urzytkownik_prawa}"></td>-->
-<!--            <td th:text="${element.urzytkownik_id}"></td>-->
-<!--            <td th:text="${element.urzytkownik_data_tw}"></td>-->
-<!--            <td th:text="${element.urzytkownik_data_up}"></td>-->
-<!--            <td th:text="${element.urzytkownik_data_ucl}"></td>-->
+<!--            <td><span th:uk-icon="${element.użytkownik_aktywny} ? 'check' : 'close'"></span></td>-->
+<!--            <td th:text="${element.użytkownik_prawa}"></td>-->
+<!--            <td th:text="${element.użytkownik_id}"></td>-->
+<!--            <td th:text="${element.użytkownik_data_tw}"></td>-->
+<!--            <td th:text="${element.użytkownik_data_up}"></td>-->
+<!--            <td th:text="${element.użytkownik_data_ucl}"></td>-->
             <td>
                 <a th:href="@{/opcje/profil/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
                 <a th:href="@{/opcje/profil/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>

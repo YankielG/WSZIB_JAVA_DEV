@@ -17,7 +17,7 @@
 <form style="width:300px; margin: auto" th:object="${startdodaj}" th:action="@{/start/zapisz}" method="post">
     <div class="uk-margin">
         <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>
-        <input th:field="*{urzytkownik}" type="text" class="uk-input" placeholder="Użytkownik" required="required">
+        <input th:field="*{uzytkownik}" type="text" class="uk-input" placeholder="Użytkownik" required="required">
     </div>
     <input th:field="*{id}" type="number" hidden>
     <button class="uk-button uk-button-secondary uk-width-1-1" type="Submit" th:text="#{start.enter}"></button>
@@ -27,8 +27,8 @@
 
     <!--    <form style="width:300px; margin: auto" th:object="${startdodaj}" th:action="@{/start/zapisz}" method="post">-->
 <!--        <div class="uk-margin">-->
-<!--            <label>Urzytkownik</label>-->
-<!--            <input th:field="*{urzytkownik}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">-->
+<!--            <label>Użytkownik</label>-->
+<!--            <input th:field="*{uzytkownik}" type="number"  class="uk-input" step="0.1" min="10" max="150" required="required">-->
 <!--        </div>-->
 <!--        <div class="uk-margin">-->
 <!--            <label>Data</label>-->

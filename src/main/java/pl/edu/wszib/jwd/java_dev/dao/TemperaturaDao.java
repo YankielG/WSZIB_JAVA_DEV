@@ -10,8 +10,4 @@ public interface TemperaturaDao extends CrudRepository<Temperatura, Long> {
     //    Temperatura findByTemperatura_(Double temeratura);
     Temperatura findByTemp(Double temeratura);
 
-    //Temperatura findBy user_id (Long id){
-    //    return userid;
-    //    }
-
 }

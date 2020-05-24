@@ -9,8 +9,8 @@
     </div>
     <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/opcje/profil/zapisz}" method="post">
         <div class="uk-margin">
-            <label>Urzytkownik</label>
-            <input th:field="*{urzytkownik}" type="text"  class="uk-input" required="required">
+            <label>Użytkownik</label>
+            <input th:field="*{uzytkownik}" type="text"  class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Imię</label>
@@ -79,25 +79,25 @@
         </div>
 
 <!--        <div class="uk-margin">-->
-<!--            <label>Wł/wył Urzytkownika</label>-->
-<!--            <input th:field="*{urzytkownik_aktywny}" type="checkbox" class="uk-input" required="required">-->
+<!--            <label>Wł/wył Użytkownika</label>-->
+<!--            <input th:field="*{użytkownik_aktywny}" type="checkbox" class="uk-input" required="required">-->
 <!--        </div>-->
 <!--            <div class="uk-margin">-->
-<!--                <div class="uk-form-label">Wł/Wył Urzytkownika</div>-->
+<!--                <div class="uk-form-label">Wł/Wył Użytkownika</div>-->
 <!--                <div class="uk-form-controls uk-form-controls-text">-->
-<!--                    <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{urzytkownik_aktywny}">Urzytkownik Wł.</label><br>-->
-<!--                    <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{urzytkownik_aktywny}">Urzytkownik wył.</label>-->
+<!--                    <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{użytkownik_aktywny}">Użytkownik Wł.</label><br>-->
+<!--                    <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{użytkownik_aktywny}">Użytkownik wył.</label>-->
 <!--                </div>-->
 <!--            </div>-->
 
 <!--        <div class="uk-margin">-->
-<!--            <label>Urzytkownik prawa </label><span uk-icon="icon: info" uk-tooltip="'r', 'w', 'rw'"></span>-->
-<!--            <input th:field="*{urzytkownik_prawa}" type="text" class="uk-input" required="required">-->
+<!--            <label>Użytkownik prawa </label><span uk-icon="icon: info" uk-tooltip="'r', 'w', 'rw'"></span>-->
+<!--            <input th:field="*{użytkownik_prawa}" type="text" class="uk-input" required="required">-->
 <!--        </div>-->
 
 <!--        <div class="uk-button uk-form-controls uk-margin">-->
-<!--            <label>Urzytkownik prawa</label>-->
-<!--            <select th:field="*{urzytkownik_prawa}" type="text" class="uk-input">-->
+<!--            <label>Użytkownik prawa</label>-->
+<!--            <select th:field="*{użytkownik_prawa}" type="text" class="uk-input">-->
 <!--                <option value=""> &#45;&#45; </option>-->
 <!--                <option th:value="'Odczyt'">Odczyt</option>-->
 <!--                <option th:value="'Odczyt-Zapis'">Odczyt-Zapis</option>-->
@@ -107,13 +107,13 @@
 <!--        </div>-->
 
 <!--        <div class="uk-margin">-->
-<!--            <label>Urzytkownik ID</label>-->
-<!--            <input th:field="*{urzytkownik_id}" type="number" class="uk-input" step="1" min="1" max="100" required="required">-->
+<!--            <label>Użytkownik ID</label>-->
+<!--            <input th:field="*{użytkownik_id}" type="number" class="uk-input" step="1" min="1" max="100" required="required">-->
 <!--        </div>-->
 
 <!--        <div class="uk-button uk-form-controls uk-margin">-->
-<!--            <label>Urzytkownik ID </label><span uk-icon="icon: info" uk-tooltip="Wybor z dostępnych"></span>-->
-<!--            <select th:field="*{urzytkownik_id}" type="text" class="uk-input" required="required">-->
+<!--            <label>Użytkownik ID </label><span uk-icon="icon: info" uk-tooltip="Wybor z dostępnych"></span>-->
+<!--            <select th:field="*{użytkownik_id}" type="text" class="uk-input" required="required">-->
 <!--                <option value=""> &#45;&#45; </option>-->
 <!--                <option th:each="u_id : ${id}"th:value="${u.id}" th:utext="${u.id}"/>-->
 <!--                <option th:value="'999'">999</option>-->
@@ -121,16 +121,16 @@
 <!--        </div>-->
 
 <!--        <div class="uk-margin">-->
-<!--            <label>Urzytkownik - Data utworzenia </label>-->
-<!--            <input th:field="*{urzytkownik_data_tw}" type="date" class="uk-input">-->
+<!--            <label>Użytkownik - Data utworzenia </label>-->
+<!--            <input th:field="*{użytkownik_data_tw}" type="date" class="uk-input">-->
 <!--        </div>-->
 <!--        <div class="uk-margin">-->
-<!--            <label>Urzytkownik - Data edycji</label>-->
-<!--            <input th:field="*{urzytkownik_data_up}" type="date" class="uk-input">-->
+<!--            <label>Użytkownik - Data edycji</label>-->
+<!--            <input th:field="*{użytkownik_data_up}" type="date" class="uk-input">-->
 <!--        </div>-->
 <!--        <div class="uk-margin">-->
-<!--            <label>Urzytkownik - Data skasowania</label>-->
-<!--            <input th:field="*{urzytkownik_data_ucl}" type="date" class="uk-input">-->
+<!--            <label>Użytkownik - Data skasowania</label>-->
+<!--            <input th:field="*{użytkownik_data_ucl}" type="date" class="uk-input">-->
 <!--        </div>-->
 
         <input th:field="*{id}" type="number" hidden>
