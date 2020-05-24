@@ -10,7 +10,7 @@
     <form style="width:300px; margin: auto" th:object="${wzrostdodaj}" th:action="@{/wzrost/zapisz}" method="post">
         <div class="uk-margin">
             <label>Wzrost</label>
-            <input th:field="*{wzrost_}" type="number"  class="uk-input" step="0.1" min="50" max="210" required="required">
+            <input th:field="*{wzrostt}" type="number"  class="uk-input" step="0.1" min="50" max="210" required="required">
         </div>
         <div class="uk-margin">
             <label>Data</label>
