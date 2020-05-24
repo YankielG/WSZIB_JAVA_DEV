@@ -10,7 +10,7 @@
     <form style="width:300px; margin: auto" th:object="${tetnododaj}" th:action="@{/tetno/zapisz}" method="post">
         <div class="uk-margin">
             <label>Tętno</label>
-            <input th:field="*{tetno}" type="number"  class="uk-input" step="1" min="50" max="150" required="required">
+            <input th:field="*{tetno_}" type="number"  class="uk-input" step="1" min="50" max="150" required="required">
         </div>
         <div class="uk-margin">
             <label>Data</label>

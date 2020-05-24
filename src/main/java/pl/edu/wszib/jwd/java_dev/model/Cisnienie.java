@@ -21,14 +21,18 @@ public class Cisnienie {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+    //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+//    private double skurcz=120;
     private double skurcz;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+//    private double rozkurcz=80;
     private double rozkurcz;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+//    private double tetno=70;
     private double tetno;
 
     private boolean rodzaj;

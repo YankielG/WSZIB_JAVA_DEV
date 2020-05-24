@@ -13,7 +13,10 @@ public class RodzajLeku {
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
 //    @Column(name = "rodzajleku_nazwa")
-    private String rodzajleku;
+    private String rodzajleku_;
+
+//    private Date data;
+    //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "urzytkownik_id")
@@ -38,12 +41,12 @@ public class RodzajLeku {
         this.id = id;
     }
 
-    public String getRodzajleku() {
-        return rodzajleku;
+    public String getRodzajleku_() {
+        return rodzajleku_;
     }
 
-    public void setRodzajleku(String rodzajleku) {
-        this.rodzajleku = rodzajleku;
+    public void setRodzajleku_(String rodzajleku_) {
+        this.rodzajleku_ = rodzajleku_;
     }
 
     public Long getUrzytkownik_id() {

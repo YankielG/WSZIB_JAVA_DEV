@@ -21,6 +21,7 @@ public class Nawyki {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data1")
     private Date data1;
+    //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     //    @Temporal(TemporalType.DATE)
@@ -29,6 +30,7 @@ public class Nawyki {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data2")
     private Date data2;
+    //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String nazwa;

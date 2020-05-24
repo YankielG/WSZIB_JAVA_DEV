@@ -49,33 +49,33 @@ class TemperaturaDaoTest {
 
     @Test
     void pojedynczy() {
-        Temperatura temperatura1 = temperaturaDao.findByTemperatura(Temp1);
+        Temperatura temperatura1 = temperaturaDao.findByTemp(Temp1);
         System.out.println("");
         System.out.println("----------------");
         System.out.println(" ---- id obiektu: " + temperatura1.getId());
         System.out.println(" ----- data obiektu: " + temperatura1.getData());
-        System.out.println(" ---- temp obiektu: " + temperatura1.getTemperatura());
+        System.out.println(" ---- temp obiektu: " + temperatura1.getTemp());
         System.out.println(" ---- rodzaj obiektu: " + temperatura1.isRodzaj());
         System.out.println(" ---- uwagi obiektu: " + temperatura1.getUwagi());
         System.out.println("----------------");
         System.out.println("");
 
         assertNotNull(temperatura1);
-        assertEquals(Temp1, temperatura1.getTemperatura());
+        assertEquals(Temp1, temperatura1.getTemp());
 
-        Temperatura temperatura2 = temperaturaDao.findByTemperatura(Temp2);
+        Temperatura temperatura2 = temperaturaDao.findByTemp(Temp2);
         System.out.println("");
         System.out.println("----------------");
         System.out.println(" ---- id obiektu: " + temperatura2.getId());
         System.out.println(" ----- data obiektu: " + temperatura2.getData());
-        System.out.println(" ---- temp obiektu: " + temperatura2.getTemperatura());
+        System.out.println(" ---- temp obiektu: " + temperatura2.getTemp());
         System.out.println(" ---- rodzaj obiektu: " + temperatura2.isRodzaj());
         System.out.println(" ---- uwagi obiektu: " + temperatura2.getUwagi());
         System.out.println("----------------");
         System.out.println("");
 
         assertNotNull(temperatura1);
-        assertEquals(Temp1, temperatura1.getTemperatura());
+        assertEquals(Temp1, temperatura1.getTemp());
 
     }
 

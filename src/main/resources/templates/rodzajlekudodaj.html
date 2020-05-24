@@ -10,7 +10,7 @@
     <form style="width:300px; margin: auto" th:object="${rodzajlekudodaj}" th:action="@{/opcje/rodzajleku/zapisz}" method="post">
         <div class="uk-margin">
             <label>Rodzaj leku</label>
-            <input th:field="*{rodzajleku}" type="text" class="uk-input" required="required">
+            <input th:field="*{rodzajleku_}" type="text" class="uk-input" required="required">
         </div>
         <input th:field="*{id}" type="number" hidden>
 

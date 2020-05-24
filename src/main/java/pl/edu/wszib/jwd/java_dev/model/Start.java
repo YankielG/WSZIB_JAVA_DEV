@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -21,9 +22,10 @@ public class Start {
     //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
-    private Date data;
+//    private Date data;
+        private LocalDateTime data = LocalDateTime.now();
 
-//    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     private String urzytkownik;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
@@ -49,11 +51,11 @@ public class Start {
         this.id = id;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 

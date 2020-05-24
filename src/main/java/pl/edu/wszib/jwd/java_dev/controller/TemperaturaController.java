@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.TemperaturaDao;
 import pl.edu.wszib.jwd.java_dev.model.Temperatura;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -25,14 +23,29 @@ public class TemperaturaController {
     @GetMapping("temperatura")
     public String Temperatura(Model model) {
         model.addAttribute("lista", temperaturaDao.findAll());
-        double etykieta[]={1,2,3,4,5,6,7,8,9,10,11};
-        double dane[]={30, 35, 37, 37, 39, 41, 43, 36, 37, 34};
+
+        //Mikłas
+        //double etykieta[]={1,2,3,4,5,6,7,8,9,10,11};
+        //double dane[]={30, 35, 37, 37, 39, 41, 43, 36, 37, 34};
+
+        List<Integer> etykieta = new ArrayList<>();
+        List<Double> dane = new ArrayList<>();
+
+        Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
+
+        for (Temperatura t  : temperaturas) {
+            dane.add(t.getTemp());
+            etykieta.add(dane.size());
+        }
+
         model.addAttribute("etykieta", etykieta);
         model.addAttribute("dane", dane);
 
-        Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
-        Collection<Temperatura> temperaturaCollection
-                = (Collection<Temperatura>) temperaturas;
+        //Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
+        //Collection<Temperatura> temperaturaCollection
+        //        = (Collection<Temperatura>) temperaturas;
+
+
 //
 //        Map<String, Long> dataMap = temperaturaCollection.stream()
 //                .collect(Collectors.groupingBy(Temperatura::getTemperatura, Collectors.counting()));

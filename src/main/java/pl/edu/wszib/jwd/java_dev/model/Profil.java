@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.xml.crypto.Data;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -76,7 +77,8 @@ public class Profil {
 //    @Column(name = "urzytkownik_d_tw", updatable = false, nullable = false)
     @Column(name = "urzytkownik_d_tw")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date urzytkownik_data_tw;
+//    private Date urzytkownik_data_tw;
+        private LocalDateTime urzytkownik_data_tw = LocalDateTime.now();
 
     //    Data ostatniej edycji
 //    @Temporal(TemporalType.DATE)
@@ -84,6 +86,7 @@ public class Profil {
     @Column(name = "urzytkownik_d_up")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date urzytkownik_data_up;
+    //    private LocalDateTime data = LocalDateTime.now();
 
     //    Data usuniecia profilu
 //    @Temporal(TemporalType.DATE)
@@ -91,6 +94,7 @@ public class Profil {
     @Column(name = "urzytkownik_d_cl")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date urzytkownik_data_ucl;
+    //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "dane_opcje")
@@ -212,11 +216,11 @@ public class Profil {
         this.urzytkownik_uwagi = urzytkownik_uwagi;
     }
 
-    public Date getUrzytkownik_data_tw() {
+    public LocalDateTime getUrzytkownik_data_tw() {
         return urzytkownik_data_tw;
     }
 
-    public void setUrzytkownik_data_tw(Date urzytkownik_data_tw) {
+    public void setUrzytkownik_data_tw(LocalDateTime urzytkownik_data_tw) {
         this.urzytkownik_data_tw = urzytkownik_data_tw;
     }
 

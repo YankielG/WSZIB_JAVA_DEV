@@ -21,14 +21,15 @@ public class Wzrost {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+//    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private double wzrost;
+//    private double wzrost_=180;
+    private double wzrost_;
 
     private boolean rodzaj;
 
     private String uwagi;
-
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "urzytkownik_id")
@@ -61,12 +62,12 @@ public class Wzrost {
         this.data = data;
     }
 
-    public double getWzrost() {
-        return wzrost;
+    public double getWzrost_() {
+        return wzrost_;
     }
 
-    public void setWzrost(double wzrost) {
-        this.wzrost = wzrost;
+    public void setWzrost_(double wzrost_) {
+        this.wzrost_ = wzrost_;
     }
 
     public boolean isRodzaj() {
