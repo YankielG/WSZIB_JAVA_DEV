@@ -21,15 +21,20 @@ public class Leki {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+    //    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "dawka")
     private String dawka;
 
+    @Column(name = "rodzaj")
     private String rodzaj;
 
+    @Column(name = "uwagi")
     private String uwagi;
 
+    @Column(name = "lek")
     private String lek;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")

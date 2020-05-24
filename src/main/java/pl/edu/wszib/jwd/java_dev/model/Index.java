@@ -1,7 +1,6 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,10 +20,12 @@ public class Index {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+    //    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private String użytkownik;
+    @Column(name = "uzytkownik")
+    private String uzytkownik;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_id")
@@ -57,12 +58,12 @@ public class Index {
         this.data = data;
     }
 
-    public String getUżytkownik() {
-        return użytkownik;
+    public String getUzytkownik() {
+        return uzytkownik;
     }
 
-    public void setUżytkownik(String użytkownik) {
-        this.użytkownik = użytkownik;
+    public void setUzytkownik(String uzytkownik) {
+        this.uzytkownik = uzytkownik;
     }
 
     public Long getUzytkownik_id() {

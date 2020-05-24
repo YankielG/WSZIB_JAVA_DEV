@@ -23,14 +23,18 @@ public class Waga {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
-    //   żytkownik
+//    private Date data = new Date();
+//    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-//    private Double waga_=85;
-    private Double waga_;
+    //    private Double waga_=85;
+    @Column(name = "wagaa")
+    private Double wagaa;
 
+    @Column(name = "rodzaj")
     private boolean rodzaj;
 
+    @Column(name = "uwagi")
     private String uwagi;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
@@ -64,12 +68,12 @@ public class Waga {
         this.data = data;
     }
 
-    public Double getWaga_() {
-        return waga_;
+    public Double getWagaa() {
+        return wagaa;
     }
 
-    public void setWaga_(Double waga_) {
-        this.waga_ = waga_;
+    public void setWagaa(Double wagaa) {
+        this.wagaa = wagaa;
     }
 
     public boolean isRodzaj() {

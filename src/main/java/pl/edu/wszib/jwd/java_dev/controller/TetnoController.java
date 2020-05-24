@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.TetnoDao;
 import pl.edu.wszib.jwd.java_dev.model.Tetno;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 @Controller
 @PropertySource("classpath:messages.properties")
 public class TetnoController {
@@ -19,6 +23,18 @@ public class TetnoController {
 
     @GetMapping("tetno")
     public String tentno(Model model) {
+        List<Date> etykieta = new ArrayList<>();
+        List<Double> dane = new ArrayList<>();
+
+        Iterable<Tetno> wagas = tetnoDao.findAll();
+        for (Tetno x : wagas) {
+            dane.add(x.getTetno_());
+//            etykieta.add(dane.size());
+            etykieta.add(x.getData());
+        }
+
+        model.addAttribute("etykieta", etykieta);
+        model.addAttribute("dane", dane);
         model.addAttribute("lista", tetnoDao.findAll());
         return "tetno";
     }

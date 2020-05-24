@@ -1,7 +1,6 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,11 +20,14 @@ public class Error404 {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+    //    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-    private String użytkownik;
+    @Column(name = "uzytkownik")
+    private String uzytkownik;
 
+    @Column(name = "uwagi")
     private String uwagi;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
@@ -59,12 +61,12 @@ public class Error404 {
         this.data = data;
     }
 
-    public String getUżytkownik() {
-        return użytkownik;
+    public String getUzytkownik() {
+        return uzytkownik;
     }
 
-    public void setUżytkownik(String użytkownik) {
-        this.użytkownik = użytkownik;
+    public void setUzytkownik(String uzytkownik) {
+        this.uzytkownik = uzytkownik;
     }
 
     public String getUwagi() {

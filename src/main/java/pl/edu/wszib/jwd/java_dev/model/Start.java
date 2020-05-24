@@ -22,10 +22,12 @@ public class Start {
     //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'hh:mm")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
-//    private Date data;
-        private LocalDateTime data = LocalDateTime.now();
+    private Date data = new Date();
+    //    private Date data;
+    //        private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "uzytkownik")
     private String uzytkownik;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
@@ -51,11 +53,11 @@ public class Start {
         this.id = id;
     }
 
-    public LocalDateTime getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(Date data) {
         this.data = data;
     }
 

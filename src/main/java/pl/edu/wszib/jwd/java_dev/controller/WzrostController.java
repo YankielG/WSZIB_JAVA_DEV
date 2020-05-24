@@ -8,7 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.WzrostDao;
+import pl.edu.wszib.jwd.java_dev.model.Waga;
 import pl.edu.wszib.jwd.java_dev.model.Wzrost;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 @PropertySource("classpath:messages.properties")
@@ -19,6 +24,18 @@ public class WzrostController {
 
     @GetMapping("wzrost")
     public String wzrost(Model model) {
+        List<Date> etykieta = new ArrayList<>();
+        List<Double> dane = new ArrayList<>();
+
+        Iterable<Wzrost> wagas = wzrostDao.findAll();
+        for (Wzrost x : wagas) {
+            dane.add(x.getWzrost_());
+//            etykieta.add(dane.size());
+            etykieta.add(x.getData());
+        }
+
+        model.addAttribute("etykieta", etykieta);
+        model.addAttribute("dane", dane);
         model.addAttribute("lista", wzrostDao.findAll());
         return "wzrost";
     }

@@ -1,7 +1,6 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,12 +20,15 @@ public class Info {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+    //    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "wersja")
     private String wersja;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "algorytm")
     private String algorytm;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")

@@ -22,37 +22,19 @@ public class TemperaturaController {
 
     @GetMapping("temperatura")
     public String Temperatura(Model model) {
-        model.addAttribute("lista", temperaturaDao.findAll());
-
-        //Mikłas
-        //double etykieta[]={1,2,3,4,5,6,7,8,9,10,11};
-        //double dane[]={30, 35, 37, 37, 39, 41, 43, 36, 37, 34};
-
         List<Date> etykieta = new ArrayList<>();
         List<Double> dane = new ArrayList<>();
 
         Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
-
-        for (Temperatura t  : temperaturas) {
-            dane.add(t.getTemp());
+        for (Temperatura x  : temperaturas) {
+            dane.add(x.getTemp());
 //            etykieta.add(dane.size());
-            etykieta.add(t.getData());
+            etykieta.add(x.getData());
         }
 
         model.addAttribute("etykieta", etykieta);
         model.addAttribute("dane", dane);
-
-        //Iterable<Temperatura> temperaturas = temperaturaDao.findAll();
-        //Collection<Temperatura> temperaturaCollection
-        //        = (Collection<Temperatura>) temperaturas;
-
-
-//
-//        Map<String, Long> dataMap = temperaturaCollection.stream()
-//                .collect(Collectors.groupingBy(Temperatura::getTemperatura, Collectors.counting()));
-//
-//        model.addAttribute("dataMap", dataMap);
-//        model.addAttribute("labels", 2);
+        model.addAttribute("lista", temperaturaDao.findAll());
         return "temperatura";
     }
 

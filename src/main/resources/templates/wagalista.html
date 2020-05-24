@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml">
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+<!--      th:replace="~{fragments/layout::layout(~{::.container})}">-->
+<head>
+    <link rel="stylesheet" href="/css/uikit-min.css" th:href="@{/css/uikit.min.css}">
+    <link rel="stylesheet" href="css/uikit.css" th:href="@{/css/uikit.css}">
+    <script th:src="@{/js/uikit.js}"></script>
+    <script th:src="@{/js/uikit-icons.js}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Waga lista</h1>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+<!--        <div class="uk-button-group">-->
+<!--            <a href="/zgloszenia/add" class="uk-button-primary"><i class="uk-button" uk-icon="plus-circle">Dodaj </i></a>-->
+<!--        </div>-->
+        <table class="uk-table uk-table-striped uk-table-hover">
+            <tr>
+                <th><a class="uk-sortable" sd:pagination-sort="Id">Id</a></th>
+                <th><a class="uk-sortable" sd:pagination-sort="data">Data</a></th>
+                <th><a class="uk-sortable" sd:pagination-sort="wagaa">Waga</a></th>
+                <th><a class="uk-sortable">Rodzaj</a></th>
+                <th><a class="uk-sortable">Uwagi</a></th>
+
+<!--                <th>Akcje</th>-->
+            </tr>
+            <tr th:each="waga : ${lista}">
+                <td th:text="${waga.id}"></td>
+                <td th:text="${waga.data}"></td>
+                <td th:text="${waga.wagaa}"></td>
+                <td th:text="${waga.rodzaj}"></td>
+                <td th:text="${waga.uwagi}"></td>
+<!--                <td style="width:150px">-->
+<!--                    &lt;!&ndash;                    <a th:href="@{/zgloszenia/history/(id=${zgloszenie.id})}" uk-icon="history" th:title="Historia"></a>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <a th:href="@{/zgloszenia/form/(id=${zgloszenie.id})}" uk-icon="pencil" th:title="Edycja"></a>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <a th:href="@{/zgloszenia/details/(id=${zgloszenie.id})}" uk-icon="info" th:title="Szczegóły"></a>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <a th:href="@{/zgloszenia/zamknij/(id=${zgloszenie.id})}" uk-icon="lock" th:title="Zakończ"></a>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <a></a>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <a th:href="@{/manager/przydziel/(id=${zgloszenie.id})}" uk-icon="users" th:title="Przydziel"></a>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <a th:href="@{/admin/usun/(id=${zgloszenie.id})}" uk-icon="warning" style="color: red" th:title="Usuń"></a>&ndash;&gt;-->
+<!--                    <div sec:authorize="isAuthenticated()">-->
+<!--                        <a th:href="@{/zgloszenia/history/(id=${zgloszenie.id})}" uk-icon="history" th:title="Historia"></a>-->
+<!--                        <a th:href="@{/zgloszenia/form/(id=${zgloszenie.id})}" uk-icon="pencil" th:title="Edycja"></a>-->
+<!--                        <a th:href="@{/zgloszenia/details/(id=${zgloszenie.id})}" uk-icon="info" th:title="Szczegóły"></a>-->
+<!--                        <a th:href="@{/zgloszenia/zamknij/(id=${zgloszenie.id})}" uk-icon="lock" th:title="Zakończ"></a>-->
+<!--                        <a></a>-->
+<!--                        <a th:href="@{/manager/przydziel/(id=${zgloszenie.id})}" uk-icon="users" th:title="Przydziel"></a>-->
+<!--                        <a th:href="@{/admin/usun/(id=${zgloszenie.id})}" uk-icon="warning" style="color: red" th:title="Usuń"></a>-->
+<!--                    </div>-->
+<!--                    <div sec:authorize="hasRole('ADMIN')">-->
+<!--                        <a th:href="@{/zgloszenia/history/(id=${zgloszenie.id})}" uk-icon="history" th:title="Historia"></a>-->
+<!--                        <a th:href="@{/zgloszenia/form/(id=${zgloszenie.id})}" uk-icon="pencil" th:title="Edycja"></a>-->
+<!--                        <a th:href="@{/zgloszenia/details/(id=${zgloszenie.id})}" uk-icon="info" th:title="Szczegóły"></a>-->
+<!--                        <a th:href="@{/zgloszenia/zamknij/(id=${zgloszenie.id})}" uk-icon="lock" th:title="Zakończ"></a>-->
+<!--                        <a></a>-->
+<!--                        <a th:href="@{/manager/przydziel/(id=${zgloszenie.id})}" uk-icon="users" th:title="Przydziel"></a>-->
+<!--                        <a th:href="@{/admin/usun/(id=${zgloszenie.id})}" uk-icon="warning" style="color: red" th:title="Usuń"></a>-->
+<!--                    </div>-->
+<!--                    <div sec:authorize="hasRole('MANAGER')">-->
+<!--                        <a th:href="@{/zgloszenia/history/(id=${zgloszenie.id})}" uk-icon="history" th:title="Historia"></a>-->
+<!--                        <a th:href="@{/zgloszenia/form/(id=${zgloszenie.id})}" uk-icon="pencil" th:title="Edycja"></a>-->
+<!--                        <a th:href="@{/zgloszenia/details/(id=${zgloszenie.id})}" uk-icon="info" th:title="Szczegóły"></a>-->
+<!--                        <a th:href="@{/zgloszenia/zamknij/(id=${zgloszenie.id})}" uk-icon="lock" th:title="Zakończ"></a>-->
+<!--                        <a th:href="@{/manager/przydziel/(id=${zgloszenie.id})}" uk-icon="users" th:title="Przydziel"></a>-->
+<!--                    </div>-->
+<!--                    <div sec:authorize="hasRole('USER')">-->
+<!--                        <a th:href="@{/zgloszenia/history/(id=${zgloszenie.id})}" uk-icon="history" th:title="Historia"></a>-->
+<!--                        <a th:href="@{/zgloszenia/form/(id=${zgloszenie.id})}" uk-icon="pencil" th:title="Edycja"></a>-->
+<!--                        <a th:href="@{/zgloszenia/details/(id=${zgloszenie.id})}" uk-icon="info" th:title="Szczegóły"></a>-->
+<!--                        <a th:href="@{/zgloszenia/zamknij/(id=${zgloszenie.id})}" uk-icon="lock" th:title="Zakończ"></a>-->
+<!--                    </div>-->
+
+<!--                </td>-->
+            </tr>
+        </table>
+
+        <div class="col-sm-6">
+            <div sd:pagination-summary="">info</div>
+        </div>
+        <div class="col-sm-6">
+            <nav class="pull-right">
+                <ul class="uk-pagination uk-flex-center" sd:pagination="full">
+                    <li class="uk-disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <li class="uk-active"><a href="#">1<span class="sr-only"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</body>
+</html>

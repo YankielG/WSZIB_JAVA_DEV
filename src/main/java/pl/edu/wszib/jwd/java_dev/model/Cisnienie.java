@@ -1,7 +1,6 @@
 package pl.edu.wszib.jwd.java_dev.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,22 +20,28 @@ public class Cisnienie {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+    //    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-//    private double skurcz=120;
+    @Column(name = "skurcz")
     private double skurcz;
+    //    private double skurcz=120;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-//    private double rozkurcz=80;
+    @Column(name = "rozkurcz")
     private double rozkurcz;
+    //    private double rozkurcz=80;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-//    private double tetno=70;
+    @Column(name = "tetno")
     private double tetno;
+    //    private double tetno=70;
 
+    @Column(name = "rodzaj")
     private boolean rodzaj;
 
+    @Column(name = "uwagi")
     private String uwagi;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")

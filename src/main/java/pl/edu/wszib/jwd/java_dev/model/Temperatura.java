@@ -22,23 +22,19 @@ public class Temperatura {
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "data")
     private Date data;
+//    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //        @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
-//    @NumberFormat(pattern = "#,###,###,###.##")
+    //    @NumberFormat(pattern = "#,###,###,###.##")
+    @Column(name = "temp")
     private double temp;
 
+    @Column(name = "rodzaj")
     private boolean rodzaj;
 
+    @Column(name = "uwagi")
     private String uwagi;
-
-    //    tyczasowe do testow
-    public Temperatura(Date data, double temp, boolean rodzaj, String uwagi) {
-        this.data = data;
-        this.temp = temp;
-        this.rodzaj = rodzaj;
-        this.uwagi = uwagi;
-    }
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_id")
@@ -51,6 +47,14 @@ public class Temperatura {
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "dane_opcje")
     private boolean dane_opcje;
+
+    //    tyczasowe do testow
+    public Temperatura(Date data, double temp, boolean rodzaj, String uwagi) {
+        this.data = data;
+        this.temp = temp;
+        this.rodzaj = rodzaj;
+        this.uwagi = uwagi;
+    }
 
     public Temperatura() {
 

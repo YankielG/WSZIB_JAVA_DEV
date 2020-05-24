@@ -21,14 +21,18 @@ public class Tetno {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "data")
     private Date data;
+//    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
 //    private double tetno_=75;
-    private double tetno_;
+    @Column(name = "tentnoo")
+    private double tetnoo;
 
+    @Column(name = "rodzaj")
     private boolean rodzaj;
 
+    @Column(name = "uwagi")
     private String uwagi;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
@@ -62,12 +66,12 @@ public class Tetno {
         this.data = data;
     }
 
-    public double getTetno_() {
-        return tetno_;
+    public double getTetnoo() {
+        return tetnoo;
     }
 
-    public void setTetno_(double tetno_) {
-        this.tetno_ = tetno_;
+    public void setTetnoo(double tetnoo) {
+        this.tetnoo = tetnoo;
     }
 
     public boolean isRodzaj() {

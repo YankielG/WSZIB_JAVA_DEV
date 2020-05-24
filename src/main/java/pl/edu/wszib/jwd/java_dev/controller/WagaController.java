@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.data.web.SortDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.edu.wszib.jwd.java_dev.dao.WagaDao;
 import pl.edu.wszib.jwd.java_dev.model.Waga;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 @Controller
 @PropertySource("classpath:messages.properties")
 public class WagaController {
@@ -24,9 +27,51 @@ public class WagaController {
 
     @GetMapping("waga")
     public String waga(Model model) {
+        List<Date> etykieta = new ArrayList<>();
+        List<Double> dane = new ArrayList<>();
+
+        Iterable<Waga> wagas = wagaDao.findAll();
+        for (Waga x : wagas) {
+            dane.add(x.getWagaa());
+//            etykieta.add(dane.size());
+            etykieta.add(x.getData());
+        }
+
+        model.addAttribute("etykieta", etykieta);
+        model.addAttribute("dane", dane);
         model.addAttribute("lista", wagaDao.findAll());
         return "waga";
     }
+
+
+//    @GetMapping("waga")
+//    public ModelMap waga(@PageableDefault(size = 5) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
+////        if (id != null) {
+////
+////            return new ModelMap().addAttribute("lista", wagaDao.findAllById(id, pageable));
+////        } else {
+////            return new ModelMap().addAttribute("lista", wagaDao.findAll(pageable));
+////        }
+////        return new ModelMap().addAttribute("lista", wagaDao.findAll(pageable));
+//
+//        List<Date> etykieta = new ArrayList<>();
+//        List<Double> dane = new ArrayList<>();
+//
+//        Iterable<Waga> wagas = wagaDao.findAll();
+//
+//        for (Waga t  : wagas) {
+//            dane.add(t.getWagaa());
+////            etykieta.add(dane.size());
+//            etykieta.add(t.getData());
+//        }
+//
+//        model.addAttribute("etykieta", etykieta);
+//        model.addAttribute("dane", dane);
+//
+//        return "waga";
+//
+//    }
+
 
     @GetMapping("waga/usun/{id}")
     public String usun(@PathVariable Long id) {

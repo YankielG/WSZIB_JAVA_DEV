@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.CisnienieDao;
 import pl.edu.wszib.jwd.java_dev.model.Cisnienie;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 @Controller
 @PropertySource("classpath:messages.properties")
 public class CisnienieController {
@@ -19,6 +23,18 @@ public class CisnienieController {
 
     @GetMapping("cisnienie")
     public String cisnienie(Model model) {
+        List<Date> etykieta = new ArrayList<>();
+        List<Double> dane = new ArrayList<>();
+
+        Iterable<Cisnienie> wagas = cisnienieDao.findAll();
+        for (Cisnienie x : wagas) {
+            dane.add(x.getSkurcz());
+//            etykieta.add(dane.size());
+            etykieta.add(x.getData());
+        }
+
+        model.addAttribute("etykieta", etykieta);
+        model.addAttribute("dane", dane);
         model.addAttribute("lista", cisnienieDao.findAll());
         return "cisnienie";
     }
