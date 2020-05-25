@@ -13,6 +13,9 @@ public class Index {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "wybor")
+    private boolean wybor;
+
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     //    @Temporal(TemporalType.DATE)
     //    @Column(name = "data", updatable = false, nullable = false)
@@ -48,6 +51,14 @@ public class Index {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isWybor() {
+        return wybor;
+    }
+
+    public void setWybor(boolean wybor) {
+        this.wybor = wybor;
     }
 
     public Date getData() {

@@ -15,6 +15,9 @@ public class Profil {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "wybor")
+    private boolean wybor;
+
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik")
     private String uzytkownik;
@@ -107,6 +110,14 @@ public class Profil {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isWybor() {
+        return wybor;
+    }
+
+    public void setWybor(boolean wybor) {
+        this.wybor = wybor;
     }
 
     public String getUzytkownik() {

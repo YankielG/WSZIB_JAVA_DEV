@@ -11,6 +11,9 @@ public class RodzajLeku {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "wybor")
+    private boolean wybor;
+
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "rodzajlekuu")
     private String rodzajlekuu;
@@ -41,6 +44,14 @@ public class RodzajLeku {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isWybor() {
+        return wybor;
+    }
+
+    public void setWybor(boolean wybor) {
+        this.wybor = wybor;
     }
 
     public String getRodzajlekuu() {
