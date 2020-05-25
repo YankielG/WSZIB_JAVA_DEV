@@ -72,13 +72,30 @@
                             data: {
                                 labels: [[${etykieta}]],
                                 datasets: [{
-                                    data: [[${dane}]],
-                                    label: "Ciśnienie",
+                                    data: [[${dane1}]],
+                                    label: "Ciśnienie skurczowe",
                                     borderColor: "#3e95cd",
                                     fill: false
                                 },
-                                ]
+
+                                {
+                                // data: [168,170,178,190,203,276,408,547,675,734],
+                                data: [[${dane2}]],
+                                label: "Ciśnienie rozkurczowe",
+                                borderColor: "#3cba9f",
+                                fill: false
+                                },
+
+                                {
+                                // data: [168,170,178,190,203,276,408,547,675,734],
+                                data: [[${dane3}]],
+                                label: "Tętno",
+                                borderColor: "#c45850",
+                                fill: false
+                                }
+                             ]
                             },
+
                             options: {
                                 // scales:{
                                 //     yAxes: "Cisnienie",

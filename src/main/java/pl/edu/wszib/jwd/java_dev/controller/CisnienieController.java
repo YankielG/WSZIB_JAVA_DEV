@@ -24,17 +24,23 @@ public class CisnienieController {
     @GetMapping("cisnienie")
     public String cisnienie(Model model) {
         List<Date> etykieta = new ArrayList<>();
-        List<Double> dane = new ArrayList<>();
+        List<Double> dane1 = new ArrayList<>();
+        List<Double> dane2 = new ArrayList<>();
+        List<Double> dane3 = new ArrayList<>();
 
         Iterable<Cisnienie> wagas = cisnienieDao.findAll();
         for (Cisnienie x : wagas) {
-            dane.add(x.getSkurcz());
-//            etykieta.add(dane.size());
+            dane1.add(x.getSkurcz());
+            dane2.add(x.getRozkurcz());
+            dane3.add(x.getTetno());
+//            etykieta.add(dane1.size());
             etykieta.add(x.getData());
         }
 
         model.addAttribute("etykieta", etykieta);
-        model.addAttribute("dane", dane);
+        model.addAttribute("dane1", dane1);
+        model.addAttribute("dane2", dane2);
+        model.addAttribute("dane3", dane3);
         model.addAttribute("lista", cisnienieDao.findAll());
         return "cisnienie";
     }
