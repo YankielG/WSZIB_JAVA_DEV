@@ -11,7 +11,9 @@ import pl.edu.wszib.jwd.java_dev.model.Waga;
 @Repository
 public interface StartDao extends CrudRepository<Start, Long> {
 
+//    @Repository
 //    public interface StartDao extends PagingAndSortingRepository<Start, Long>, CrudRepository<Start, Long> {
 //        public Page<Start> findAllById(Long id, Pageable pageable);
 //        public Page<Start> findAll(Pageable pageable);
+
 }

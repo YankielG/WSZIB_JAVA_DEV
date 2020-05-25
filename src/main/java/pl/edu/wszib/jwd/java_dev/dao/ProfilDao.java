@@ -11,6 +11,7 @@ import pl.edu.wszib.jwd.java_dev.model.Waga;
 @Repository
 public interface ProfilDao extends CrudRepository<Profil, Long> {
 
+//    @Repository
 //    public interface ProfilDao extends PagingAndSortingRepository<Profil, Long>, CrudRepository<Profil, Long> {
 //        public Page<Profil> findAllById(Long id, Pageable pageable);
 //        public Page<Profil> findAll(Pageable pageable);

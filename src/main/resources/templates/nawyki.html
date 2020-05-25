@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/szablon :: szablon(~{::.container})}">
 <body>
 
     <div class="container">
@@ -52,23 +53,23 @@
             <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
                 <thead>
                 <tr>
-                    <th>Id</th>
-<!--                    <th>Id <a sd:pagination-sort="id" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+<!--                    <th>Id</th>-->
+                    <th>Id <a sd:pagination-sort="id" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
                     <!--            <th th:colspan="2"></th>-->
-                    <th>Wybór</th>
-<!--                    <th>Wybór <a sd:pagination-sort="wybor" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
-                    <th>Nazwa</th>
-<!--                    <th>Nazwa <a sd:pagination-sort="nazwa" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
-                    <th>Data startu</th>
-<!--                    <th>Data startu <a sd:pagination-sort="data1" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
-                    <th>Data Końca</th>
-<!--                    <th>Data Końca <a sd:pagination-sort="data2" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
-                    <th>Powtórzenia</th>
-<!--                    <th>Powtórzenia <a sd:pagination-sort="powtorzenia" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
-                    <th>Realizacja</th>
-<!--                    <th>Realizacja <a sd:pagination-sort="realizacja" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
-                    <th>Uwagi</th>
-<!--                    <th>Uwagi <a sd:pagination-sort="uwagi" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+<!--                    <th>Wybór</th>-->
+                    <th>Wybór <a sd:pagination-sort="wybor" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+<!--                    <th>Nazwa</th>-->
+                    <th>Nazwa <a sd:pagination-sort="nazwa" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+<!--                    <th>Data startu</th>-->
+                    <th>Data startu <a sd:pagination-sort="data1" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+<!--                    <th>Data Końca</th>-->
+                    <th>Data Końca <a sd:pagination-sort="data2" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+<!--                    <th>Powtórzenia</th>-->
+                    <th>Powtórzenia <a sd:pagination-sort="powtorzenia" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+<!--                    <th>Realizacja</th>-->
+                    <th>Realizacja <a sd:pagination-sort="realizacja" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+<!--                    <th>Uwagi</th>-->
+                    <th>Uwagi <a sd:pagination-sort="uwagi" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
                     <th>Opcje</th>
                 </tr>
                 <tbody>
@@ -94,17 +95,17 @@
                 </tbody>
             </table>
 
-<!--            <div class="col-sm-6">-->
-<!--                <div sd:pagination-summary="">info</div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-6">-->
-<!--                <nav class="pull-right">-->
-<!--                    <ul class="uk-pagination uk-flex-center" sd:pagination="full">-->
-<!--                        <li class="uk-disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>-->
-<!--                        <li class="uk-active"><a href="#">1<span class="sr-only"></span></a></li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
-<!--            </div>-->
+            <div class="col-sm-6">
+                <div sd:pagination-summary="">info</div>
+            </div>
+            <div class="col-sm-6">
+                <nav class="pull-right">
+                    <ul class="uk-pagination uk-flex-center" sd:pagination="full">
+                        <li class="uk-disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li class="uk-active"><a href="#">1<span class="sr-only"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
 
             <div class="uk-padding"></div>
 

@@ -43,36 +43,6 @@ public class WagaController {
         return "waga";
     }
 
-
-//    @GetMapping("waga")
-//    public ModelMap waga(@PageableDefault(size = 5) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
-////        if (id != null) {
-////
-////            return new ModelMap().addAttribute("lista", wagaDao.findAllById(id, pageable));
-////        } else {
-////            return new ModelMap().addAttribute("lista", wagaDao.findAll(pageable));
-////        }
-////        return new ModelMap().addAttribute("lista", wagaDao.findAll(pageable));
-//
-//        List<Date> etykieta = new ArrayList<>();
-//        List<Double> dane = new ArrayList<>();
-//
-//        Iterable<Waga> wagas = wagaDao.findAll();
-//
-//        for (Waga t  : wagas) {
-//            dane.add(t.getWagaa());
-////            etykieta.add(dane.size());
-//            etykieta.add(t.getData());
-//        }
-//
-//        model.addAttribute("etykieta", etykieta);
-//        model.addAttribute("dane", dane);
-//
-//        return "waga";
-//
-//    }
-
-
     @GetMapping("waga/usun/{id}")
     public String usun(@PathVariable Long id) {
         wagaDao.deleteById(id);

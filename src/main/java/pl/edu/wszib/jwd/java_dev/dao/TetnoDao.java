@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 import pl.edu.wszib.jwd.java_dev.model.Tetno;
 import pl.edu.wszib.jwd.java_dev.model.Waga;
 
-@Repository
-public interface TetnoDao extends PagingAndSortingRepository<Tetno, Long>, CrudRepository<Tetno, Long> {
-    public Page<Tetno> findAllById(Long id, Pageable pageable);
-    public Page<Tetno> findAll(Pageable pageable);
+//@Repository
+//public interface TetnoDao extends PagingAndSortingRepository<Tetno, Long>, CrudRepository<Tetno, Long> {
+//    public Page<Tetno> findAllById(Long id, Pageable pageable);
+//    public Page<Tetno> findAll(Pageable pageable);
 
-//public interface TetnoDao extends CrudRepository<Tetno, Long> {
+@Repository
+public interface TetnoDao extends CrudRepository<Tetno, Long> {
 }

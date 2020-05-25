@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import pl.edu.wszib.jwd.java_dev.model.Leki;
 
 
-@Repository
-public interface LekiDao extends CrudRepository<Leki, Long> {
-
 //@Repository
-//interface LekiDao extends PagingAndSortingRepository<Leki, Long>, CrudRepository<Leki, Long> {
-//    public Page<Leki> findAllById(Long id, Pageable pageable);
-//    public Page<Leki> findAll(Pageable pageable);
+//public interface LekiDao extends CrudRepository<Leki, Long> {
+
+@Repository
+public interface LekiDao extends PagingAndSortingRepository<Leki, Long>, CrudRepository<Leki, Long> {
+    public Page<Leki> findAllById(Long id, Pageable pageable);
+    public Page<Leki> findAll(Pageable pageable);
 }

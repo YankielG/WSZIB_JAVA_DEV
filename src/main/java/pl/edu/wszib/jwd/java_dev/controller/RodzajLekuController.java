@@ -2,11 +2,15 @@ package pl.edu.wszib.jwd.java_dev.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.edu.wszib.jwd.java_dev.dao.RodzajLekuDao;
 import pl.edu.wszib.jwd.java_dev.model.RodzajLeku;
 
@@ -17,10 +21,20 @@ public class RodzajLekuController {
     @Autowired
     private RodzajLekuDao rodzajLekuDao;
 
+//    @GetMapping("opcje/rodzajleku")
+//    public String rodzajleku(Model model) {
+//        model.addAttribute("lista", rodzajLekuDao.findAll());
+//        return "opcjeleki";
+//    }
+
     @GetMapping("opcje/rodzajleku")
-    public String rodzajleku(Model model) {
-        model.addAttribute("lista", rodzajLekuDao.findAll());
-        return "opcjeleki";
+    public ModelMap rodzajLeku(@PageableDefault(size = 5) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
+//       if (id != null) {
+//           return new ModelMap().addAttribute("lista", rodzajLekuDao.findAllById(id, pageable));
+//        } else {
+//            return new ModelMap().addAttribute("lista", rodzajLekuDao.findAll(pageable));
+//        }
+        return new ModelMap().addAttribute("lista", rodzajLekuDao.findAll(pageable));
     }
 
     @GetMapping("opcje/rodzajleku/usun/{id}")

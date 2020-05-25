@@ -11,6 +11,7 @@ import pl.edu.wszib.jwd.java_dev.model.Waga;
 @Repository
 public interface Error404Dao extends CrudRepository<Error404, Long> {
 
+//    @Repository
 //    public interface Error404Dao extends PagingAndSortingRepository<Error404, Long>, CrudRepository<Error404, Long> {
 //        public Page<Error404> findAllById(Long id, Pageable pageable);
 //        public Page<Error404> findAll(Pageable pageable);
