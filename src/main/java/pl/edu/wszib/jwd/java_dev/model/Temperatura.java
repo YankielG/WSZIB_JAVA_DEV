@@ -24,8 +24,8 @@ public class Temperatura {
     //@DateTimeFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "data")
-//    private Date data;
-    private Date data = new Date();
+    private Date data;
+//    private Date data = new Date();
     //    private LocalDateTime data = LocalDateTime.now();
 
     //        @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
