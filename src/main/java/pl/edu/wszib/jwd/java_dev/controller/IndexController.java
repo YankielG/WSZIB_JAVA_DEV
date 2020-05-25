@@ -24,7 +24,7 @@ public class IndexController {
 
     @GetMapping("index")
     public String index(Model model) {
-        model.addAttribute("lista", startDao.findAll());
+//        model.addAttribute("lista", startDao.findAll());
         model.addAttribute("lista1", indexDao.findAll());
         return "index";
     }

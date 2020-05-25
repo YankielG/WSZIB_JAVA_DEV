@@ -59,13 +59,8 @@
             </div>
 
             <div class="uk-section">
-                <div class="uk-container uk-container-xsmall">
-                    <div style="max-width: 800px; margin: 50px auto">
-                        <canvas id="line-chart" width="1600" height="900"></canvas>
-                    </div>
-
+                    <canvas id="line-chart" width="2800" height="900"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
                     <script th:inline="javascript">
                         new Chart(document.getElementById("line-chart"), {
                             type: 'line',
@@ -97,15 +92,32 @@
                             },
 
                             options: {
-                                // scales:{
-                                //     yAxes: "Cisnienie",
-                                //     xAxes: "data",
-                                // }
+                                responsive: true,
+                                scales:{
+                                    xAxes: [{
+                                        display: true,
+                                        scaleLabel: {
+                                            display: true,
+                                            labelString: 'Data'}
+                                    }],
+                                    yAxes: [{
+                                        display: true,
+                                        stacked: true,
+                                        ticks: {
+                                            min: 40,
+                                            steps: 10,
+                                            stepValue: 5,
+                                            max: 220},
+                                        scaleLabel: {
+                                            display: true,
+                                            labelString: 'Cićnienie / Tętno'}
+                                    }]
+
+                                }
                             }
                         });
 
                     </script>
-                </div>
             </div>
 
             <a th:href="@{/cisnienie/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
