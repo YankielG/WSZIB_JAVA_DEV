@@ -21,21 +21,21 @@ public class RodzajLekuController {
     @Autowired
     private RodzajLekuDao rodzajLekuDao;
 
-//    @GetMapping("opcje/rodzajleku")
-//    public String rodzajleku(Model model) {
-//        model.addAttribute("lista", rodzajLekuDao.findAll());
-//        return "opcjeleki";
-//    }
-
     @GetMapping("opcje/rodzajleku")
-    public ModelMap rodzajLeku(@PageableDefault(size = 5) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
-//       if (id != null) {
-//           return new ModelMap().addAttribute("lista", rodzajLekuDao.findAllById(id, pageable));
-//        } else {
-//            return new ModelMap().addAttribute("lista", rodzajLekuDao.findAll(pageable));
-//        }
-        return new ModelMap().addAttribute("lista", rodzajLekuDao.findAll(pageable));
+    public String rodzajleku(Model model) {
+        model.addAttribute("lista", rodzajLekuDao.findAll());
+        return "opcjeleki";
     }
+
+//    @GetMapping("opcje/rodzajleku")
+//    public ModelMap rodzajLeku(@PageableDefault(size = 5) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
+////       if (id != null) {
+////           return new ModelMap().addAttribute("lista", rodzajLekuDao.findAllById(id, pageable));
+////        } else {
+////            return new ModelMap().addAttribute("lista", rodzajLekuDao.findAll(pageable));
+////        }
+//        return new ModelMap().addAttribute("lista", rodzajLekuDao.findAll(pageable));
+//    }
 
     @GetMapping("opcje/rodzajleku/usun/{id}")
     public String usun(@PathVariable Long id) {

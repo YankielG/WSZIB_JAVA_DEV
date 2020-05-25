@@ -21,21 +21,21 @@ public class InfoController {
     @Autowired
     private InfoDao infoDao;
 
-//    @GetMapping("info")
-//    public String info(Model model) {
-//        model.addAttribute("lista", infoDao.findAll());
-//        return "info";
-//    }
-
     @GetMapping("info")
-    public ModelMap info(@PageableDefault(size = 3) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
-//       if (id != null) {
-//           return new ModelMap().addAttribute("lista", infoDao.findAllById(id, pageable));
-//        } else {
-//            return new ModelMap().addAttribute("lista", infoDao.findAll(pageable));
-//        }
-        return new ModelMap().addAttribute("lista", infoDao.findAll(pageable));
+    public String info(Model model) {
+        model.addAttribute("lista", infoDao.findAll());
+        return "info";
     }
+
+//    @GetMapping("info")
+//    public ModelMap info(@PageableDefault(size = 3) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
+////       if (id != null) {
+////           return new ModelMap().addAttribute("lista", infoDao.findAllById(id, pageable));
+////        } else {
+////            return new ModelMap().addAttribute("lista", infoDao.findAll(pageable));
+////        }
+//        return new ModelMap().addAttribute("lista", infoDao.findAll(pageable));
+//    }
 
 
 
@@ -79,6 +79,17 @@ public class InfoController {
         model.addAttribute("lista1", infoDao.findAll());
         return "opcjeinfo";
     }
+
+//    @GetMapping("opcje/opcjeinfo")
+//    public ModelMap opcjeinfo(@PageableDefault(size = 5) Pageable pageable, @RequestParam(name = "id", required = false) Long id, Model model) {
+//       if (id != null) {
+//           return new ModelMap().addAttribute("lista", infoDao.findAllById(id, pageable));
+//        } else {
+//            return new ModelMap().addAttribute("lista", infoDao.findAll(pageable));
+//        }
+//        return new ModelMap().addAttribute("lista1", infoDao.findAll(pageable));
+//    }
+
     @GetMapping("opcje/info/usun/{id}")
     public String usun(@PathVariable Long id) {
         infoDao.deleteById(id);
