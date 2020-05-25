@@ -28,7 +28,7 @@ public class TetnoController {
 
         Iterable<Tetno> wagas = tetnoDao.findAll();
         for (Tetno x : wagas) {
-            dane.add(x.getTetno_());
+            dane.add(x.getTetnoo());
 //            etykieta.add(dane.size());
             etykieta.add(x.getData());
         }

@@ -2,83 +2,101 @@
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
 <body>
 
-<div class="container">
-    <div class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
-    <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil}" style="position:center;"></h2>
-    </div>
-    <a th:href="@{/opcje/profil/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
-    <a th:href="@{/opcje/profil/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
-    <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
-        <thead>
-        <tr>
-            <th>iD</th>
-            <!--            <th th:colspan="2"></th>-->
-            <th>Wybór</th>
-            <th>Użytkownik</th>
-            <th>Imię</th>
-            <th>Nazwisko</th>
-<!--            <th>Email</th>-->
-<!--            <th>Hasło</th>-->
-            <th>Płeć</th>
-            <th>Data urodzenia</th>
-            <th>Jednostka wagi</th>
-            <th>Jednostka długości</th>
-<!--            <th>Wł/Wył Użytkownika</th>-->
-<!--            <th>Użytkownik prawa</th>-->
-<!--            <th>Użytkownik ID</th>-->
-<!--            <th>Data utworzenia</th>-->
-<!--            <th>Data edycji</th>-->
-<!--            <th>Data skasowania</th>-->
-            <th>Opcje</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="element : ${lista}">
-            <td th:text="${element.id}"></td>
-            <td><input class="uk-checkbox" type="checkbox"></td>
-            <td th:text="${element.uzytkownik}"></td>
-            <td th:text="${element.imie}"></td>
-            <td th:text="${element.nazwisko}"></td>
-<!--            <td th:text="${element.email}"></td>-->
-<!--            <td th:text="${element.haslo}"></td>-->
-            <td th:text="${element.plec}"></td>
-            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
-            <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
-            <!--            <td th:text="${element.data}"></td>--->
-            <td th:text="${element.waga}"></td>
-            <td th:text="${element.miara}"></td>
-<!--            <td><span th:uk-icon="${element.użytkownik_aktywny} ? 'check' : 'close'"></span></td>-->
-<!--            <td th:text="${element.użytkownik_prawa}"></td>-->
-<!--            <td th:text="${element.użytkownik_id}"></td>-->
-<!--            <td th:text="${element.użytkownik_data_tw}"></td>-->
-<!--            <td th:text="${element.użytkownik_data_up}"></td>-->
-<!--            <td th:text="${element.użytkownik_data_ucl}"></td>-->
-            <td>
-                <a th:href="@{/opcje/profil/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
-                <a th:href="@{/opcje/profil/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
-                <a th:href="@{/opcje/profil/edytujadmin/{id} (id=${element.id})}" uk-icon="icon: users" uk-tooltip="Admin"></a>
-                <a th:href="@{/opcje/profil/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
-            </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil}" style="position:center;"></h2>
+            </div>
 
-    <div class="col-sm-6">
-        <div sd:pagination-summary="">info</div>
-    </div>
-    <div class="col-sm-6">
-        <nav class="pull-right">
-            <ul class="uk-pagination uk-flex-center" sd:pagination="full">
-                <li class="uk-disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                <li class="uk-active"><a href="#">1<span class="sr-only"></span></a></li>
-            </ul>
-        </nav>
-    </div>
+            <a th:href="@{/opcje/profil/wstaw}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/opcje/profil/czysc}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id</th>
+<!--                    <th>Id <a sd:pagination-sort="id" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th th:colspan="2"></th>-->
+                    <th>Wybór</th>
+<!--                    <th>Wybór <a sd:pagination-sort="data" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Użytkownik</th>
+<!--                    <th>Użytkownik <a sd:pagination-sort="uzytkownik" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Imię</th>
+<!--                    <th>Imię <a sd:pagination-sort="imie" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Nazwisko</th>
+<!--                    <th>Nazwisko <a sd:pagination-sort="nazwisko" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Email</th>-->
+                    <!--            <th>Email <a sd:pagination-sort="email" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Hasło</th>-->
+                    <!--            <th>Hasło <a sd:pagination-sort="haslo" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Płeć</th>
+<!--                    <th>Płeć <a sd:pagination-sort="plec" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Data urodzenia</th>
+<!--                    <th>Data urodzenia <a sd:pagination-sort="data" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Jednostka wagi</th>
+<!--                    <th>Jednostka wagi <a sd:pagination-sort="waga" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <th>Jednostka długości</th>
+<!--                    <th>Jednostka długości <a sd:pagination-sort="miara" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Wł/Wył Użytkownika</th>-->
+                    <!--            <th>Wł/Wył Użytkownika <a sd:pagination-sort="uzytkownik_aktywacja" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Użytkownik prawa</th>-->
+                    <!--            <th>Użytkownik prawa <a sd:pagination-sort="uzytkownik_prawa" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Użytkownik ID</th>-->
+                    <!--            <th>Użytkownik ID <a sd:pagination-sort="uzytkownik_id" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Data utworzenia</th>-->
+                    <!--            <th>Data utworzenia <a sd:pagination-sort="uzytkownik_tw" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Data edycji</th>-->
+                    <!--            <th>Data edycji <a sd:pagination-sort="uzytkownik_t_up" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                    <!--            <th>Data skasowania</th>-->
+                    <!--            <th>Data skasowania <a sd:pagination-sort="urzytkownik_t_ucl" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>-->
+                                <th>Opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="element : ${lista}">
+                    <td th:text="${element.id}"></td>
+                    <td><input class="uk-checkbox" type="checkbox"></td>
+                    <td th:text="${element.uzytkownik}"></td>
+                    <td th:text="${element.imie}"></td>
+                    <td th:text="${element.nazwisko}"></td>
+                    <!--            <td th:text="${element.email}"></td>-->
+                    <!--            <td th:text="${element.haslo}"></td>-->
+                    <td th:text="${element.plec}"></td>
+                    <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy')}"></td>
+                    <!--            <td th:text="${#calendars.format(element.data, 'dd-MM-yyyy HH:mm:ss')}"></td>-->
+                    <!--            <td th:text="${element.data}"></td>--->
+                    <td th:text="${element.waga}"></td>
+                    <td th:text="${element.miara}"></td>
+                    <!--            <td><span th:uk-icon="${element.użytkownik_aktywny} ? 'check' : 'close'"></span></td>-->
+                    <!--            <td th:text="${element.użytkownik_prawa}"></td>-->
+                    <!--            <td th:text="${element.użytkownik_id}"></td>-->
+                    <!--            <td th:text="${element.użytkownik_data_tw}"></td>-->
+                    <!--            <td th:text="${element.użytkownik_data_up}"></td>-->
+                    <!--            <td th:text="${element.użytkownik_data_ucl}"></td>-->
+                                <td>
+                        <a th:href="@{/opcje/profil/szczegoly/{id} (id=${element.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/opcje/profil/edytuj/{id} (id=${element.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/opcje/profil/edytujadmin/{id} (id=${element.id})}" uk-icon="icon: users" uk-tooltip="Admin"></a>
+                        <a th:href="@{/opcje/profil/usun/{id} (id=${(element.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <div class="uk-padding"></div>
+<!--            <div class="col-sm-6">-->
+<!--                <div sd:pagination-summary="">info</div>-->
+<!--            </div>-->
+<!--            <div class="col-sm-6">-->
+<!--                <nav class="pull-right">-->
+<!--                    <ul class="uk-pagination uk-flex-center" sd:pagination="full">-->
+<!--                        <li class="uk-disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>-->
+<!--                        <li class="uk-active"><a href="#">1<span class="sr-only"></span></a></li>-->
+<!--                    </ul>-->
+<!--                </nav>-->
+<!--            </div>-->
 
-</div>
+            <div class="uk-padding"></div>
+
+    </div>
 
 </body>
 </html>

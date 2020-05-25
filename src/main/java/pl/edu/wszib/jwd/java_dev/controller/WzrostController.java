@@ -29,7 +29,7 @@ public class WzrostController {
 
         Iterable<Wzrost> wagas = wzrostDao.findAll();
         for (Wzrost x : wagas) {
-            dane.add(x.getWzrost_());
+            dane.add(x.getWzrostt());
 //            etykieta.add(dane.size());
             etykieta.add(x.getData());
         }
