@@ -17,15 +17,19 @@
 <div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
     <!--    <img class="uk-align-center uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">-->
     <img class="uk-align-center uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">
-    <form method="POST" class="form-signin" th:object="${startdodaj}" th:action="@{start/zapisz}">
+
+    <form method="POST" class="form-signin" th:object="${startdodaj}" th:action="@{login}">
         <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>
-        <input th:field="*{uzytkownik}" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>
+<!--        <input th:field="*{uzytkownik}" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>-->
+        <input id="uzytkownik" name="uzytkownik" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>
         <br/>
-        <input th:field="*{haslo}" type="password" th:placeholder="Hasło" class="uk-input"/> <br/>
+<!--        <input th:field="*{haslo}" type="password" th:placeholder="Hasło" class="uk-input"/> <br/>-->
+        <input id="haslo" name="haslo" type="password" th:placeholder="Hasło" class="uk-input"/> <br/>
         <br/>
         <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" type="Submit" value="Login"
                 th:text="#{start.enter}"></button>
     </form>
+
     <div style="margin: 20px auto">
         <a class="uk-align-left"  th:href="@{/rejestracja}" uk-icon="icon: user; ratio: 1.2" uk-tooltip="Dodaj konto"></a>
         <a class="uk-align-right" th:href="@{/przypomnijhaslo}" uk-icon="icon: search; ratio: 1.2" uk-tooltip="Przypomnij logowanie"></a>
@@ -34,15 +38,23 @@
 
 
 <!--<div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">-->
-<!--    <form th:href="@{index}" method="POST" class="form-signin">-->
+<!--    &lt;!&ndash;    <img class="uk-align-center uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">&ndash;&gt;-->
+<!--    <img class="uk-align-center uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">-->
+
+<!--    <form method="POST" class="form-signin" th:object="${startdodaj}" th:action="@{start/zapisz}">-->
 <!--        <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>-->
-<!--        <input type="text" id="user_name" name="user_name" placeholder="Użytkownik" class="uk-input" required="required"/> <br/>-->
+<!--        <input th:field="*{uzytkownik}" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>-->
 <!--        <br/>-->
-<!--        <input type="password" id="password" name="password" th:placeholder="Hasło" class="uk-input" required="required"/> <br/>-->
+<!--        <input th:field="*{haslo}" type="password" th:placeholder="Hasło" class="uk-input"/> <br/>-->
 <!--        <br/>-->
-<!--        <div align="center" th:if="${start.error}"><p style="font-size: 20;">Niema takiego użytkownika!</p></div>-->
-<!--        <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" value="Login" type="Submit" th:text="#{start.enter}"></button>-->
+<!--        <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" type="Submit" value="Login"-->
+<!--                th:text="#{start.enter}"></button>-->
 <!--    </form>-->
+
+<!--    <div style="margin: 20px auto">-->
+<!--        <a class="uk-align-left"  th:href="@{/rejestracja}" uk-icon="icon: user; ratio: 1.2" uk-tooltip="Dodaj konto"></a>-->
+<!--        <a class="uk-align-right" th:href="@{/przypomnijhaslo}" uk-icon="icon: search; ratio: 1.2" uk-tooltip="Przypomnij logowanie"></a>-->
+<!--    </div>-->
 <!--</div>-->
 
 <!--<div class="uk-card-default uk-card uk-card-body" style="width: 500px; margin: 300px auto">-->

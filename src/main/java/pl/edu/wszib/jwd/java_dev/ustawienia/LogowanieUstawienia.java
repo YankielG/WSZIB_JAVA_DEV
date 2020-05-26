@@ -38,19 +38,19 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .roles("uz")
                 .build();
         UserDetails admin = User.withDefaultPasswordEncoder()
-                .username("a")
-                .password("1")
+                .username("admin")
+                .password("admin1")
                 .roles("ADMIN")
                 .build();
         return new InMemoryUserDetailsManager(user, admin);
     }
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        String loginPage = "/login";
-        String loginPage = "/";
+        String loginPage = "/login";
+//        String loginPage = "/start";
         String logoutPage = "/logout";
+//        String logoutPage = "/wyloguj";
 
 //        http.
 //                authorizeRequests()
@@ -73,15 +73,15 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //                .and().logout()
 //                .logoutRequestMatcher(new AntPathRequestMatcher(logoutPage))
 //                .logoutSuccessUrl(loginPage).and().exceptionHandling();
-//
-//                .and()
-//                .formLogin() .permitAll()
-//                .and()
-//                .logout() .permitAll();
 
-
+        http.authorizeRequests()
+                .antMatchers("/").permitAll()
+                .anyRequest().hasRole("ADMIN")
+                .and()
+                .formLogin() .permitAll()
+                .and()
+                .logout() .permitAll();
     }
-
 
     @Override
     public void configure(WebSecurity web) throws Exception {

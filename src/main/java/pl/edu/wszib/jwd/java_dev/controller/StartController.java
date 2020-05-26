@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 import pl.edu.wszib.jwd.java_dev.dao.StartDao;
 import pl.edu.wszib.jwd.java_dev.model.Start;
 import pl.edu.wszib.jwd.java_dev.model.Start;
@@ -47,6 +48,12 @@ public class StartController {
     public String zapisz(Start start) {
         startDao.save(start);
         return "redirect:/index";
+    }
+    @PostMapping("login")
+    public ModelAndView login() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("login");
+        return modelAndView;
     }
 
     @GetMapping("start/edytuj/{id}")
