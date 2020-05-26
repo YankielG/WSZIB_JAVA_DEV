@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.edu.wszib.jwd.java_dev.dao.ProfilDao;
+import pl.edu.wszib.jwd.java_dev.dao.StartDao;
 import pl.edu.wszib.jwd.java_dev.model.Profil;
+import pl.edu.wszib.jwd.java_dev.model.Start;
 
 @Controller
 @PropertySource("classpath:messages.properties")
@@ -20,6 +22,9 @@ public class ProfilController {
 
     @Autowired
     private ProfilDao profilDao;
+
+    @Autowired
+    private StartDao startDao;
 
     @GetMapping("opcje/opcjeprofil")
     public String profil(Model model) {
@@ -54,6 +59,19 @@ public class ProfilController {
     public String wstaw(Model model) {
         model.addAttribute("profildodaj", new Profil());
         return "profildodaj";
+    }
+
+    @GetMapping("rejestracja")
+    public String rejestracja(Model model) {
+        model.addAttribute("profildodaj", new Profil());
+        return "rejestracja";
+    }
+
+    @GetMapping("przypomnijhaslo")
+    public String przypomnijhaslo(Model model) {
+        model.addAttribute("startdodaj", new Start());
+        model.addAttribute("lista", startDao.findAll());
+        return "przypomnijhaslo";
     }
 
     @PostMapping("opcje/profil/zapisz")

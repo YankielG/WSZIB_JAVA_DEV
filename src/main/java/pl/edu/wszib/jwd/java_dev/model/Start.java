@@ -34,6 +34,10 @@ public class Start {
     private String uzytkownik;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "haslo")
+    private String haslo;
+
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_id")
     private Long uzytkownik_id;
 
@@ -78,6 +82,14 @@ public class Start {
 
     public void setUzytkownik(String uzytkownik) {
         this.uzytkownik = uzytkownik;
+    }
+
+    public String getHaslo() {
+        return haslo;
+    }
+
+    public void setHaslo(String haslo) {
+        this.haslo = haslo;
     }
 
     public Long getUzytkownik_id() {
