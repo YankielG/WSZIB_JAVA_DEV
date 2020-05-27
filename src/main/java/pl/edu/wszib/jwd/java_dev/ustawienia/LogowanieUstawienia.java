@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+//    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -59,7 +59,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/rejestracja").permitAll()
 //                .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("ADMIN")
 //                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
-////                .anyRequest().hasRole("UZYTKOWNIK")
+//////                .anyRequest().hasRole("UZYTKOWNIK")
 //                .anyRequest()
 //                .authenticated()
 //                .and().csrf().disable()
@@ -74,13 +74,13 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //                .logoutRequestMatcher(new AntPathRequestMatcher(logoutPage))
 //                .logoutSuccessUrl(loginPage).and().exceptionHandling();
 
-        http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .anyRequest().hasRole("ADMIN")
-                .and()
-                .formLogin() .permitAll()
-                .and()
-                .logout() .permitAll();
+//        http.authorizeRequests()
+//                .antMatchers("/").permitAll()
+//                .anyRequest().hasRole("ADMIN")
+//                .and()
+//                .formLogin() .permitAll()
+//                .and()
+//                .logout() .permitAll();
     }
 
     @Override
