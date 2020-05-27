@@ -12,15 +12,18 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
-    @Autowired
+//    @Autowired
 //    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 //    @Override
@@ -29,17 +32,34 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //             .passwordEncoder(bCryptPasswordEncoder);
 //    }
 
+//    @Autowired
+//    DataSource dataSource;
+
+//    @Override protected void configure(AuthenticationManagerBuilder auth)
+//            throws Exception {
+//        auth
+//                .jdbcAuthentication()
+//                .dataSource(dataSource)
+//                .usersByUsernameQuery(
+//                        "select username, password, true " +
+//                                "from Spitter where username=?")
+//                .authoritiesByUsernameQuery(
+//                        "select username, 'ROLE_USER' from Spitter where username=?")
+//                .passwordEncoder(new StandardPasswordEncoder("53Kr3t"));
+//    }
+
+
     @Bean
     public UserDetailsService uzytkownikustawienia(){
 
         UserDetails user = User.withDefaultPasswordEncoder()
-                .username("uz")
-                .password("uz1")
-                .roles("uz")
+                .username("m")
+                .password("m1")
+                .roles("MANAGER")
                 .build();
         UserDetails admin = User.withDefaultPasswordEncoder()
                 .username("admin")
-                .password("admin1")
+                .password("a1")
                 .roles("ADMIN")
                 .build();
         return new InMemoryUserDetailsManager(user, admin);
@@ -48,31 +68,29 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         String loginPage = "/login";
-//        String loginPage = "/start";
-        String logoutPage = "/logout";
-//        String logoutPage = "/wyloguj";
+        String logoutPage = "/";
 
-//        http.
-//                authorizeRequests()
-//                .antMatchers("/").permitAll()
-//                .antMatchers(loginPage).permitAll()
-//                .antMatchers("/rejestracja").permitAll()
-//                .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("ADMIN")
-//                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
-//////                .anyRequest().hasRole("UZYTKOWNIK")
-//                .anyRequest()
-//                .authenticated()
-//                .and().csrf().disable()
-//                .formLogin()
-//                .loginPage(loginPage)
-//                .loginPage("/")
-//                .failureUrl("/login?error=true")
-//                .defaultSuccessUrl("/index")
-//                .usernameParameter("uzytkownik")
-//                .passwordParameter("haslo")
-//                .and().logout()
-//                .logoutRequestMatcher(new AntPathRequestMatcher(logoutPage))
-//                .logoutSuccessUrl(loginPage).and().exceptionHandling();
+        http.
+                authorizeRequests()
+                .antMatchers("/").permitAll()
+                .antMatchers(loginPage).permitAll()
+                .antMatchers("/rejestracja").permitAll()
+                .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
+                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
+////                .anyRequest().hasRole("UZYTKOWNIK")
+                .anyRequest()
+                .authenticated()
+                .and().csrf().disable()
+                .formLogin()
+                .loginPage(loginPage)
+                .loginPage("/")
+                .failureUrl("/login?error=true")
+                .defaultSuccessUrl("/index")
+                .usernameParameter("user_name")
+                .passwordParameter("password")
+                .and().logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher(logoutPage))
+                .logoutSuccessUrl(loginPage).and().exceptionHandling();
 
 //        http.authorizeRequests()
 //                .antMatchers("/").permitAll()
@@ -87,7 +105,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/templates/**");
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/pliki/**", "/templates/**","/**");
     }
 
 }

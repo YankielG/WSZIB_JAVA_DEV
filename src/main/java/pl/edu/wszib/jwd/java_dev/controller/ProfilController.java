@@ -61,7 +61,19 @@ public class ProfilController {
         return "profildodaj";
     }
 
-    @GetMapping("rejestracja")
+    @PostMapping("profilblad")
+    public String profilblad(Model model) {
+        model.addAttribute("profildodaj", new Profil());
+        return "profilblad";
+    }
+
+ @PostMapping("profilsukces")
+    public String profilsukces(Model model) {
+        model.addAttribute("profildodaj", new Profil());
+        return "profilsukces";
+    }
+
+ @GetMapping("rejestracja")
     public String rejestracja(Model model) {
         model.addAttribute("profildodaj", new Profil());
         return "rejestracja";
@@ -72,6 +84,20 @@ public class ProfilController {
         model.addAttribute("startdodaj", new Start());
         model.addAttribute("lista", startDao.findAll());
         return "przypomnijhaslo";
+    }
+
+    @GetMapping("przypomnijblad")
+    public String przypomnijblad(Model model) {
+        model.addAttribute("startdodaj", new Start());
+        model.addAttribute("lista", startDao.findAll());
+        return "przypomnijblad";
+    }
+
+    @GetMapping("przypomnijsukces")
+    public String przypomnijsukces(Model model) {
+        model.addAttribute("startdodaj", new Start());
+        model.addAttribute("lista", startDao.findAll());
+        return "przypomnijsukces";
     }
 
     @PostMapping("opcje/profil/zapisz")
