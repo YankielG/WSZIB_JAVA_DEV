@@ -53,8 +53,13 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
     public UserDetailsService uzytkownikustawienia(){
 
         UserDetails user = User.withDefaultPasswordEncoder()
-                .username("m")
-                .password("m1")
+                .username("gosc")
+                .password("g1")
+                .roles("GOSC")
+                .build();
+        UserDetails manager = User.withDefaultPasswordEncoder()
+                .username("szef")
+                .password("s1")
                 .roles("MANAGER")
                 .build();
         UserDetails admin = User.withDefaultPasswordEncoder()
@@ -75,6 +80,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers(loginPage).permitAll()
                 .antMatchers("/rejestracja").permitAll()
+                .antMatchers("/przypomnijhaslo").permitAll()
                 .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
                 .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
 ////                .anyRequest().hasRole("UZYTKOWNIK")

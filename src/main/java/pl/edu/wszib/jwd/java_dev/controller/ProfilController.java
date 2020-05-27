@@ -81,12 +81,12 @@ public class ProfilController {
 
     @GetMapping("przypomnijhaslo")
     public String przypomnijhaslo(Model model) {
-        model.addAttribute("startdodaj", new Start());
-        model.addAttribute("lista", startDao.findAll());
+//        model.addAttribute("startdodaj", new Start());
+//        model.addAttribute("lista", startDao.findAll());
         return "przypomnijhaslo";
     }
 
-    @GetMapping("przypomnijblad")
+    @PostMapping("przypomnijblad")
     public String przypomnijblad(Model model) {
         model.addAttribute("startdodaj", new Start());
         model.addAttribute("lista", startDao.findAll());
