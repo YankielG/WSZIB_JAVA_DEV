@@ -18,7 +18,7 @@
     <div class="uk-padding"></div>
 
     <div class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
+        <img class="uk-align-left uk-margin-remove-adjacent" th:src="@{/pliki/tlo.JPG}" width="60" height="28" alt="info">
     <h2 class="uk-heading-divider" th:text="#{rejestracja.tytyl}" style="position:center;"></h2>
     </div>
     <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/profilblad}" method="post">

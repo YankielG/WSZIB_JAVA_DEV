@@ -40,14 +40,11 @@
             <li class="uk-parent"><a th:href="@{/leki}">Leki</a></li>
             <li class="uk-parent"><a th:href="@{/nawyki}">Nawyki</a></li>
             <li>
-                <a href="#">Opcje</a>
+                <a href="#" >Opcje</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-<!--                        <li>Info</a></li>-->
-<!--                        <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/opcje/opcjeinfo}">Info</a></li>-->
-                        <li sec:authorize="hasAnyAuthority('MANAGER')"><a th:href="@{/opcje/opcjeinfo}">Info</a></li>
-<!--                        <li>profil</a></li>-->
-                        <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/opcje/opcjeprofil}">profil</a></li>
+                        <li><a th:href="@{/opcje/opcjeinfo}">Info</a></li>
+                        <li><a th:href="@{/opcje/opcjeprofil}">profil</a></li>
                         <li><a th:href="@{/opcje/rodzajleku}">Leki</a></li>
                     </ul>
                 </div>

@@ -67,7 +67,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .password("a1")
                 .roles("ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager(user, manager, admin);
     }
 
     @Override
@@ -80,7 +80,11 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers(loginPage).permitAll()
                 .antMatchers("/rejestracja").permitAll()
+                .antMatchers("/profilblad").permitAll()
+                .antMatchers("/profilsukces").permitAll()
                 .antMatchers("/przypomnijhaslo").permitAll()
+                .antMatchers("/przypomnijblad").permitAll()
+                .antMatchers("/przypomnijsukces").permitAll()
                 .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
                 .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
 ////                .anyRequest().hasRole("UZYTKOWNIK")
@@ -111,7 +115,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/pliki/**", "/templates/**","/**");
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/templates/**", "/pliki/**");
     }
 
 }
