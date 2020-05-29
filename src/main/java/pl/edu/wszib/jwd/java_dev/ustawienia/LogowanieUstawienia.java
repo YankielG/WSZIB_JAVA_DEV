@@ -27,7 +27,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
 //    xxxxx szyfrowania xxxxx
 
-            @Bean
+        @Bean
         public static PasswordEncoder passwordEncoder() {
             return NoOpPasswordEncoder.getInstance();
         }

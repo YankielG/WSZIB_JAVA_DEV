@@ -25,7 +25,7 @@
     <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/rejestracja/zapisz}" method="post">
         <div class="uk-margin">
             <label>Użytkownik</label>
-            <input th:field="*{uzytkownik}" type="text"  class="uk-input" required="required">
+            <input th:field="*{uzytkownik}" id="user_name" name="user_name" type="text"  class="uk-input" required="required">
         </div>
         <div class="uk-margin">
             <label>Imię</label>
@@ -41,7 +41,7 @@
         </div>
         <div class="uk-margin">
             <label>Hasło</label>
-            <input th:field="*{haslo}" type="password" class="uk-input" required="required">
+            <input th:field="*{haslo}"  id="password" name="password" type="password" class="uk-input" required="required">
         </div>
 
 <!--        <div class="uk-margin">-->
