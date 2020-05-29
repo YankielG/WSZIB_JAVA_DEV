@@ -70,6 +70,10 @@ public class Profil {
     private String uzytkownik_prawa;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
+    @Column(name = "uzytkownik_typ")
+    private String uzytkownik_typ;
+
+    //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_uwagi")
     private String uzytkownik_uwagi;
 
@@ -214,6 +218,14 @@ public class Profil {
 
     public void setUzytkownik_prawa(String uzytkownik_prawa) {
         this.uzytkownik_prawa = uzytkownik_prawa;
+    }
+
+    public String getUzytkownik_typ() {
+        return uzytkownik_typ;
+    }
+
+    public void setUzytkownik_typ(String uzytkownik_typ) {
+        this.uzytkownik_typ = uzytkownik_typ;
     }
 
     public String getUzytkownik_uwagi() {

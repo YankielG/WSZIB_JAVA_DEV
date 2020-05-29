@@ -56,12 +56,17 @@
         </div>
 
         <div class="uk-margin">
-            <label>Użytkownik prawa: </label>
+            <label>Prawa użytkownika: </label>
             <td th:text="${profilszczegoly.uzytkownik_prawa}">...Brak danych...</td>
         </div>
 
         <div class="uk-margin">
-            <label>Użytkownik ID: </label>
+            <label>Typ użytkownik: </label>
+            <td th:text="${profilszczegoly.uzytkownik_typ}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>ID użytkownika: </label>
             <td th:text="${profilszczegoly.uzytkownik_id}">...Brak danych...</td>
         </div>
 
@@ -80,6 +85,11 @@
             <label>Użytkownik - Data skasowania: </label>
 <!--            <td th:text="${profilszczegoly.uzytkownik_data_ucl}">...Brak danych...</td>-->
             <td th:text="${#calendars.format(profilszczegoly.uzytkownik_data_ucl, 'dd-MM-yyyy HH:mm')}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Użytkownik educja danych: </label>
+            <td><span th:uk-icon="${profilszczegoly.dane_opcje} ? 'check' : 'close'"></span></td>
         </div>
 
         <div class="uk-margin">

@@ -86,7 +86,7 @@
         <!--            <input th:field="*{uzytkownik_aktywny}" type="checkbox" class="uk-input" required="required">-->
         <!--        </div>-->
                     <div class="uk-margin">
-                        <div class="uk-form-label">Wł/Wył uzytkownika</div>
+                        <div class="uk-form-label">Wł/Wył użytkownika</div>
                         <div class="uk-form-controls uk-form-controls-text">
                             <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{uzytkownik_aktywny}">uzytkownik Wł.</label><br>
                             <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{uzytkownik_aktywny}">uzytkownik wył.</label>
@@ -99,15 +99,26 @@
         <!--        </div>-->
 
                 <div class="uk-button uk-form-controls uk-margin">
-                    <label>Użytkownik prawa</label>
+                    <label>Prawa użytkownik </label>
                     <select th:field="*{uzytkownik_prawa}" type="text" class="uk-input">
                         <option value=""> -- </option>
                         <option th:value="'Odczyt'">Odczyt</option>
-                        <option th:value="'Odczyt-Zapis'">Odczyt-Zapis</option>
+                        <option th:value="'Zapis'">Zapis</option>
+                        <option th:value="'Edycja'">Edycja</option>
                         <option th:value="'Odczyt-Edycja-Zapis'">Odczyt-Edycja-Zapis</option>
-                        <option th:value="'Admin'">Admin</option>
                     </select>
                 </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Rodzaj użytkownik </label>
+            <select th:field="*{uzytkownik_typ}" type="text" class="uk-input">
+                <option value=""> -- </option>
+                <option th:value="'GOSC'">Gosc</option>
+                <option th:value="'USER'">Użytkownik</option>
+                <option th:value="'MANAGER'">Moderator</option>
+                <option th:value="'Admin'">Admin</option>
+            </select>
+        </div>
 
                 <div class="uk-margin">
                     <label>Użytkownik ID</label>

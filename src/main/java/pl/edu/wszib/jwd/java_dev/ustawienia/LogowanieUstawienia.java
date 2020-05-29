@@ -23,6 +23,18 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
+//    xxxxx szyfrowania xxxxx
+
+    //        @Bean
+//        public static PasswordEncoder passwordEncoder() {
+//            return NoOpPasswordEncoder.getInstance();
+//        }
+
+//    @Bean
+//    public BCryptPasswordEncoder passwordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
+
 //    @Autowired
 //    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -31,6 +43,8 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //        auth
 //             .passwordEncoder(bCryptPasswordEncoder);
 //    }
+
+    //    xxxxx uzytkownicy xxxxx
 
 //    @Autowired
 //    DataSource dataSource;
@@ -41,12 +55,21 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //                .jdbcAuthentication()
 //                .dataSource(dataSource)
 //                .usersByUsernameQuery(
-//                        "select username, password, true " +
-//                                "from Spitter where username=?")
+//                        "select uzytkownik, haslo, true " +
+//                                "from Profil where uzytkownik=?")
 //                .authoritiesByUsernameQuery(
-//                        "select username, 'ROLE_USER' from Spitter where username=?")
+//                        "select uzytkownik, 'ROLE_USER' from Profil where uzytkownik=?")
 //                .passwordEncoder(new StandardPasswordEncoder("53Kr3t"));
 //    }
+
+//@Override protected void configure(AuthenticationManagerBuilder auth)
+//        throws Exception {
+//    auth.
+//            inMemoryAuthentication()
+//            .withUser("gosc").password("{noop}g").roles("USER").and()
+//            .withUser("admin").password("{noop}a").roles("USER", "MANAGER" ,"ADMIN").and()
+//            .withUser("szef").password("{noop}s").roles("USER", "MANAGER");
+//}
 
 
     @Bean
@@ -80,14 +103,10 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers(loginPage).permitAll()
                 .antMatchers("/rejestracja").permitAll()
-                .antMatchers("/profilblad").permitAll()
-                .antMatchers("/profilsukces").permitAll()
                 .antMatchers("/przypomnijhaslo").permitAll()
-                .antMatchers("/przypomnijblad").permitAll()
-                .antMatchers("/przypomnijsukces").permitAll()
                 .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
                 .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
-////                .anyRequest().hasRole("UZYTKOWNIK")
+////                .anyRequest().hasRole("USER")
                 .anyRequest()
                 .authenticated()
                 .and().csrf().disable()
@@ -115,7 +134,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/templates/**", "/pliki/**");
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/pliki/**", "/templates/**","/**");
     }
 
 }
