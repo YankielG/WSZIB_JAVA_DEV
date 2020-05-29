@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -25,10 +27,10 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
 //    xxxxx szyfrowania xxxxx
 
-    //        @Bean
-//        public static PasswordEncoder passwordEncoder() {
-//            return NoOpPasswordEncoder.getInstance();
-//        }
+            @Bean
+        public static PasswordEncoder passwordEncoder() {
+            return NoOpPasswordEncoder.getInstance();
+        }
 
 //    @Bean
 //    public BCryptPasswordEncoder passwordEncoder(){
@@ -46,21 +48,21 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
     //    xxxxx uzytkownicy xxxxx
 
-//    @Autowired
-//    DataSource dataSource;
+    @Autowired
+    DataSource dataSource;
 
-//    @Override protected void configure(AuthenticationManagerBuilder auth)
-//            throws Exception {
-//        auth
-//                .jdbcAuthentication()
-//                .dataSource(dataSource)
-//                .usersByUsernameQuery(
-//                        "select uzytkownik, haslo, true " +
-//                                "from Profil where uzytkownik=?")
-//                .authoritiesByUsernameQuery(
-//                        "select uzytkownik, 'ROLE_USER' from Profil where uzytkownik=?")
+    @Override protected void configure(AuthenticationManagerBuilder auth)
+            throws Exception {
+        auth
+                .jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery(
+                        "select uzytkownik, haslo, true " +
+                                "from Profil where uzytkownik=?")
+                .authoritiesByUsernameQuery(
+                        "select uzytkownik, 'ROLE_USER' from Profil where uzytkownik=?");
 //                .passwordEncoder(new StandardPasswordEncoder("53Kr3t"));
-//    }
+    }
 
 //@Override protected void configure(AuthenticationManagerBuilder auth)
 //        throws Exception {
@@ -72,26 +74,26 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //}
 
 
-    @Bean
-    public UserDetailsService uzytkownikustawienia(){
-
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("gosc")
-                .password("g1")
-                .roles("GOSC")
-                .build();
-        UserDetails manager = User.withDefaultPasswordEncoder()
-                .username("szef")
-                .password("s1")
-                .roles("MANAGER")
-                .build();
-        UserDetails admin = User.withDefaultPasswordEncoder()
-                .username("admin")
-                .password("a1")
-                .roles("ADMIN")
-                .build();
-        return new InMemoryUserDetailsManager(user, manager, admin);
-    }
+//    @Bean
+//    public UserDetailsService uzytkownikustawienia(){
+//
+//        UserDetails user = User.withDefaultPasswordEncoder()
+//                .username("gosc")
+//                .password("g")
+//                .roles("GOSC")
+//                .build();
+//        UserDetails manager = User.withDefaultPasswordEncoder()
+//                .username("szef")
+//                .password("s")
+//                .roles("MANAGER")
+//                .build();
+//        UserDetails admin = User.withDefaultPasswordEncoder()
+//                .username("admin")
+//                .password("a")
+//                .roles("ADMIN")
+//                .build();
+//        return new InMemoryUserDetailsManager(user, manager, admin);
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
