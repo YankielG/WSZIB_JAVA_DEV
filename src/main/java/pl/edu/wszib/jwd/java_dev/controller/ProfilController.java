@@ -105,6 +105,11 @@ public class ProfilController {
         profilDao.save(profil);
         return "redirect:/opcje/opcjeprofil";
     }
+    @PostMapping("rejestracja/zapisz")
+    public String rejestracjazapisz(Profil profil) {
+        profilDao.save(profil);
+        return "profilsukces";
+    }
 
     @GetMapping("opcje/profil/edytuj/{id}")
     public String edytuj(@PathVariable Long id, Model model) {

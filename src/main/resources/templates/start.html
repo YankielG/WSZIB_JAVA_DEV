@@ -16,20 +16,20 @@
 
 <div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
     <!--    <img class="uk-align-center uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">-->
-    <img class="uk-align-center uk-margin-remove-adjacent" src="/tlo.JPG" width="300" height="140" alt="info">
+    <img class="uk-align-center uk-margin-remove-adjacent" th:src="@{/pliki/tlo.JPG}" width="300" height="140" alt="info">
 
     <form method="POST" class="form-signin" th:object="${startdodaj}" th:action="@{/login}">
         <h2 class="uk-text-center uk-card-title" th:text="#{start.text1}"></h2>
 <!--        <input th:field="*{uzytkownik}" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>-->
-        <input id="uzytkownik" name="user_name" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>
+        <input id="user_name" name="user_name" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>
         <br/>
 <!--        <input th:field="*{haslo}" type="password" th:placeholder="Hasło" class="uk-input"/> <br/>-->
-        <input id="haslo" name="password" type="password" th:placeholder="Hasło" class="uk-input"/> <br/>
+        <input id="password" name="password" type="password" th:placeholder="Hasło" class="uk-input" required="required"/> <br/>
         <br/>
-        <input id="remember_me" name="remember-me" type="checkbox"/>
-        <label for="remember_me" class="inline">Pamiętaj mnie</label>
-        <br/>
-        <br/>
+<!--        <input id="remember_me" name="remember-me" type="checkbox"/>-->
+<!--        <label for="remember_me" class="inline">Pamiętaj mnie</label>-->
+<!--        <br/>-->
+<!--        <br/>-->
         <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" type="Submit" value="Login"
                 th:text="#{start.enter}"></button>
     </form>

@@ -103,9 +103,13 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers(loginPage).permitAll()
                 .antMatchers("/rejestracja").permitAll()
+                .antMatchers("/rejestracja/zapisz").permitAll()
+                .antMatchers("/rejestracja/zapisz").permitAll()
                 .antMatchers("/przypomnijhaslo").permitAll()
-                .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
-                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
+                .antMatchers("/przypomnijblad").permitAll()
+                .antMatchers("/przypomnijsukces").permitAll()
+//                .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
+//                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
 ////                .anyRequest().hasRole("USER")
                 .anyRequest()
                 .authenticated()
@@ -134,8 +138,9 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/pliki/**", "/templates/**","/**");
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/pliki/**", "/templates/**");
     }
 
 }
+
 

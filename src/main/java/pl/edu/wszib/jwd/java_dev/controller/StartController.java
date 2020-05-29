@@ -39,8 +39,8 @@ public class StartController {
 
     @GetMapping(value={"/", "/login"})
     public String wstaw(Model model) {
-//        model.addAttribute("startdodaj", new Start());
-//            model.addAttribute("lista", startDao.findAll());
+        model.addAttribute("startdodaj", new Start());
+            model.addAttribute("lista", startDao.findAll());
         return "start";
     }
 
