@@ -109,10 +109,10 @@ public class ProfilController {
     @PostMapping("opcje/profil/zapisz")
     public String zapisz(Profil profil) {
         profil.setHaslo(bCryptPasswordEncoder.encode(profil.getHaslo()));
-        profil.setUzytkownik_typ("USER");
         profil.setUzytkownik_uwagi("Tworzenie");
         profil.setUzytkownik_prawa("Odczyt-Edycja-Zapis");
-        profil.setUzytkownik_id("Nowy_0000");
+        profil.setUzytkownik_typ("USER");
+//        profil.setUzytkownik_id("Nowy_0000");
         profil.setUzytkownik_aktywny(true);
         profil.setUzytkownik_data_tw(new Date());
         profilDao.save(profil);
@@ -125,7 +125,8 @@ public class ProfilController {
         profil.setUzytkownik_typ("USER");
         profil.setUzytkownik_uwagi("Rejestracja");
         profil.setUzytkownik_prawa("Odczyt-Edycja-Zapis");
-        profil.setUzytkownik_id("Nowy_0000");
+        profil.setUzytkownik_typ("USER");
+//        profil.setUzytkownik_id("Nowy_0000");
         profil.setUzytkownik_aktywny(true);
         profil.setUzytkownik_data_tw(new Date());
         profilDao.save(profil);
@@ -151,6 +152,13 @@ public class ProfilController {
         Profil profil = profilDao.findById(id).get();
         model.addAttribute("profildodaj", profil);
         return "profildodajadmin";
+    }
+
+    @PostMapping("opcje/profil/admin")
+    public String adminzapisz(Profil profil) {
+        profil.setUzytkownik_data_up(new Date());
+        profilDao.save(profil);
+        return "redirect:/opcje/opcjeprofil";
     }
 
 

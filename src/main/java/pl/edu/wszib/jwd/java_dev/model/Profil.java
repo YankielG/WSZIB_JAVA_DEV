@@ -63,7 +63,7 @@ public class Profil {
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_id")
-    private String uzytkownik_id;
+    private Long uzytkownik_id;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_prawa")
@@ -204,11 +204,11 @@ public class Profil {
         this.uzytkownik_aktywny = uzytkownik_aktywny;
     }
 
-    public String getUzytkownik_id() {
+    public Long getUzytkownik_id() {
         return uzytkownik_id;
     }
 
-    public void setUzytkownik_id(String uzytkownik_id) {
+    public void setUzytkownik_id(Long uzytkownik_id) {
         this.uzytkownik_id = uzytkownik_id;
     }
 

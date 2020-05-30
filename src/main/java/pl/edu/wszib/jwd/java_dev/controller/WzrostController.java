@@ -2,6 +2,7 @@ package pl.edu.wszib.jwd.java_dev.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.edu.wszib.jwd.java_dev.dao.WzrostDao;
 import pl.edu.wszib.jwd.java_dev.model.Waga;
 import pl.edu.wszib.jwd.java_dev.model.Wzrost;
+import pl.edu.wszib.jwd.java_dev.ustawienia.LogowanieUstawienia;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -60,6 +62,7 @@ public class WzrostController {
 
     @PostMapping("wzrost/zapisz")
     public String zapisz(Wzrost wzrost) {
+//        wzrost.setUzytkownik_prawa();
         wzrostDao.save(wzrost);
         return "redirect:/wzrost";
     }

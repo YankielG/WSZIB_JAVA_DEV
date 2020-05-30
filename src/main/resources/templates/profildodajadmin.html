@@ -7,7 +7,7 @@
         <img class="uk-align-left uk-margin-remove-adjacent" src="/tlo.JPG" width="60" height="28" alt="info">
         <h2 class="uk-heading-divider" th:text="#{opcje.tytul.profil.admin}" style="position:center;"></h2>
     </div>
-    <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/opcje/profil/zapisz}" method="post">
+    <form style="width:300px; margin: auto" th:object="${profildodaj}" th:action="@{/opcje/profil/admin}" method="post">
         <div class="uk-margin">
             <label>uzytkownik: </label>
             <td th:text="${profildodaj.uzytkownik}">...Brak danych...</td>
@@ -101,7 +101,7 @@
                 <div class="uk-button uk-form-controls uk-margin">
                     <label>Prawa użytkownik </label>
                     <select th:field="*{uzytkownik_prawa}" type="text" class="uk-input">
-                        <option value=""> -- </option>
+                        <option value="<null>"> -- </option>
                         <option th:value="'Odczyt'">Odczyt</option>
                         <option th:value="'Zapis'">Zapis</option>
                         <option th:value="'Edycja'">Edycja</option>
@@ -112,11 +112,11 @@
         <div class="uk-button uk-form-controls uk-margin">
             <label>Rodzaj użytkownik </label>
             <select th:field="*{uzytkownik_typ}" type="text" class="uk-input">
-                <option value=""> -- </option>
+                <option value="<null>"> -- </option>
                 <option th:value="'GOSC'">Gosc</option>
                 <option th:value="'USER'">Użytkownik</option>
                 <option th:value="'MANAGER'">Moderator</option>
-                <option th:value="'Admin'">Admin</option>
+                <option th:value="'ADMIN'">Admin</option>
             </select>
         </div>
 

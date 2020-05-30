@@ -32,6 +32,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //            return NoOpPasswordEncoder.getInstance();
 //        }
 
+
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -52,6 +53,7 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                         "select uzytkownik, uzytkownik_typ from Profil where uzytkownik=?")
 ////                .passwordEncoder(new StandardPasswordEncoder("53Kr3t"));
                     .passwordEncoder(bCryptPasswordEncoder);
+
     }
 
 //@Override protected void configure(AuthenticationManagerBuilder auth)
@@ -100,8 +102,8 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                 .antMatchers("/przypomnijhaslo").permitAll()
                 .antMatchers("/przypomnijblad").permitAll()
                 .antMatchers("/przypomnijsukces").permitAll()
-//                .antMatchers("/opcje/opcjeinfo").hasAnyAuthority("MANAGER")
-//                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
+                .antMatchers("opcje/opcjeinfo").hasAnyAuthority("ADMIN", "MANAGER")
+                .antMatchers("opcje/opcjeprofil").hasAnyAuthority("ADMIN")
 ////                .anyRequest().hasRole("USER")
                 .anyRequest()
                 .authenticated()
