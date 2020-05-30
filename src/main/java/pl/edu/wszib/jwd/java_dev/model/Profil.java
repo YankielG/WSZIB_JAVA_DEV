@@ -63,7 +63,7 @@ public class Profil {
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_id")
-    private Long uzytkownik_id;
+    private String uzytkownik_id;
 
     //    @NotEmpty(message = "*Pole nie może być puste!. Proszę o wypełnienie pola")
     @Column(name = "uzytkownik_prawa")
@@ -83,9 +83,9 @@ public class Profil {
     @Column(name = "uzytkownik_d_tw")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
 //    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-//    private Date uzytkownik_data_tw;
+    private Date uzytkownik_data_tw;
 //    private LocalDateTime uzytkownik_data_tw = LocalDateTime.now();
-    private Date uzytkownik_data_tw = new Date();
+//    private Date uzytkownik_data_tw = new Date();
 
     //    Data ostatniej edycji
 //    @Temporal(TemporalType.DATE)
@@ -204,11 +204,11 @@ public class Profil {
         this.uzytkownik_aktywny = uzytkownik_aktywny;
     }
 
-    public Long getUzytkownik_id() {
+    public String getUzytkownik_id() {
         return uzytkownik_id;
     }
 
-    public void setUzytkownik_id(Long uzytkownik_id) {
+    public void setUzytkownik_id(String uzytkownik_id) {
         this.uzytkownik_id = uzytkownik_id;
     }
 

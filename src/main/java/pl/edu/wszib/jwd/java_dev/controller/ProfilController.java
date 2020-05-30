@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,6 +17,8 @@ import pl.edu.wszib.jwd.java_dev.dao.StartDao;
 import pl.edu.wszib.jwd.java_dev.model.Profil;
 import pl.edu.wszib.jwd.java_dev.model.Start;
 
+import java.util.Date;
+
 @Controller
 @PropertySource("classpath:messages.properties")
 public class ProfilController {
@@ -25,6 +28,9 @@ public class ProfilController {
 
     @Autowired
     private StartDao startDao;
+
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("opcje/opcjeprofil")
     public String profil(Model model) {
@@ -102,11 +108,26 @@ public class ProfilController {
 
     @PostMapping("opcje/profil/zapisz")
     public String zapisz(Profil profil) {
+        profil.setHaslo(bCryptPasswordEncoder.encode(profil.getHaslo()));
+        profil.setUzytkownik_typ("USER");
+        profil.setUzytkownik_uwagi("Tworzenie");
+        profil.setUzytkownik_prawa("Odczyt-Edycja-Zapis");
+        profil.setUzytkownik_id("Nowy_0000");
+        profil.setUzytkownik_aktywny(true);
+        profil.setUzytkownik_data_tw(new Date());
         profilDao.save(profil);
         return "redirect:/opcje/opcjeprofil";
     }
+
     @PostMapping("rejestracja/zapisz")
     public String rejestracjazapisz(Profil profil) {
+        profil.setHaslo(bCryptPasswordEncoder.encode(profil.getHaslo()));
+        profil.setUzytkownik_typ("USER");
+        profil.setUzytkownik_uwagi("Rejestracja");
+        profil.setUzytkownik_prawa("Odczyt-Edycja-Zapis");
+        profil.setUzytkownik_id("Nowy_0000");
+        profil.setUzytkownik_aktywny(true);
+        profil.setUzytkownik_data_tw(new Date());
         profilDao.save(profil);
         return "profilsukces";
     }

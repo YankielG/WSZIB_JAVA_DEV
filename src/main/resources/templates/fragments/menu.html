@@ -39,7 +39,7 @@
             <li class="uk-parent"><a th:href="@{/tetno}">Tętno</a></li>
             <li class="uk-parent"><a th:href="@{/leki}">Leki</a></li>
             <li class="uk-parent"><a th:href="@{/nawyki}">Nawyki</a></li>
-            <li>
+            <li  sec:authorize="hasAnyAuthority('MANAGER','ADMIN')">
                 <a href="#">Opcje</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">

@@ -25,7 +25,7 @@
         
         <div class="uk-margin">
             <label>Rodzaj: </label>
-            <td th:text="${lekiszczegoly.rodzaj}"></td>
+            <td th:text="${#calendars.format(lekiszczegoly.rodzaj, 'dd-MM-yyyy')}"></td>
         </div>
 
         <div class="uk-margin">

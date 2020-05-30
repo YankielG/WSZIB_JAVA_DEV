@@ -27,24 +27,13 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 
 //    xxxxx szyfrowania xxxxx
 
-        @Bean
-        public static PasswordEncoder passwordEncoder() {
-            return NoOpPasswordEncoder.getInstance();
-        }
+//        @Bean
+//        public static PasswordEncoder passwordEncoder() {
+//            return NoOpPasswordEncoder.getInstance();
+//        }
 
-//    @Bean
-//    public BCryptPasswordEncoder passwordEncoder(){
-//        return new BCryptPasswordEncoder();
-//    }
-
-//    @Autowired
-//    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth
-//             .passwordEncoder(bCryptPasswordEncoder);
-//    }
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     //    xxxxx uzytkownicy xxxxx
 
@@ -60,8 +49,9 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
                         "select uzytkownik, haslo, true " +
                                 "from Profil where uzytkownik=?")
                 .authoritiesByUsernameQuery(
-                        "select uzytkownik, 'ROLE_USER' from Profil where uzytkownik=?");
-//                .passwordEncoder(new StandardPasswordEncoder("53Kr3t"));
+                        "select uzytkownik, uzytkownik_typ from Profil where uzytkownik=?")
+////                .passwordEncoder(new StandardPasswordEncoder("53Kr3t"));
+                    .passwordEncoder(bCryptPasswordEncoder);
     }
 
 //@Override protected void configure(AuthenticationManagerBuilder auth)
@@ -133,7 +123,12 @@ public class LogowanieUstawienia extends WebSecurityConfigurerAdapter {
 //                .and()
 //                .formLogin() .permitAll()
 //                .and()
-//                .logout() .permitAll();
+//                .logout() .permitAll()
+//                .and()
+//                .rememberMe()
+//                .tokenValiditySeconds(60)
+//                .key("spittrKey");
+
     }
 
     @Override
