@@ -47,7 +47,7 @@
 <!--                        <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/opcje/opcjeinfo}">Info</a></li>-->
                         <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/opcje/opcjeinfo}">Info</a></li>
 <!--                        <li>profil</a></li>-->
-                        <li sec:authorize="hasAnyAuthority('ADMIN')"><a th:href="@{/opcje/opcjeprofil}">profil</a></li>
+                        <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/opcje/opcjeprofil}">profil</a></li>
                         <li><a th:href="@{/opcje/rodzajleku}">Leki</a></li>
                     </ul>
                 </div>
