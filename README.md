@@ -6,6 +6,10 @@ Użytkownik ma kilka podstron na każdej jest wprowadzana inna wartość dotycz�
 oraz odczyt wcześniejszych zapisów.
 
 
+
+
+
+
 Jako projekt końcowy zaproponowałem 5 tematów. 
 Nie mogąc się zdecydować wybrałem pierwszy lepszy. 
 Akurat trafiło na Dzienniczek zdrowia.
