@@ -30,6 +30,11 @@
 <!--        <label for="remember_me" class="inline">Pamiętaj mnie</label>-->
 <!--        <br/>-->
 <!--        <br/>-->
+
+        <div align="center" th:if="${param.error}">
+            <p style="font-size: 20; color: #ff1c19;">Nazwa użytkownika lub hasło są nieprawidłowe! Sprawdź je!</p>
+        </div>
+
         <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" type="Submit" value="Login"
                 th:text="#{start.enter}"></button>
     </form>

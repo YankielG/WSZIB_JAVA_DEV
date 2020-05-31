@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" th:replace="~{fragments/szablon :: szablon(~{::.container})}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/szablon :: szablon(~{::.container})}"
+      xmlns:sec= "http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <body>
 
 <!--<div class="container" th:each="element : ${lista} ">-->
-<div class="container">
+<div class="container" sec:authorize="isAuthenticated()">
 
-        <h2 class="uk-heading-divider" th:text="#{index.tytyl}" style="position:center;"></h2>
-<!--    <h2 class="uk-heading-bullet" th:text="#{index.tytyl} + ${element.uzytkownik}" style="position:center;"></h2>-->
+        <h2 class="uk-heading-divider"  style="position:center">
+            <span th:text="#{index.tytyl}">W</span>
+            <span sec:authentication="name">L</span>
+<!--            <span sec:authentication="principal.authorities">P</span>-->
+        </h2>
 
     <div class="uk-panel">
         <img class="uk-align-left uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">

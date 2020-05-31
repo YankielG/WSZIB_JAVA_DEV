@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec= "http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <body>
 
 <nav th:fragment="menu1" class="uk-navbar-container" uk-navbar uk-sticky>
     <div class="uk-navbar-center">
-        <a th:href="@{/index}" class="uk-navbar-item uk-logo">Start</a>
+        <a th:href="@{/index}" class="uk-navbar-item uk-logo" sec:authorize="isAuthenticated()"><span sec:authentication="name">L</span></a>
         <ul class="uk-navbar-nav">
             <!--            <li class="uk-parent" th:classappend="${title==#{temperatura.tytul.calosc} ? 'uk-active':''}"><a th:href="@{/temperatura}">Temperatura</a></li>-->
             <li class="uk-parent"><a th:href="@{/temperatura}">Temperatura</a></li>
@@ -29,8 +30,9 @@
 
 
 <nav th:fragment="menu2" class="uk-navbar-container" uk-navbar uk-sticky>
+
     <div class="uk-navbar-center nav-overlay">
-        <a th:href="@{/index}" class="uk-navbar-item uk-logo">Start</a>
+        <a th:href="@{/index}" class="uk-navbar-item uk-logo" sec:authorize="isAuthenticated()"><span sec:authentication="name">L</span></a>
         <ul class="uk-navbar-nav">
             <li class="uk-parent"><a th:href="@{/temperatura}">Temperatura</a></li>
             <li class="uk-parent"><a th:href="@{/wzrost}">Wzrost</a></li>
@@ -55,8 +57,11 @@
             <li class="uk-parent"><a th:href="@{/info}">Info</a></li>
         </ul>
 <!--        <a class="uk-parent" style="margin-left: 30px" th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>-->
-        <a class="uk-parent" style="margin-left: 30px" th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>
+         <span class="uk-navbar-item" style="margin-left: 50px" sec:authentication="principal.authorities"></span>
+        <a th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>
+
     </div>
+
 <!--szukanie prawa strona-->
 <!--    <div class="uk-navbar-right">-->
 <!--        <div>-->
@@ -82,7 +87,7 @@
     <div class="uk-navbar-left">
         <div th:fragment="menu" class="uk-width-1-2@s uk-width-2-5@m" uk-sticky>
             <ul class="uk-nav uk-nav-default">
-                <li class="uk-active"><a th:href="@{/index}">Start</a></li>
+                <li class="uk-active"><a th:href="@{/index}" class="uk-navbar-item uk-logo" sec:authorize="isAuthenticated()"><span sec:authentication="name">L</span></a></li>
                 <li><a th:href="@{/temperatura}">Temperatura</a></li>
                 <li><a th:href="@{/wzrost}">Wzrost</a></li>
                 <li><a th:href="@{/waga}">Waga</a></li>
