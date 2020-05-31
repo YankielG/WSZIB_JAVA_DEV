@@ -55,7 +55,7 @@
             </li>
             <li class="uk-parent"><a th:href="@{/info}">Info</a></li>
         </ul>
-<!--         <span class="uk-navbar-item" style="margin-left: 100px" sec:authentication="principal.authorities"></span>-->
+<!--         <span class="uk-navbar-item" style="margin-left: 100px" sec:authentication="principal.username"></span>-->
          <span class="uk-navbar-item" style="margin-left: 100px" sec:authorize="hasAnyAuthority('ADMIN')">Administrator</span>
          <span class="uk-navbar-item" style="margin-left: 100px" sec:authorize="hasAnyAuthority('MANAGER')">Moderator</span>
          <span class="uk-navbar-item" style="margin-left: 100px" sec:authorize="hasAnyAuthority('USER')">Użytkownik</span>
