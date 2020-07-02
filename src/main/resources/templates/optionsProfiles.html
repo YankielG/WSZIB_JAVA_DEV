@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{options.title.profile}" style="position:center;"></h2>
+            </div>
+
+            <a th:href="@{/options/profile/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/options/profile/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Użytkownik</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Płeć</th>
+                    <th>Data urodzenia</th>
+                    <th>Jednostka wagi</th>
+                    <th>Jednostka długości</th>
+                    <th>options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elements : ${lists}">
+                    <td th:text="${elements.id}"></td>
+                    <td th:text="${elements.users}"></td>
+                    <td th:text="${elements.name}"></td>
+                    <td th:text="${elements.surname}"></td>
+                    <td th:text="${elements.gender}"></td>
+                    <td th:text="${#calendars.format(elements.date, 'dd-MM-yyyy')}"></td>
+                    <td th:text="${elements.weight}"></td>
+                    <td th:text="${elements.measure}"></td>
+                    <td>
+                        <a th:href="@{/options/profile/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/options/profile/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/options/profile/editadmin/{id} (id=${elements.id})}" uk-icon="icon: users" uk-tooltip="Admin"></a>
+                        <a th:href="@{/options/profile/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="uk-padding"></div>
+
+    </div>
+
+</body>
+</html>

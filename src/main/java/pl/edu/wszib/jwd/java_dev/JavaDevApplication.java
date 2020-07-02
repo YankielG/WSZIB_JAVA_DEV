@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.thymeleaf.dialect.springdata.SpringDataDialect;
 
 @SpringBootApplication
-//@PropertySource("classpath:db.properties")
+@PropertySource("classpath:db.properties")
 public class JavaDevApplication {
 
     public static void main(String[] args) {

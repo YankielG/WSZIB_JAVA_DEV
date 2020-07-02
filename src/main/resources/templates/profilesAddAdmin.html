@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+        <h2 class="uk-heading-divider" th:text="#{options.title.profile.admin}" style="position:center;"></h2>
+    </div>
+
+    <form style="width:300px; margin: auto" th:object="${profileadd}" th:action="@{/options/profile/save}" method="post">
+        <div class="uk-margin">
+            <label>Użytkownik: </label>
+            <td th:text="${profileadd.users}">...Brak danych...</td>
+            <input th:field="*{users}" type="text"  class="uk-input" hidden>
+        </div>
+
+        <div class="uk-margin">
+            <label>Imię: </label>
+            <td th:text="${profileadd.name}">...Brak danych...</td>
+            <input th:field="*{name}" type="text" class="uk-input" hidden>
+        </div>
+
+        <div class="uk-margin">
+            <label>Nazwisko: </label>
+            <td th:text="${profileadd.surname}">...Brak danych...</td>
+            <input th:field="*{surname}" type="text" class="uk-input" hidden>
+        </div>
+
+        <div class="uk-margin" hidden>
+            <label >Email</label>
+            <input th:field="*{email}" type="email" class="uk-input">
+        </div>
+
+        <div class="uk-margin" hidden>
+            <label>Hasło</label>
+            <input th:field="*{password}" type="text" class="uk-input">
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin" hidden>
+            <label>Płeć</label>
+            <select th:field="*{gender}" type="text" class="uk-input">
+                <option value=""> -- </option>
+                <option th:value="'Kobieta'">Kobieta</option>
+                <option th:value="'Mężczyzna'">Mężczyzna</option>
+                <option th:value="'Dziecko'">Dziecko</option>
+            </select>
+        </div>
+
+        <div class="uk-margin" hidden>
+            <label>Data urodzenia</label>
+            <Input th:field="*{date}" type="date" class="uk-input">
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin" hidden>
+            <label>Jednostka wagi</label>
+            <select th:field="*{weight}" type="text" class="uk-input">
+                <option value=""> -- </option>
+                <option th:value="'dkg'">dkg</option>
+                <option th:value="'Kg'">Kg</option>
+            </select>
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin" hidden>
+            <label>Jednostka długości</label>
+            <select th:field="*{measure}" type="text" class="uk-input">
+                <option value=""> -- </option>
+                <option th:value="'cm'">cm</option>
+                <option th:value="'m'">m</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+        <div class="uk-form-label">Wł/Wył użytkownika</div>
+            <div class="uk-form-controls uk-form-controls-text">
+                <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{enable}">uzytkownik Wł.</label><br>
+                <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{enable}">uzytkownik wył.</label>
+            </div>
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Prawa użytkownik </label>
+            <select th:field="*{permissions}" type="text" class="uk-input">
+                <option value="---"> -- </option>
+                <option th:value="'Odczyt'">Odczyt</option>
+                <option th:value="'Zapis'">Zapis</option>
+                <option th:value="'Edycja'">Edycja</option>
+                <option th:value="'Odczyt-Edycja-Zapis'">Odczyt-Edycja-Zapis</option>
+            </select>
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Rodzaj użytkownik </label>
+            <select th:field="*{type}" type="text" class="uk-input">
+                <option value="---"> -- </option>
+                <option th:value="'GOSC'">Gosc</option>
+                <option th:value="'USER'">Użytkownik</option>
+                <option th:value="'MANAGER'">Moderator</option>
+                <option th:value="'ADMIN'">Admin</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <label>Użytkownik Uwagi</label>
+            <textarea th:field="*{description}" class="uk-textarea" rows="4"></textarea>
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+        <a th:href="@{/options/optionsprofiles}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{home.title}"></title>
+    <link rel="icon" type="image/x-icon" th:href="@{icon.ico}" href="../static/icon.ico"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}" href="../static/css/uikit.min.css"/>
+    <script th:src="@{/js/uikit.min.js}" src="../static/js/uikit.min.js"></script>
+    <script th:src="@{/js/uikit-icons.min.js}" src="../static/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+<div class="container uk-align-center" style="max-width: 1000px; margin: 50px auto">
+    <div class="uk-padding"></div>
+
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" th:src="@{/static/files/background.JPG}" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{registration.title}" style="position:center;"></h2>
+    </div>
+
+    <form style="width:300px; margin: auto" th:object="${profileadd}" th:action="@{/registration/save}" method="post">
+        <div class="uk-margin">
+            <label>Użytkownik</label>
+            <input th:field="*{users}" id="user_name" name="user_name" type="text"  class="uk-input" required="required">
+        </div>
+        <div class="uk-margin">
+            <label>Imię</label>
+            <input th:field="*{name}" type="text" class="uk-input" required="required">
+        </div>
+        <div class="uk-margin">
+            <label>Nazwisko</label>
+            <input th:field="*{surname}" type="text" class="uk-input" required="required">
+        </div>
+        <div class="uk-margin">
+            <label>Email</label>
+            <input th:field="*{email}" type="email" class="uk-input" required="required">
+        </div>
+        <div class="uk-margin">
+            <label>Hasło</label>
+            <input th:field="*{password}"  id="password" name="password" type="password" class="uk-input" required="required">
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Płeć</label>
+            <select th:field="*{gender}" type="text" class="uk-input" required="required">
+                <option value=""> -- </option>
+                <option th:value="'Kobieta'">Kobieta</option>
+                <option th:value="'Mężczyzna'">Mężczyzna</option>
+                <option th:value="'Dziecko'">Dziecko</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <label>Data urodzenia</label>
+            <Input th:field="*{date}" type="date" class="uk-input" required="required">
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Jednostka wagi</label>
+            <select th:field="*{weight}" type="text" class="uk-input">
+                <option value=""> -- </option>
+                <option th:value="'dkg'">dkg</option>
+                <option th:value="'Kg'">Kg</option>
+            </select>
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Jednostka długości</label>
+            <select th:field="*{measure}" type="text" class="uk-input">
+                <option value=""> -- </option>
+                <option th:value="'cm'">cm</option>
+                <option th:value="'m'">m</option>
+            </select>
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+
+        <a th:href="@{/}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>

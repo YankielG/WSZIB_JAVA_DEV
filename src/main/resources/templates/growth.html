@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{growth.title}" style="position:center;"></h2>
+            </div>
+
+            <span uk-icon="icon: info" uk-tooltip="Info"></span>
+            <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000">
+                <div class="uk-card uk-card-body uk-card-default">
+                    <p>growth człowieka mierzony od czubka głowy do podeszwy stopy w pozycji wyprostowanej. Rano i wieczorem growth może się różnić o 2–3 cm.</p>
+                    <p>Szacowanie średniego growthu ludzi jest trudne. Średni growth ludzi zmienia się na przestrzeni wieków / lat.
+                        A także zależy od kontynętu.</p>
+                    <p>Na tą chwilę można przyjąć:</p>
+                    <ul class="uk-list uk-list-bullet">
+                        <li>growth karłowaty - do 152,9 cm,</li>
+                        <li>growth niski (153-162,9 cm),</li>
+                        <li>growth średni (163-175,0 cm),</li>
+                        <li>growth wysoki (175-184,9 cm),</li>
+                        <li>growth bardzo wysoki (powyżej 178 cm).</li>
+                    </ul>
+                </div>
+            </div>
+
+        <div class="uk-section">
+            <canvas id="line-chart" width="2800" height="900"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+            <script th:inline="javascript">
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: [[${label}]],
+                        datasets: [{
+                            data: [[${information}]],
+                            label: "Wzrost",
+                            borderColor: "#3e95cd",
+                            fill: false
+                        },
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales:{
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Data'}
+                            }],
+                            yAxes: [{
+                                display: true,
+                                stacked: true,
+                                ticks: {
+                                    min: 40,
+                                    steps: 10,
+                                    stepValue: 5,
+                                    max: 220},
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Wzrost'}
+                            }]
+
+                        }
+                    }
+                });
+
+            </script>
+        </div>
+
+            <a th:href="@{/growth/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/growth/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-striped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Wzrost</th>
+                    <th>Data</th>
+                    <th>Rodzaj</th>
+                    <th>Uwagi</th>
+                    <th>Opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elements : ${lists}">
+                    <td th:text="${elements.id}"></td>
+                    <td th:text="${elements.growths}"></td>
+                    <td th:text="${#calendars.format(elements.date, 'dd-MM-yyyy')}"></td>
+                    <td><span th:uk-icon="${elements.type} ? 'heart' : 'ban'"></span></td>
+                    <td th:text="${elements.description}"></td>
+                    <td>
+                        <a th:href="@{/growth/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/growth/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/growth/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="uk-padding"></div>
+    </div>
+
+</body>
+</html>

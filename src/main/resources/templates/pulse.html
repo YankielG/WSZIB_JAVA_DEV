@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{pulse.title}" style="position:center;"></h2>
+            </div>
+
+            <span uk-icon="icon: info" uk-tooltip="Info"></span>
+            <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000" >
+                <div class="uk-card uk-card-body uk-card-default" >
+                   <p> Prawidłowe tętno (puls) mieści się w przedziale od 60 do 100 uderzeń serca na minutę.</p>
+                    <p>Za wysoki puls serca (powyżej 100 uderzeń na minutę) to tachykardia (częstoskurcz), za niski puls (poniżej 60 uderzeń na minutę) to bradykardia.</p>
+                    <p>Zarówno wysoki puls w spoczynku, jak i niski puls mogą świadczyć o chorobie – taki stan wymaga dalszej diagnostyki.</p>
+                </div>
+            </div>
+
+        <div class="uk-section">
+            <canvas id="line-chart" width="2800" height="900"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+            <script th:inline="javascript">
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: [[${label}]],
+                        datasets: [{
+                            data: [[${information}]],
+                            label: "Tętno",
+                            borderColor: "#3e95cd",
+                            fill: false
+                        },
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales:{
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Data'}
+                            }],
+                            yAxes: [{
+                                display: true,
+                                stacked: true,
+                                ticks: {
+                                    min: 40,
+                                    steps: 10,
+                                    stepValue: 5,
+                                    max: 160},
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Tętno'}
+                            }]
+
+                        }
+                    }
+                });
+
+            </script>
+        </div>
+
+            <a th:href="@{/pulse/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/pulse/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-striped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tętno</th>
+                    <th>Data</th>
+                    <th>Rodzaj</th>
+                    <th>Uwagi</th>
+                    <th>Opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elements : ${lists}">
+                    <td th:text="${elements.id}"></td>
+                    <td th:text="${elements.pulses}"></td>
+                    <td th:text="${#calendars.format(elements.date, 'dd-MM-yyyy')}"></td>
+                    <td><span th:uk-icon="${elements.type} ? 'heart' : 'ban'"></span></td>
+                    <td th:text="${elements.description}"></td>
+                    <td>
+                        <a th:href="@{/pulse/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/pulse/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/pulse/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="uk-padding"></div>
+
+    </div>
+
+</body>
+</html>

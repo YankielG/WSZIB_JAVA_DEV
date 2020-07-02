@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{options.title.info}" style="position:center;"></h2>
+            </div>
+
+            <a th:href="@{/options/info/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/options/info/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data</th>
+                    <th>Wersja</th>
+                    <th>Algorytm</th>
+                    <th>opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elements : ${lists1}">
+                    <td th:text="${elements.id}"></td>
+                    <td th:text="${#calendars.format(elements.date, 'dd-MM-yyyy')}"></td>
+                    <td th:text="${elements.version}"></td>
+                    <td th:text="${elements.algorithm}"></td>
+                    <td>
+                        <a th:href="@{/options/info/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/options/info/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/options/info/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="uk-padding"></div>
+
+    </div>
+
+</body>
+</html>

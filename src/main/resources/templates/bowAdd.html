@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{bow.title.add}" style="position:center;"></h2>
+    </div>
+
+    <form style="width:300px; margin: auto" th:object="${bowadd}" th:action="@{/bow/save}" method="post">
+        <div class="uk-margin">
+            <label>Leki</label>
+            <input th:field="*{bows}" type="text" class="uk-input" required="required">
+        </div>
+
+        <div class="uk-margin">
+            <label>Data</label>
+            <Input th:field="*{date}" type="date" class="uk-input" required="required">
+        </div>
+
+        <div class="uk-margin">
+            <label>Dawka</label>
+            <input th:field="*{quantity}" type="text" class="uk-input" required="required">
+        </div>
+
+        <div class="uk-button uk-form-controls uk-margin">
+            <label>Rodzaj </label><span uk-icon="icon: info" uk-tooltip="Ustaw w opcjach"></span>
+            <select th:field="*{type}" type="text" class="uk-input" required="required">
+                <option value=""> -- </option>
+                <option th:each="bowtype : ${bowtypeadd}"th:value="${bowtype.bowtypes}" th:utext="${bowtype.bowtypes}"/>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <label>Uwagi</label>
+            <textarea th:field="*{description}" class="uk-textarea" rows="4"></textarea>
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+        <a th:href="@{/bow}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>

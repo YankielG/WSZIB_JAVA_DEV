@@ -2,60 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec= "http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <body>
-
-<nav th:fragment="menu1" class="uk-navbar-container" uk-navbar uk-sticky>
-    <div class="uk-navbar-center">
-        <a th:href="@{/index}" class="uk-navbar-item uk-logo" sec:authorize="isAuthenticated()"><span sec:authentication="name">L</span></a>
-        <ul class="uk-navbar-nav">
-            <!--            <li class="uk-parent" th:classappend="${title==#{temperatura.tytul.calosc} ? 'uk-active':''}"><a th:href="@{/temperatura}">Temperatura</a></li>-->
-            <li class="uk-parent"><a th:href="@{/temperatura}">Temperatura</a></li>
-            <li class="uk-parent"><a th:href="@{/wzrost}">Wzrost</a></li>
-            <li class="uk-parent"><a th:href="@{/waga}">Waga</a></li>
-            <li class="uk-parent"><a th:href="@{/cisnienie}">Cisnienie</a></li>
-            <li class="uk-parent"><a th:href="@{/tetno}">Tętno</a></li>
-            <li class="uk-parent"><a th:href="@{/leki}">Leki</a></li>
-            <li class="uk-parent"><a th:href="@{/nawyki}">Nawyki</a></li>
-            <li class="uk-parent"><a th:href="@{/opcje}">Opcje</a></li>
-<!--            <li class="uk-parent"><a th:href="@{/opcje}" sec:authorize="hasAnyAuthority('MANAGER','ADMIN')">Opcje</a></li>-->
-            <li class="uk-parent"><a th:href="@{/info}">Info</a></li>
-        </ul>
-    </div>
-    <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-<!--            <li class="uk-parent"><a th:href="@{/}">Wyloguj</a></li>-->
-            <a class="uk-parent" style="margin-left: 30px" th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>
-        </ul>
-    </div>
-</nav>
-
-
-<nav th:fragment="menu2" class="uk-navbar-container" uk-navbar uk-sticky>
-
+<nav th:fragment="menu" class="uk-navbar-container" uk-navbar uk-sticky>
     <div class="uk-navbar-center nav-overlay">
         <a th:href="@{/index}" class="uk-navbar-item uk-logo" sec:authorize="isAuthenticated()"><span sec:authentication="name">L</span></a>
         <ul class="uk-navbar-nav">
-            <li class="uk-parent"><a th:href="@{/temperatura}">Temperatura</a></li>
-            <li class="uk-parent"><a th:href="@{/wzrost}">Wzrost</a></li>
-            <li class="uk-parent"><a th:href="@{/waga}">Waga</a></li>
-            <li class="uk-parent"><a th:href="@{/cisnienie}">Cisnienie</a></li>
-            <li class="uk-parent"><a th:href="@{/tetno}">Tętno</a></li>
-            <li class="uk-parent"><a th:href="@{/leki}">Leki</a></li>
-            <li class="uk-parent"><a th:href="@{/nawyki}">Nawyki</a></li>
+            <li class="uk-parent"><a th:href="@{/temperature}">Temperatura</a></li>
+            <li class="uk-parent"><a th:href="@{/growth}">Wzrost</a></li>
+            <li class="uk-parent"><a th:href="@{/weight}">Waga</a></li>
+            <li class="uk-parent"><a th:href="@{/pressure}">Cisnienie</a></li>
+            <li class="uk-parent"><a th:href="@{/pulse}">Tętno</a></li>
+            <li class="uk-parent"><a th:href="@{/bow}">Leki</a></li>
+            <li class="uk-parent"><a th:href="@{/habits}">Nawyki</a></li>
             <li>
                 <a href="#">Opcje</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-<!--                        <li>Info</a></li>-->
-                        <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/opcje/opcjeinfo}">Info</a></li>
-<!--                        <li>profil</a></li>-->
-                        <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/opcje/opcjeprofil}">profil</a></li>
-                        <li><a th:href="@{/opcje/rodzajleku}">Leki</a></li>
+                        <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/options/optionsinfo}">Info</a></li>
+                        <li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/options/optionsprofiles}">profil</a></li>
+                        <li><a th:href="@{/options/optionsbow}">Leki</a></li>
                     </ul>
                 </div>
             </li>
             <li class="uk-parent"><a th:href="@{/info}">Info</a></li>
         </ul>
-<!--         <span class="uk-navbar-item" style="margin-left: 100px" sec:authentication="principal.username"></span>-->
          <span class="uk-navbar-item" style="margin-left: 100px" sec:authorize="hasAnyAuthority('ADMIN')">Administrator</span>
          <span class="uk-navbar-item" style="margin-left: 100px" sec:authorize="hasAnyAuthority('MANAGER')">Moderator</span>
          <span class="uk-navbar-item" style="margin-left: 100px" sec:authorize="hasAnyAuthority('USER')">Użytkownik</span>
@@ -63,51 +32,6 @@
         <span class="uk-navbar-item" th:text="${#calendars.format(#calendars.createNow(), 'dd MMMM yyyy')}"></span>
         <a th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>
 
-    </div>
-
-<!--szukanie prawa strona-->
-<!--    <div class="uk-navbar-right">-->
-<!--        <div>-->
-<!--            <a class="uk-navbar-toggle" uk-search-icon href="#"></a>-->
-<!--            <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">-->
-<!--                <form class="uk-search uk-search-navbar uk-width-1-1">-->
-<!--                    <input class="uk-search-input" type="search" placeholder="Wyszukaj..." autofocus>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--wylogowanie prawa strona-->
-<!--    <div class="uk-navbar-right">-->
-<!--        <ul class="uk-navbar-nav">-->
-<!--    <a class="uk-parent" style="margin-right: 80px" th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>-->
-<!--&lt;!&ndash;            <li class="uk-parent"><a th:href="@{/}">Wyloguj</a></li>&ndash;&gt;-->
-<!--        </ul>-->
-<!--    </div>-->
-</nav>
-
-
-<nav th:fragment="menu3" class="uk-navbar-container uk-section-xsmall" uk-navbar>
-    <div class="uk-navbar-left">
-        <div th:fragment="menu" class="uk-width-1-2@s uk-width-2-5@m" uk-sticky>
-            <ul class="uk-nav uk-nav-default">
-                <li class="uk-active"><a th:href="@{/index}" class="uk-navbar-item uk-logo" sec:authorize="isAuthenticated()"><span sec:authentication="name">L</span></a></li>
-                <li><a th:href="@{/temperatura}">Temperatura</a></li>
-                <li><a th:href="@{/wzrost}">Wzrost</a></li>
-                <li><a th:href="@{/waga}">Waga</a></li>
-                <li><a th:href="@{/cisnienie}">Cisnienie</a></li>
-                <li><a th:href="@{/tetno}">Tetno</a></li>
-                <li><a th:href="@{/leki}">Leki</a></li>
-                <li><a th:href="@{/nawyki}">Nawyki</a></li>
-                <li><a th:href="@{/opcje}">Opcje</a></li>
-<!--                <li sec:authorize="hasAnyAuthority('MANAGER','ADMIN')"><a th:href="@{/opcje}">Opcje</a></li>-->
-                <li><a th:href="@{/info}">Info</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-            <a class="uk-parent" style="margin-left: 30px" th:href="@{/}" uk-icon="icon:  sign-out; ratio: 1.1" uk-tooltip="Wyloguj"></a>
-        </ul>
     </div>
 </nav>
 

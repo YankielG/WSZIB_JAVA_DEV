@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{temperature.title.details}" style="position:center;"></h2>
+    </div>
+
+    <form style="width:300px; margin: auto" th:object="${temperaturedetails}" th:action="@{/temperatureDetails/save}" method="post">
+        <div class="uk-margin">
+            <label>Temperatura: </label>
+            <td th:text="${temperaturedetails.temperatures}"></td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Data: </label>
+            <td th:text="${#calendars.format(temperaturedetails.date, 'dd-MM-yyyy')}"></td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Rodzaj: </label>
+            <td> <span th:uk-icon="${temperaturedetails.type} ? 'heart' : 'ban'"></span></td>
+        </div>
+        
+        <div class="uk-margin">
+            <label>Uwagi: </label>
+            <td th:text="${temperaturedetails.description}"></td>
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+
+        <a th:href="@{/temperature}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>

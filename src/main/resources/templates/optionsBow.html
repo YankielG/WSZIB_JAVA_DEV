@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{options.title.bow}" style="position:center;"></h2>
+            </div>
+
+            <a th:href="@{/options/bowtype/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/options/bowtype/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Rodzaj Leku</th>
+                    <th>opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elements : ${lists}">
+                    <td th:text="${elements.id}"></td>
+                    <td th:text="${elements.bowtypes}"></td>
+                    <td>
+                        <a th:href="@{/options/bowtype/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/options/bowtype/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/options/bowtype/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="uk-padding"></div>
+
+    </div>
+
+</body>
+</html>

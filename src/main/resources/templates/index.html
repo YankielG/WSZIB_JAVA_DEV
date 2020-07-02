@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
-      th:replace="~{fragments/szablon :: szablon(~{::.container})}"
+      th:replace="~{fragments/layout :: szablon(~{::.container})}"
       xmlns:sec= "http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <body>
 
-<!--<div class="container" th:each="element : ${lista} ">-->
 <div class="container" sec:authorize="isAuthenticated()">
 
-        <h2 class="uk-heading-divider"  style="position:center">
-            <span th:text="#{index.tytyl}">W</span>
-            <span sec:authentication="name">L</span>
-<!--            <span sec:authentication="principal.authorities">P</span>-->
-        </h2>
+    <h2 class="uk-heading-divider"  style="position:center">
+        <span th:text="#{index.title}">W</span>
+        <span sec:authentication="name">L</span>
+    </h2>
 
     <div class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="tlo.JPG" width="300" height="140" alt="info">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="background.JPG" width="300" height="140" alt="info">
         <p>Przejmij kontrolę nad organizmem i zacznij decydować o swoim zdrowiu!</p>
 
         <p>Dobre zdrowie to nie tylko geny. Decydują o nim także styl życia, umiejętność rozładowywania stresu, sposób
@@ -39,7 +37,9 @@
             Wysokie ryzyko wcale nie oznacza, że zachorujesz. Znaczy tylko tyle, że powinieneś bardziej się pilnować.
         </p>
     </div>
-<h2>KORZYSTANIE Z PROGRAMU NIE ZASTĘPUJE PORADY LEKARSKIEJ.</h2>
+
+    <h2>KORZYSTANIE Z PROGRAMU NIE ZASTĘPUJE PORADY LEKARSKIEJ.</h2>
+
     <div class="uk-padding"></div>
 </div>
 

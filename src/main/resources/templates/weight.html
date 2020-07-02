@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{weight.title}" style="position:center;"></h2>
+            </div>
+
+            <span uk-icon="icon: info" uk-tooltip="Info"></span>
+            <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000">
+                <div class="uk-card uk-card-body uk-card-default">
+                   <p>Całkowita masa ciała jest obliczana na zasadzie zsumowania tłuszczu niezbędnego oraz tłuszczu zapasowego.</p>
+                   <p>U osób, które czynnie ćwiczą tłuszcz niezbędny do metabolizmu oraz tłuszcz zapasowy, który potencjalnie jest
+                    zawsze w nadmiarze jest niezbędny do normalnego funkcjonowania organizmu. </p>
+                    <p>Normalnie, tłuszcz niezbędny powinien stanowić 16% całkowitej masy ciała u mężczyzn i 27% u kobiet.</p>
+                </div>
+            </div>
+
+        <div class="uk-section">
+            <canvas id="line-chart" width="2800" height="900"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+            <script th:inline="javascript">
+                new Chart(document.getElementById("line-chart"), {
+                    type: 'line',
+                    data: {
+                        labels: [[${label}]],
+                        datasets: [{
+                            data: [[${information}]],
+                            label: "Waga",
+                            borderColor: "#3e95cd",
+                            fill: false
+                        },
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales:{
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Data'}
+                            }],
+                            yAxes: [{
+                                display: true,
+                                stacked: true,
+                                ticks: {
+                                    min: 0,
+                                    steps: 10,
+                                    stepValue: 5,
+                                    max: 160},
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Waga'}
+                            }]
+
+                        }
+                    }
+                });
+
+            </script>
+        </div>
+
+                <a th:href="@{/weight/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+                <a th:href="@{/weight/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+                <table class="uk-table uk-table-striped uk-table-hover uk-table-small" uk-sortable>
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>waga</th>
+                        <th>Data</th>
+                        <th>Rodzaj</th>
+                        <th>Uwagi</th>
+                        <th>Opcje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="elements : ${lists}">
+                        <td th:text="${elements.id}"></td>
+                        <td th:text="${elements.weights}"></td>
+                        <td th:text="${#calendars.format(elements.date, 'dd-MM-yyyy')}"></td>
+                        <td><span th:uk-icon="${elements.type} ? 'heart' : 'ban'"></span></td>
+                        <td th:text="${elements.description}"></td>
+                        <td>
+                            <a th:href="@{/weight/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                            <a th:href="@{/weight/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                            <a th:href="@{/weight/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            <div class="uk-padding"></div>
+
+    </div>
+
+</body>
+</html>
+

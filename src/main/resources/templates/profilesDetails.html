@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+        <h2 class="uk-heading-divider" th:text="#{options.title.profile.details}" style="position:center;"></h2>
+    </div>
+    <form style="width:300px; margin: auto" th:object="${profiledetails}" th:action="@{/options/profile/save}"
+          method="post">
+        <div class="uk-margin">
+            <label>Użytkownik: </label>
+            <td th:text="${profiledetails.users}">...Brak danych...</td>
+        </div>
+        <div class="uk-margin">
+            <label>Imię: </label>
+            <td th:text="${profiledetails.name}">...Brak danych...</td>
+        </div>
+        <div class="uk-margin">
+            <label>Nazwisko: </label>
+            <td th:text="${profiledetails.surname}">...Brak danych...</td>
+        </div>
+        <div class="uk-margin">
+            <label>Email: </label>
+            <td th:text="${profiledetails.email}">...Brak danych...</td>
+        </div>
+        <div class="uk-margin">
+            <label>Hasło: </label>
+            <td th:text="${profiledetails.password}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Płeć: </label>
+            <td th:text="${profiledetails.gender}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Data urodzenia: </label>
+            <td th:text="${#calendars.format(profiledetails.date, 'dd-MM-yyyy')}"></td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Jednostka wagi: </label>
+            <td th:text="${profiledetails.weight}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Jednostka długości: </label>
+            <td th:text="${profiledetails.measure}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Wł/wył Użytkownika: </label>
+            <td><span th:uk-icon="${profiledetails.enable} ? 'check' : 'close'"></span></td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Prawa użytkownika: </label>
+            <td th:text="${profiledetails.permissions}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Typ użytkownika: </label>
+            <td th:text="${profiledetails.type}">...Brak danych...</td>
+        </div>
+
+        <div class="uk-margin">
+            <label>Użytkownik - Uwagi: </label>
+            <td th:text="${profiledetails.description}">...Brak danych...</td>
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+
+        <a th:href="@{/options/optionsprofiles}"><input class="uk-button uk-button-danger" type="button" value="Zamknij"></a>
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>

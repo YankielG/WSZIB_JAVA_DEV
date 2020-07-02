@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{options.title.bow.add}" style="position:center;"></h2>
+    </div>
+
+    <form style="width:300px; margin: auto" th:object="${bowtypeadd}" th:action="@{/options/bowtype/save}" method="post">
+        <div class="uk-margin">
+            <label>Rodzaj leku</label>
+            <input th:field="*{bowtypes}" type="text" class="uk-input" required="required">
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+
+        <a th:href="@{/options/optionsbow}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>

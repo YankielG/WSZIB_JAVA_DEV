@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{home.title}"></title>
+    <link rel="icon" type="image/x-icon" th:href="@{icon.ico}" href="../static/icon.ico"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/uikit.min.css}" href="../static/css/uikit.min.css"/>
+    <script th:src="@{/js/uikit.min.js}" src="../static/js/uikit.min.js"></script>
+    <script th:src="@{/js/uikit-icons.min.js}" src="../static/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+
+<div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
+    <img class="uk-align-center uk-margin-remove-adjacent" th:src="@{/static/files/background.jpg}" width="300" height="140" alt="info">
+
+    <form method="POST" class="form-signin" th:object="${homeadd}" th:action="@{/login}">
+        <h2 class="uk-text-center uk-card-title" th:text="#{home.text1}"></h2>
+        <input id="user_name" name="user_name" type="text" placeholder="Użytkownik" class="uk-input" required="required"> <br/>
+        <br/>
+
+        <input id="password" name="password" type="password" th:placeholder="Hasło" class="uk-input" required="required"/> <br/>
+        <br/>
+
+        <div align="center" th:if="${param.error}">
+            <p style="font-size: 20; color: #ff1c19;">Nazwa użytkownika lub hasło są nieprawidłowe! Sprawdź je!</p>
+        </div>
+
+        <button class="uk-button uk-button-secondary uk-width-1-1" name="Submit" type="Submit" value="Login"
+                th:text="#{home.enter}"></button>
+    </form>
+
+    <div style="margin: 20px auto">
+        <a class="uk-align-left"  th:href="@{/registration}" uk-icon="icon: user; ratio: 1.2" uk-tooltip="Dodaj konto"></a>
+        <a class="uk-align-right" th:href="@{/remindpassword}" uk-icon="icon: search; ratio: 1.2" uk-tooltip="Przypomnij logowanie"></a>
+    </div>
+</div>
+
+<!--<script>-->
+<!--    window.onload = function myFunction() {-->
+<!--        if((navigator.userAgent.indexOf("Firefox") || navigator.userAgent.indexOf('OPR')) != -1 )-->
+<!--        {-->
+<!--            alert('Aplikacja nie wspiera przeglądarki Firefox');-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+</body>
+</html>

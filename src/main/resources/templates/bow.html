@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+    <div class="container">
+            <div class="uk-panel">
+                <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+                <h2 class="uk-heading-divider" th:text="#{bow.title}" style="position:center;"></h2>
+            </div>
+
+            <span uk-icon="icon: info" uk-tooltip="Info"></span>
+            <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000" >
+                <div class="uk-card uk-card-body uk-card-default" >
+                   <P> Przed użyciem zapoznaj się z treścią ulotki dołączonej do opakowania bądź skonsultuj się z lekarzem lub farmaceutą.</p>
+                    <p> Gdyż każdy lek niewłaściwie stosowany zagraża Twojemu życiu lub zdrowiu</P>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="uk-padding"></div>
+
+            <a th:href="@{/bow/add}" uk-icon="icon: copy" uk-tooltip="Dodaj"></a>
+            <a th:href="@{/bow/clear}" uk-icon="icon: trash" uk-tooltip="Wyczyść"></a>
+            <table class="uk-table uk-table-stripped uk-table-hover uk-table-small" uk-sortable>
+                <thead>
+                <tr>
+                    <th>Id <a sd:pagination-sort="id" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+                    <th>Lek <a sd:pagination-sort="lek" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+                    <th>Data <a sd:pagination-sort="data" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+                    <th>Dawka <a sd:pagination-sort="dawka" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+                    <th>Rodzaj <a sd:pagination-sort="rodzaj" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+                    <th>Uwagi <a sd:pagination-sort="uwagi" uk-icon="icon: list; ratio: 0.9" uk-tooltip="Sortuj"></a></th>
+                    <th>Opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elements : ${lists}">
+                    <td th:text="${elements.id}"></td>
+                    <td th:text="${elements.bows}"></td>
+                    <td th:text="${#calendars.format(elements.date, 'dd-MM-yyyy')}"></td>
+                    <td th:text="${elements.quantity}"></td>
+                    <td th:text="${elements.type}"></td>
+                    <td th:text="${elements.description}"></td>
+                    <td>
+                        <a th:href="@{/bow/edit/{id} (id=${elements.id})}" uk-icon="icon: file-edit" uk-tooltip="Edytuj"></a>
+                        <a th:href="@{/bow/details/{id} (id=${elements.id})}" uk-icon="icon: info" uk-tooltip="Szczegóły"></a>
+                        <a th:href="@{/bow/delete/{id} (id=${(elements.id)})}" uk-icon="icon: trash" uk-tooltip="Usuń"></a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="col-sm-6">
+                <div sd:pagination-summary="">info</div>
+            </div>
+            <div class="col-sm-6">
+                <nav class="pull-right">
+                    <ul class="uk-pagination uk-flex-center" sd:pagination="full">
+                        <li class="uk-disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li class="uk-active"><a href="#">1<span class="sr-only"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="uk-padding"></div>
+
+    </div>
+
+</body>
+</html>

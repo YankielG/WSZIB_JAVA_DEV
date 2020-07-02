@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: szablon(~{::.container})}">
+<body>
+
+<div class="container">
+    <div class="uk-panel">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="/background.JPG" width="60" height="28" alt="info">
+    <h2 class="uk-heading-divider" th:text="#{pulse.title.add}" style="position:center;"></h2>
+    </div>
+
+    <form style="width:300px; margin: auto" th:object="${pulseadd}" th:action="@{/pulse/save}" method="post">
+        <div class="uk-margin">
+            <label>Tętno</label>
+            <input th:field="*{pulses}" type="number"  class="uk-input" step="0.1" min="50" max="150" required="required">
+        </div>
+
+        <div class="uk-margin">
+            <label>Data</label>
+            <Input th:field="*{date}" type="date" class="uk-input" required="required">
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-form-label">Rodzaj</div>
+            <div class="uk-form-controls uk-form-controls-text" >
+                <label><input class="uk-radio" type="radio" name="true" th:value="true" th:field="*{type}"> Tętno prawidłowe</label><br>
+                <label><input class="uk-radio" type="radio" name="false" th:value="false" th:field="*{type}"> Tętno nieprawidłowe</label>
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <label>Uwagi</label>
+            <textarea th:field="*{description}" class="uk-textarea" rows="4"></textarea>
+        </div>
+
+        <input th:field="*{id}" type="number" hidden>
+
+        <a th:href="@{/pulse}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+
+    </form>
+
+    <div class="uk-padding"></div>
+
+</div>
+
+</body>
+</html>
