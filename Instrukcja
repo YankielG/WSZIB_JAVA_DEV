@@ -1,11 +1,12 @@
-INSTRUKCJA – JAK URUCHOMIĆ APLIKACJE:
+# INSTRUKCJA – Jak Uruchomić Aplikacje:
 
-Aplikacja znajduję się na gicie w prywatnym repozytorium:
+Aplikacja to projekt w Thymeleaf znajduję się na gicie w prywatnym repozytorium:
 https://github.com/YankielG/WSZIB_JAVA_DEV
-Jest to projekt w Thymeleaf.
 
 Ta sama wersja aplikacji jest na heroku, -ułatwienie; aby nie pobierać i nie musieć konfigurować projektu. A sprawdzić jego funkcjonalność. Mam nadzieje ze heroku odzwierciedli to samo co daje samodzielne uruchomienie projektu.
 https://dziennik-zdrowia.herokuapp.com/
+
+------------
 
 1.	Proszę o pobranie „Clona” z git - repozytorium, rozpakowanie go w dowolnym miejscu.
 
@@ -20,19 +21,19 @@ https://dziennik-zdrowia.herokuapp.com/
     
 6.	Plik „email.properties” na tą chwile jest nie wykorzystywany – niema potrzeby tworzenia go.
 
-7.	Uruchomić przeglądarkę internetową podając adres : "localhost:8080".
-
+7.	Uruchomić przeglądarkę internetową podając adres :  https://localhost:8080
 8.	Zarejestrować się w aplikacji. Podając odpowiednio wymagane dane. Konto domyślnie ma najniższe uprawnienia. 
 Nie posiada wszystkich opcji. Aby je przydzielić zmienić trzeba mieć uprawnienia tylko i wyłącznie administratora.
 
 9.	Dlatego zalecane jest  zaimportowanie danych z bazy: postgres_baza.sql. Będą tam gotowe konta:
 
-TYP:  ADMIN 		UŻYTKOWNIK:  Tomek 		HASŁO:  admin
-TYP:  MANAGER 	UŻYTKOWNIK:  Monika 	HASŁO:  manager
-TYP:  USER		UŻYTKOWNIK:  Adam	 	HASŁO:  user
-
-UWAGA: WIELKOŚĆ LITER W UŻYTKOWNIKU I HAŚLE MA ZNACZENIE
+	- TYP:  ADMIN 		UŻYTKOWNIK:  Tomek 		HASŁO:  admin
+	- TYP:  MANAGER 	UŻYTKOWNIK:  Monika 	HASŁO:  manager
+	- TYP:  USER		UŻYTKOWNIK:  Adam	 	HASŁO:  user
 
 10.	Po zaimportowaniu bazy nadal jest możliwość tworzenia kont.
 
-Najlepiej jest skorzystać z gotowego projektu zamieszczonego na Heroku.
+
+------------
+
+**Najlepiej jest skorzystać z gotowego projektu zamieszczonego na Heroku.**
