@@ -37,3 +37,4 @@ Nie posiada wszystkich opcji. Aby je przydzielić zmienić trzeba mieć uprawnie
 ------------
 
 **Najlepiej jest skorzystać z gotowego projektu zamieszczonego na Heroku.**
+
