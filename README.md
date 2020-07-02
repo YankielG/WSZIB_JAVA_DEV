@@ -1,7 +1,7 @@
 # Opis projektu:
 
 
-![](https://github.com/YankielG/WSZIB_JAVA_DEV/blob/master/src/main/resources/static/background_s.JPG)
+![](https://github.com/YankielG/WSZIB_JAVA_DEV/blob/master/src/main/resources/static/background_m.JPG)
 
 Stworzenie aplikacji webowej dzienniczek zdrowia. 
 Aplikacja będzie pozwalała na wprowadzenie parametrów zdrowotnych do bazy danych oraz jej odczytywanie. Użytkownik ma kilka podstron na każdej jest wprowadzana inna wartość dotycząca jego zdrowia oraz odczyt wcześniejszych zapisów.
